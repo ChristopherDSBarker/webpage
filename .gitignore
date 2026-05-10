@@ -1,0 +1,8 @@
+.DS_Store
+.vscode/
+uploads/
+
+*.zip
+*.mp4
+
+assets/**/*.csv

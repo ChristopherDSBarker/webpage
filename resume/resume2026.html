@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Christopher Barker | Web Resume</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+      body {
+        background:
+          radial-gradient(circle at 18% 12%, rgba(63, 140, 255, 0.18), transparent 30%),
+          linear-gradient(180deg, #05070c 0%, #081020 54%, #05070c 100%);
+      }
+
+      .resume-document {
+        width: min(980px, calc(100% - 32px));
+        margin: 40px auto 72px;
+        padding: clamp(24px, 5vw, 56px);
+        border: 1px solid rgba(244, 200, 74, 0.24);
+        border-radius: 8px;
+        background: #101a2f;
+        color: var(--ink);
+        box-shadow: var(--shadow);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .resume-document::before,
+      .resume-document::after {
+        content: "";
+        display: block;
+        height: 10px;
+        background: repeating-linear-gradient(90deg, rgba(244, 200, 74, 0.86) 0 9px, transparent 9px 20px);
+        opacity: 0.42;
+      }
+
+      .resume-document::before {
+        margin: -22px -22px 28px;
+      }
+
+      .resume-document::after {
+        margin: 30px -22px -22px;
+      }
+
+      .resume-kicker {
+        color: var(--accent);
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-size: 0.78rem;
+      }
+
+      .resume-document h1 {
+        max-width: none;
+        margin-top: 8px;
+        font-size: clamp(2.3rem, 6vw, 4.8rem);
+      }
+
+      .resume-subtitle,
+      .resume-contact {
+        color: #d8e3f6;
+      }
+
+      .resume-contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+        margin-top: 14px;
+        font-weight: 700;
+      }
+
+      .resume-contact a {
+        color: var(--ink);
+        text-decoration-color: rgba(244, 200, 74, 0.72);
+      }
+
+      .resume-section {
+        margin-top: 30px;
+        padding-top: 22px;
+        border-top: 1px solid rgba(244, 200, 74, 0.22);
+      }
+
+      .resume-section h2 {
+        font-size: 1rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 16px;
+      }
+
+      .resume-item {
+        display: grid;
+        gap: 8px;
+        margin-bottom: 18px;
+      }
+
+      .resume-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        color: var(--ink);
+        font-weight: 800;
+      }
+
+      .resume-row span:last-child {
+        color: var(--muted);
+        font-weight: 700;
+        text-align: right;
+      }
+
+      .resume-document ul {
+        margin: 0;
+        padding-left: 20px;
+        color: #d8e3f6;
+      }
+
+      .resume-document li {
+        margin-bottom: 6px;
+      }
+
+      .skill-lines {
+        display: grid;
+        gap: 8px;
+        color: #d8e3f6;
+      }
+
+      @media (max-width: 680px) {
+        .resume-row {
+          display: grid;
+        }
+
+        .resume-row span:last-child {
+          text-align: left;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <article class="resume-document">
+      <header>
+        <p class="resume-kicker">Frontend Web Developer / UX/UI / Data Visualization</p>
+        <h1>Christopher Barker</h1>
+        <p class="resume-subtitle">Interdisciplinary student developer combining web development, interactive design, applied AI, and data visualization.</p>
+        <div class="resume-contact">
+          <span>Tacoma, WA</span>
+          <a href="mailto:Christopher.Barker@plu.edu">Christopher.Barker@plu.edu</a>
+          <a href="https://www.linkedin.com/in/christopher-barker-/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/ChristopherDSBarker" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </header>
+
+      <section class="resume-section">
+        <h2>Education</h2>
+        <div class="resume-item">
+          <div class="resume-row"><span>Pacific Lutheran University</span><span>February 2024 - May 2026 / Tacoma, WA</span></div>
+          <p>Bachelor of Arts, Individualized Major in Web Development and Interactive Design</p>
+        </div>
+        <div class="resume-item">
+          <div class="resume-row"><span>Tacoma Community College</span><span>June 2017 - June 2022 / Tacoma, WA</span></div>
+          <p>Associate of Arts, Direct Transfer Agreement</p>
+        </div>
+      </section>
+
+      <section class="resume-section">
+        <h2>Technical Activities</h2>
+        <div class="resume-item">
+          <div class="resume-row"><span>Derailed / React, CSS, JavaScript, JSON</span><span>June 2025 - September 2025</span></div>
+          <ul>
+            <li>Developed a real-time multiplayer browser game using React and JavaScript.</li>
+            <li>Designed responsive game interfaces and controls for smooth browser-based gameplay.</li>
+            <li>Implemented state management for player movement, synchronization, and collision logic.</li>
+          </ul>
+        </div>
+        <div class="resume-item">
+          <div class="resume-row"><span>West Coast Tourism Data Analysis / Python</span><span>March 2026</span></div>
+          <ul>
+            <li>Engineered a data analysis pipeline to evaluate the Weekender Effect across retail datasets.</li>
+            <li>Processed datasets to compare regional tourism, premium spending, and basket diversity.</li>
+          </ul>
+        </div>
+        <div class="resume-item">
+          <div class="resume-row"><span>AI Protein Sequence Visualization / Python, ESM-3, BLIP-2</span><span>June 2025 - Current</span></div>
+          <ul>
+            <li>Built a Python-based AI pipeline converting protein sequences into 2D visual embeddings.</li>
+            <li>Generated protein image captions to support function prediction and research interpretation.</li>
+          </ul>
+        </div>
+        <div class="resume-item">
+          <div class="resume-row"><span>Discord Bot / Python, Git</span><span>June 2024 - September 2024</span></div>
+          <ul>
+            <li>Developed a Python reminder bot with slash commands, countdown timers, and GitHub version control.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="resume-section">
+        <h2>Work And Research Experience</h2>
+        <div class="resume-item">
+          <div class="resume-row"><span>UX/UI Design Intern / TestUnlimited.com</span><span>January 2024 - March 2024</span></div>
+          <ul>
+            <li>Drafted UI design blueprints from pencil sketches to client-ready deliverables.</li>
+            <li>Redesigned product page layouts and optimized visual assets for usability and consistency.</li>
+            <li>Collaborated with engineering to deploy front-end design updates to the live site.</li>
+          </ul>
+        </div>
+        <div class="resume-item">
+          <div class="resume-row"><span>Undergraduate Research Assistant / Pacific Lutheran University</span><span>June 2025 - Current</span></div>
+          <ul>
+            <li>Authored Python scripts to query biological databases and render protein structures from sequence data.</li>
+          </ul>
+        </div>
+        <div class="resume-item">
+          <div class="resume-row"><span>PC Tech / Pacific Lutheran University</span><span>August 2024 - June 2025</span></div>
+          <ul>
+            <li>Troubleshot hardware and software issues and mentored new student workers.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="resume-section">
+        <h2>Achievements And Awards</h2>
+        <div class="skill-lines">
+          <p><strong>Consortium for Computing Sciences in Colleges</strong> / Pacific Lutheran University / October 2025</p>
+          <p><strong>Dean's List</strong> / University of Washington, Tacoma / June 2024 - Current</p>
+          <p><strong>First Generation Fellow</strong> / University of Washington, Tacoma / June 2023</p>
+          <p><strong>Outstanding Student Award</strong> / Tacoma Community College / 2022 - 2023</p>
+        </div>
+      </section>
+
+      <section class="resume-section">
+        <h2>Technical Skills</h2>
+        <div class="skill-lines">
+          <p><strong>Languages:</strong> JavaScript, HTML5, CSS3, Python, Java, JSON, R</p>
+          <p><strong>Frameworks And Libraries:</strong> React, Material UI, Node.js, JUnit</p>
+          <p><strong>Design And Developer Tools:</strong> Figma, UI/UX Wireframing, Git, GitHub, VS Code, Docker, IntelliJ</p>
+        </div>
+      </section>
+    </article>
+  </body>
+</html>

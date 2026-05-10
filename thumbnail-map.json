@@ -1,0 +1,259 @@
+{
+  "schema": {
+    "purpose": "Repository-driven thumbnail source map for portfolio reels.",
+    "status_values": ["artifact", "derived", "fallback"],
+    "selection_order": [
+      "hero.* or thumbnail.*",
+      "logos",
+      "posters",
+      "screenshots",
+      "gameplay captures",
+      "notebook visualizations",
+      "exported sketches",
+      "PDF previews",
+      "generated fallback graphics"
+    ]
+  },
+  "featured": {
+    "opioid-prescribing-risk-analysis": {
+      "title": "Opioid Prescribing Risk Analysis",
+      "thumbnail": "images/opioid-prescribing-risk-poster.png",
+      "source_asset": "project poster",
+      "status": "artifact",
+      "next_best_asset": "chart crops from notebook or poster"
+    },
+    "grocery-retail-consumer-analytics": {
+      "title": "Grocery Retail Consumer Analytics",
+      "thumbnail": "images/grocery-retail-consumer-poster.png",
+      "source_asset": "project poster",
+      "status": "artifact",
+      "next_best_asset": "dashboard or visualization crop"
+    },
+    "minesweeper-game": {
+      "title": "Minesweeper Game",
+      "thumbnail": "css-generated game board cover",
+      "source_asset": "generated fallback",
+      "status": "fallback",
+      "next_best_asset": "gameplay screenshot"
+    },
+    "battleship-game": {
+      "title": "Battleship Game",
+      "thumbnail": "css-generated board cover",
+      "source_asset": "generated fallback",
+      "status": "fallback",
+      "next_best_asset": "gameplay screenshot or title screen"
+    },
+    "html-resume-portfolio": {
+      "title": "HTML Resume Portfolio",
+      "thumbnail": "css-generated web/resume cover",
+      "source_asset": "generated fallback",
+      "status": "fallback",
+      "next_best_asset": "browser screenshot"
+    },
+    "ai-caption-generator": {
+      "title": "AI Caption Generator",
+      "thumbnail": "css-generated AI app cover",
+      "source_asset": "generated fallback",
+      "status": "fallback",
+      "next_best_asset": "app upload/output screenshot"
+    },
+    "gan-discord-bot": {
+      "title": "GAN Discord Bot",
+      "thumbnail": "css-generated Discord bot cover",
+      "source_asset": "generated fallback",
+      "status": "fallback",
+      "next_best_asset": "bot output screenshot"
+    },
+    "data-collab-room-studio": {
+      "title": "Data Collaboration Room Studio",
+      "thumbnail": "images/thumbnails/data-collab-room-logo-system.png",
+      "source_asset": "assets/featured/data-collab-room-studio/room-studio-logo.pdf",
+      "status": "derived",
+      "next_best_asset": "capstone presentation crop or studio mockup"
+    }
+  },
+  "supporting": {
+    "grid-system-dynamic-composition": {
+      "title": "Grid System Dynamic Composition",
+      "thumbnail": "images/thumbnails/grid-system-dynamic-composition.png",
+      "source_asset": "assets/supporting/design/grid-system-dynamic-composition.pdf",
+      "status": "derived",
+      "next_best_asset": "stronger PDF crop if needed"
+    },
+    "package-series-design": {
+      "title": "Package Series Design",
+      "thumbnail": "images/thumbnails/package-series-design.png",
+      "source_asset": "assets/supporting/design/package-series-design.pdf",
+      "status": "derived",
+      "next_best_asset": "package mockup or presentation crop"
+    },
+    "typography-poster-design": {
+      "title": "Typography Poster Design",
+      "thumbnail": "images/thumbnails/typography-poster-design.png",
+      "source_asset": "assets/supporting/design/typography-poster-design.pdf",
+      "status": "derived",
+      "next_best_asset": "poster crop if needed"
+    },
+    "favorite-things-magazine-spread": {
+      "title": "Favorite Things Magazine Spread",
+      "thumbnail": "images/thumbnails/favorite-things-magazine-spread.png",
+      "source_asset": "assets/supporting/design/favorite-things-magazine-spread.pdf",
+      "status": "derived",
+      "next_best_asset": "spread crop if needed"
+    },
+    "interactive-number-learning-publication": {
+      "title": "Interactive Number Learning Publication",
+      "thumbnail": "images/thumbnails/interactive-number-learning-publication.png",
+      "source_asset": "assets/supporting/design/interactive-number-learning-publication.pdf",
+      "status": "derived",
+      "next_best_asset": "publication spread crop"
+    },
+    "wang-center-collab-sticker": {
+      "title": "Wang Center Collab Sticker",
+      "thumbnail": "assets/supporting/media/wang-center-collab.jpeg",
+      "source_asset": "assets/supporting/media/wang-center-collab.jpeg",
+      "status": "artifact",
+      "next_best_asset": "crop if needed"
+    },
+    "llm-bias-detection-classifier": {
+      "title": "LLM Bias Detection Classifier",
+      "thumbnail": "css-generated data cover",
+      "source_asset": "generated fallback",
+      "status": "fallback",
+      "next_best_asset": "classifier report chart or output screenshot"
+    },
+    "stock-market-visualization-analysis": {
+      "title": "Stock Market Visualization Analysis",
+      "thumbnail": "css-generated data cover",
+      "source_asset": "generated fallback",
+      "status": "fallback",
+      "next_best_asset": "chart export from R report"
+    },
+    "corgis-predictive-data-analysis": {
+      "title": "CORGIS Predictive Data Analysis",
+      "thumbnail": "css-generated data cover",
+      "source_asset": "generated fallback",
+      "status": "fallback",
+      "next_best_asset": "notebook chart crop"
+    },
+    "logistic-regression-analysis": {
+      "title": "Logistic Regression Analysis",
+      "thumbnail": "css-generated statistics cover",
+      "source_asset": "generated fallback",
+      "status": "fallback",
+      "next_best_asset": "ROC/confusion matrix/notebook output"
+    },
+    "decision-tree-analysis": {
+      "title": "Decision Tree Analysis",
+      "thumbnail": "css-generated tree cover",
+      "source_asset": "generated fallback",
+      "status": "fallback",
+      "next_best_asset": "tree diagram export"
+    },
+    "neural-network-analysis": {
+      "title": "Neural Network Analysis",
+      "thumbnail": "css-generated neural cover",
+      "source_asset": "generated fallback",
+      "status": "fallback",
+      "next_best_asset": "training curve or architecture diagram"
+    },
+    "multiple-regression-analysis": {
+      "title": "Multiple Regression Analysis",
+      "thumbnail": "css-generated regression cover",
+      "source_asset": "generated fallback",
+      "status": "fallback",
+      "next_best_asset": "coefficient/residual chart export"
+    },
+    "spelling-bee-puzzle": {
+      "title": "Spelling Bee Puzzle",
+      "thumbnail": "css-generated puzzle cover",
+      "source_asset": "generated fallback",
+      "status": "fallback",
+      "next_best_asset": "UI or output screenshot"
+    },
+    "mountain-terrain-pathfinding": {
+      "title": "Mountain Terrain Pathfinding",
+      "thumbnail": "css-generated terrain cover",
+      "source_asset": "generated fallback",
+      "status": "fallback",
+      "next_best_asset": "terrain path screenshot"
+    },
+    "image-tool": {
+      "title": "Image Tool",
+      "thumbnail": "css-generated image tool cover",
+      "source_asset": "generated fallback",
+      "status": "fallback",
+      "next_best_asset": "before/after image comparison"
+    },
+    "abstract-art": {
+      "title": "Abstract Art",
+      "thumbnail": "css-generated abstract cover",
+      "source_asset": "generated fallback",
+      "status": "fallback",
+      "next_best_asset": "rendered Java canvas screenshot"
+    },
+    "regex-pattern-analyzer": {
+      "title": "Regex Pattern Analyzer",
+      "thumbnail": "css-generated regex cover",
+      "source_asset": "generated fallback",
+      "status": "fallback",
+      "next_best_asset": "pattern/output screenshot"
+    },
+    "processing-visual-experiment": {
+      "title": "Processing Visual Experiment",
+      "thumbnail": "css-generated creative cover",
+      "source_asset": "generated fallback",
+      "status": "fallback",
+      "next_best_asset": "exported sketch frame"
+    },
+    "array-visualization-study": {
+      "title": "Array Visualization Study",
+      "thumbnail": "css-generated array cover",
+      "source_asset": "generated fallback",
+      "status": "fallback",
+      "next_best_asset": "exported sketch frame"
+    },
+    "animal-function-animation": {
+      "title": "Animal Function Animation",
+      "thumbnail": "css-generated motion cover",
+      "source_asset": "generated fallback",
+      "status": "fallback",
+      "next_best_asset": "GIF or animation still"
+    },
+    "random-circles-generator": {
+      "title": "Random Circles Generator",
+      "thumbnail": "css-generated circles cover",
+      "source_asset": "generated fallback",
+      "status": "fallback",
+      "next_best_asset": "exported generated circles frame"
+    },
+    "bridging-biology-and-ai": {
+      "title": "Bridging Biology And AI",
+      "thumbnail": "images/thumbnails/bridging-biology-and-ai-understanding.png",
+      "source_asset": "assets/supporting/design/bridging-biology-and-ai-understanding.pdf",
+      "status": "derived",
+      "next_best_asset": "keep current PDF preview"
+    },
+    "animated-short-scene": {
+      "title": "Animated Short Scene",
+      "thumbnail": "assets/supporting/animated-short-scene.gif",
+      "source_asset": "assets/supporting/animated-short-scene.gif",
+      "status": "artifact",
+      "next_best_asset": "keep current GIF"
+    },
+    "community-documentary-media": {
+      "title": "Community Documentary Media",
+      "thumbnail": "css-generated media title card",
+      "source_asset": "generated fallback",
+      "status": "fallback",
+      "next_best_asset": "owned still frame"
+    },
+    "bjug-day-campaign": {
+      "title": "BJUG Day Campaign",
+      "thumbnail": "css-generated campaign title card",
+      "source_asset": "generated fallback",
+      "status": "fallback",
+      "next_best_asset": "owned campaign still"
+    }
+  }
+}

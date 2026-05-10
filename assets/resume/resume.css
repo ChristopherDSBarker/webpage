@@ -1,0 +1,32 @@
+a {
+    color: white;
+}
+first {
+    color: red;
+}
+h1 {
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    border-top: 5px double blue;
+}
+h2 {
+    border-bottom: 2px solid red;
+}
+h4 {
+    color: white;
+    background-color: gray;
+    border-top: 5px dashed green;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+underline {
+    text-decoration: underline;
+}
+.reference {
+    background-color: orange;
+}
+#paper {
+    color: white;
+    background-color: gray;
+}

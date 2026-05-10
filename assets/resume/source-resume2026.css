@@ -1,0 +1,84 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* The Paper Background */
+body {
+    background-color: #f0f0f0; 
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+#paper {
+    background-color: gray;
+    color: white;
+    width: 100%;
+    max-width: 850px; /* Standard letter size width */
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    border-top: 5px double blue;
+    padding-top: 15px;
+    margin-bottom: 20px;
+}
+
+.centered-header {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.red-text {
+    color: red;
+}
+
+.contact-info a {
+    color: white; /* Adjusted to show up on gray background */
+}
+
+/* Section Headings */
+h2 {
+    border-bottom: 2px solid red;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    padding-bottom: 3px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+/* Flexbox Alignment for Dates */
+.flex-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 5px;
+}
+
+.resume-item {
+    margin-bottom: 15px;
+}
+
+/* Lists and Typography */
+ul {
+    margin-left: 20px;
+}
+
+li {
+    margin-bottom: 5px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 5px;
+}
