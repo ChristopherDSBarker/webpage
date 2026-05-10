@@ -1,7 +1,11 @@
 {
   "schema": {
     "purpose": "Repository-driven thumbnail source map for portfolio reels.",
-    "status_values": ["artifact", "derived", "fallback"],
+    "status_values": [
+      "artifact",
+      "derived",
+      "fallback"
+    ],
     "selection_order": [
       "hero.* or thumbnail.*",
       "logos",
@@ -15,6 +19,13 @@
     ]
   },
   "featured": {
+    "protein-ai-pipeline": {
+      "title": "Protein AI Pipeline",
+      "thumbnail": "images/thumbnails/bridging-biology-and-ai-understanding.png",
+      "source_asset": "assets/supporting/design/bridging-biology-and-ai-understanding.pdf + https://github.com/Cao-Labs/lutesAI2025/tree/main/ChrisB",
+      "status": "derived",
+      "next_best_asset": "protein matrix visualization or pipeline diagram crop"
+    },
     "opioid-prescribing-risk-analysis": {
       "title": "Opioid Prescribing Risk Analysis",
       "thumbnail": "images/opioid-prescribing-risk-poster.png",
@@ -164,6 +175,13 @@
       "status": "fallback",
       "next_best_asset": "coefficient/residual chart export"
     },
+    "csci367-game-systems": {
+      "title": "CSCI 367 Game Systems",
+      "thumbnail": "assets/supporting/media/csci367-conceptlogo.png",
+      "source_asset": "https://github.com/distcrypto/csci367_4/blob/main/conceptlogo.png",
+      "status": "artifact",
+      "next_best_asset": "repo-backed UI screenshot or systems diagram"
+    },
     "spelling-bee-puzzle": {
       "title": "Spelling Bee Puzzle",
       "thumbnail": "css-generated puzzle cover",
@@ -226,13 +244,6 @@
       "source_asset": "generated fallback",
       "status": "fallback",
       "next_best_asset": "exported generated circles frame"
-    },
-    "bridging-biology-and-ai": {
-      "title": "Bridging Biology And AI",
-      "thumbnail": "images/thumbnails/bridging-biology-and-ai-understanding.png",
-      "source_asset": "assets/supporting/design/bridging-biology-and-ai-understanding.pdf",
-      "status": "derived",
-      "next_best_asset": "keep current PDF preview"
     },
     "animated-short-scene": {
       "title": "Animated Short Scene",

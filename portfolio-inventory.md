@@ -50,6 +50,25 @@ Every curated repository item must satisfy at least one of these:
 
 No curated project folder should become unreachable from the portfolio navigation system.
 
+## Deployment-Safe Synchronization Rule
+
+Every webpage-visible asset must satisfy:
+
+- exists locally
+- exists in the webpage repo
+- is tracked by Git
+- is not excluded by `.gitignore`
+- resolves after GitHub Pages deployment
+- has intentional source/archive classification when excluded from deployment
+
+Local filesystem success does not equal deployment success. Raw datasets, ZIP archives, and large videos should stay in the canonical `best_works` source archive unless there is a specific presentation reason to deploy them.
+
+Pre-push audit command:
+
+```bash
+python3 tools/deployment_safe_audit.py
+```
+
 ## Repository Verification Rule
 
 Repository existence and public linkability are separate states.
@@ -111,8 +130,33 @@ Older coursework or secondary material preserved for completeness and discoverab
 - `Supporting`: useful breadth material, visible but intentionally secondary.
 - `Archival`: preserved for transparency; should not compete visually with flagship work.
 
+## Significance Review Rule
+
+Count parity does not prove semantic completeness. A project may be visible, deploy-safe, and mapped while still being underrepresented.
+
+Periodically review important projects for:
+
+- implementation depth
+- repo evidence strength
+- artifact density
+- resume importance
+- recruiter value
+- semantic representation quality
+
+If a project has high implementation depth and strong evidence, it may deserve featured placement, a dedicated project page, GitHub linkage, or stronger artifact integration even when the count-based audits already pass.
+
+Use AI-assisted review as a recommendation layer only. AI may flag underrepresentation, stale metadata, weak thumbnail identity, duplicate visual language, or possible featured candidates. Final decisions about importance, story priority, and featured placement remain human-confirmed.
+
+Avoid automatic project merging, fake screenshots, auto-featured promotion, and new audit layers unless they catch a real failure mode not already covered by the current governance files.
+
 ## Featured Projects
 
+- [x] Protein AI Pipeline
+  - Website: `featured/protein-ai-pipeline.html`
+  - Source: `Cao-Labs/lutesAI2025`, `ChrisB` folder/workstream
+  - Status: synced
+  - Presentation: flagship research implementation
+  - Artifact package: GitHub workstream, protein image generation script, BLIP-2 workflow, similarity evaluation script, Bridging Biology And AI supporting poster
 - [x] Opioid Prescribing Risk Analysis
   - Website: `featured/opioid-prescribing-risk-analysis.html`
   - Status: complete
@@ -156,8 +200,14 @@ Older coursework or secondary material preserved for completeness and discoverab
 - [x] Array Visualization Study
 - [x] BJUG Day Campaign
 - [x] Bridging Biology And AI
+  - Status: merged into `featured/protein-ai-pipeline.html` as supporting research communication artifact
 - [x] Community Documentary Media
 - [x] CORGIS Predictive Data Analysis
+- [x] CSCI 367 Game Systems
+  - Website: `supporting/csci367-game-systems.html`
+  - GitHub: `https://github.com/distcrypto/csci367_4`
+  - Thumbnail source: repo-backed `conceptlogo.png`
+  - Role: user-confirmed lead/main implementation contributor on a collaborative project
 - [x] Decision Tree Analysis
 - [x] Favorite Things Magazine Spread
 - [x] Grid System Dynamic Composition
@@ -193,6 +243,7 @@ Current deterministic asset audit:
 - Directly linked asset files: 39
 - Classified internal/package assets: 9
 - Unmatched curated assets: 0
+- Deployment-safe link audit: 0 missing references, 0 ignored-file references, 0 untracked references after the raw CSV/ZIP link patch
 
 | Repo item | Website presence | Major assets | Coverage status |
 |---|---|---|---|
@@ -204,6 +255,7 @@ Current deterministic asset audit:
 | `supporting/design/*.pdf` | Supporting Reel + Projects Directory | Design PDFs and exported thumbnails | Synced |
 | `supporting/code/*` | Supporting Reel + Projects Directory | Java, Processing, and source archive files | Public/archive |
 | `supporting/data/*` | Supporting Reel + Projects Directory | Notebooks, reports, scripts, CSV/data assets | Public/archive |
+| `distcrypto/csci367_4` | Supporting page + Supporting Reel + Projects Directory | README, concept logo, gameplay logic, auth, leaderboard, save/score files | Synced |
 
 ## Technical Tasks
 
@@ -211,9 +263,9 @@ Current deterministic asset audit:
 - [ ] Add GitHub repository links where available.
 - [ ] Add live demos for web/game projects where possible.
 - [ ] Import only GitHub repos that reinforce existing projects or have clear standalone portfolio value.
-- [ ] Import Protein AI Pipeline from `lutesAI2025` with ChrisB contribution framing.
+- [x] Integrate Protein AI Pipeline from `lutesAI2025` with ChrisB contribution framing.
+- [x] Add `csci367_4` as a supporting team project with lead/main implementation framing.
 - [ ] Add Mabinogi as a standalone supporting technical project after repo/source import.
-- [ ] Add `csci367_4` as a supporting team project with lead developer framing after repo/source import.
 - [ ] Add Derailed/train-io only with collaborative role and physics/gameplay contribution language.
 
 ## Presentation Tasks

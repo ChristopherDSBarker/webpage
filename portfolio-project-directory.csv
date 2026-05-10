@@ -1,36 +1,37 @@
-project_title,category,layer,technologies,screenshot_status,video_status,github_status,live_demo_status,poster_status,writeup_status,homepage_linked,projects_linked,archive_linked,missing_assets,priority_score
-Opioid Prescribing Risk Analysis,Data & AI,Featured,Python/Jupyter/ML,Partial,None,Missing,Missing,Present,Partial,Yes,Yes,Yes,GitHub link; more notebook visuals,10
-Grocery Retail Consumer Analytics,Data & AI,Featured,Python/Jupyter/Visualization,Partial,None,Missing,Missing,Present,Partial,Yes,Yes,Yes,GitHub link; dashboard screenshots,9
-Minesweeper Game,Games & Interactive,Featured,JavaScript/HTML/CSS,Partial,None,Missing,Missing,None,Partial,Yes,Yes,Yes,Live demo; gameplay screenshots; GitHub link,8
-Battleship Game,Games & Interactive,Featured,Java/OOP,Placeholder,None,Missing,Missing,None,Present,No,Yes,Yes,Gameplay screenshots; GitHub link,7
-HTML Resume Portfolio,Web,Featured,HTML/CSS,Placeholder,None,Missing,Missing,None,Present,No,Yes,Yes,Responsive screenshots; GitHub link,7
-AI Caption Generator,AI Tool,Featured,Python/Streamlit/OpenAI,Missing,None,Present,Missing,None,Present,Yes,Yes,Yes,App screenshots; output examples; Streamlit demo,9
-GAN Discord Bot,AI Tool,Featured,Python/Bot/Image generation,Missing,None,Missing,Missing,None,Missing,No,Yes,Yes,README; output examples; GitHub link,6
-Data Collaboration Room Studio,Research & Design,Featured,Research/Presentation/Studio design,Present,None,Missing,Missing,Logo PDF preview,Present,No,Yes,Yes,Optional studio mockup or presentation crop,6
-Grid System Dynamic Composition,Design,Supporting,Graphic design,Placeholder,None,N/A,N/A,PDF,PDF,No,Yes,Yes,Thumbnail/mockup image,6
-Package Series Design,Design,Supporting,Packaging/Branding,Placeholder,None,N/A,N/A,PDF,PDF,No,Yes,Yes,Package mockup thumbnail,6
-Typography Poster Design,Design,Supporting,Typography/Poster,Placeholder,None,N/A,N/A,PDF,PDF,No,Yes,Yes,Poster thumbnail,6
-Favorite Things Magazine Spread,Design,Supporting,Editorial design,Placeholder,None,N/A,N/A,PDF,PDF,No,Yes,Yes,Spread thumbnail,6
-Interactive Number Learning Publication,Design,Supporting,Publication design,Placeholder,None,N/A,N/A,PDF,PDF,No,Yes,Yes,Publication mockup thumbnail,6
-Wang Center Collab Sticker,Design & Media,Supporting,Sticker/Visual communication,Present,None,N/A,N/A,Image,Partial,No,Yes,Yes,Context/process detail,5
-LLM Bias Detection Classifier,Data & AI,Supporting,Python/ML/NLP,Missing,None,Missing,Missing,None,Present,No,Yes,Yes,Chart/output screenshots; README,7
-Stock Market Visualization Analysis,Data & AI,Supporting,R/Visualization,Missing,None,Missing,Missing,None,Present,No,Yes,Yes,Chart thumbnail,6
-CORGIS Predictive Data Analysis,Data & AI,Supporting,Python/Notebook,Missing,None,Missing,Missing,None,Present,No,Yes,Yes,Notebook screenshot,6
-Logistic Regression Analysis,Data & AI,Supporting,Python/Notebook/Stats,Missing,None,N/A,N/A,None,Notebook,No,Yes,Yes,Notebook screenshot,5
-Decision Tree Analysis,Data & AI,Supporting,Python/Notebook/ML,Missing,None,N/A,N/A,None,Notebook,No,Yes,Yes,Notebook screenshot,5
-Neural Network Analysis,Data & AI,Supporting,Python/Notebook/ML,Missing,None,N/A,N/A,None,Notebook,No,Yes,Yes,Notebook screenshot,5
-Multiple Regression Analysis,Data & AI,Supporting,Python/Notebook/Stats,Missing,None,N/A,N/A,None,Notebook,No,Yes,Yes,Notebook screenshot,5
-Spelling Bee Puzzle,Code,Supporting,Java,Placeholder,None,N/A,N/A,None,Source,No,Yes,Yes,Code excerpt or UI visual,4
-Mountain Terrain Pathfinding,Code,Supporting,Java/Algorithms,Placeholder,None,N/A,N/A,None,Source,No,Yes,Yes,Terrain/path visual,5
-Image Tool,Code,Supporting,Java/Image processing,Placeholder,None,N/A,N/A,None,Source,No,Yes,Yes,Before/after image,5
-Abstract Art,Creative Code,Supporting,Java/Drawing,Placeholder,None,N/A,N/A,None,Source,No,Yes,Yes,Rendered artwork screenshot,5
-Regex Pattern Analyzer,Code,Supporting,Regex/Text processing,Placeholder,None,N/A,N/A,None,Source archive,No,Yes,Yes,Usage screenshot or README,4
-Processing Visual Experiment,Creative Code,Supporting,Processing,Placeholder,None,N/A,N/A,None,Source,No,Yes,Yes,GIF/exported screenshot,4
-Array Visualization Study,Creative Code,Supporting,Processing,Placeholder,None,N/A,N/A,None,Source,No,Yes,Yes,GIF/exported screenshot,4
-Animal Function Animation,Creative Code,Supporting,Processing,Placeholder,None,N/A,N/A,None,Source,No,Yes,Yes,GIF/exported screenshot,4
-Random Circles Generator,Creative Code,Supporting,Processing,Placeholder,None,N/A,N/A,None,Source,No,Yes,Yes,GIF/exported screenshot,4
-Bridging Biology And AI,Research,Supporting,Research communication/PDF,Placeholder,None,N/A,N/A,PDF,PDF,No,Yes,Yes,PDF preview thumbnail,6
-Animated Short Scene,Media,Supporting,Animation/GIF,Present,None,N/A,N/A,GIF,Partial,No,Yes,Yes,Storyboard/process notes,6
-Community Documentary Media,Media,Supporting,Video/Interview/Exhibit,YouTube thumbnail,Present,N/A,N/A,None,Present,No,Yes,Yes,Still frames; role detail; award evidence,7
-BJUG Day Campaign,Media,Supporting,Video/Campaign,YouTube thumbnail,Present,N/A,N/A,None,Present,No,Yes,Yes,Campaign stills; process images,6
-Resume Project,Resume,Archive,HTML/PDF/CSS,N/A,None,N/A,N/A,PDF,Present,Yes,No,Yes,None,8
+project_title,category,layer,technologies,screenshot_status,video_status,github_status,live_demo_status,poster_status,writeup_status,homepage_linked,projects_linked,archive_linked,missing_assets,priority_score,implementation_depth,repo_evidence_strength,recruiter_value,semantic_representation_quality
+Opioid Prescribing Risk Analysis,Data & AI,Featured,Python/Jupyter/ML,Present,None,Missing,Missing,Artifact thumbnail,Partial,Yes,Yes,Yes,GitHub link; more notebook visuals,10,High,Moderate,High,Strong
+Grocery Retail Consumer Analytics,Data & AI,Featured,Python/Jupyter/Visualization,Present,None,Missing,Missing,Artifact thumbnail,Partial,Yes,Yes,Yes,GitHub link; dashboard screenshots,9,High,Moderate,High,Strong
+Minesweeper Game,Games & Interactive,Featured,JavaScript/HTML/CSS,Fallback,None,Missing,Missing,CSS fallback,Partial,Yes,Yes,Yes,gameplay screenshot,8,Medium,Moderate,Medium,Adequate
+Battleship Game,Games & Interactive,Featured,Java/OOP,Fallback,None,Missing,Missing,CSS fallback,Present,No,Yes,Yes,gameplay screenshot or title screen,7,Medium,Moderate,Medium,Adequate
+HTML Resume Portfolio,Web,Featured,HTML/CSS,Fallback,None,Missing,Missing,CSS fallback,Present,No,Yes,Yes,browser screenshot,7,Medium,Moderate,Medium,Adequate
+AI Caption Generator,AI Tool,Featured,Python/Streamlit/OpenAI,Fallback,None,Present,Missing,CSS fallback,Present,Yes,Yes,Yes,app upload/output screenshot,9,Medium,Strong,High,Adequate
+GAN Discord Bot,AI Tool,Featured,Python/Bot/Image generation,Fallback,None,Missing,Missing,CSS fallback,Missing,No,Yes,Yes,bot output screenshot,6,Medium,Moderate,Medium,Weak
+Data Collaboration Room Studio,Research & Design,Featured,Research/Presentation/Studio design,Present,None,Missing,Missing,Derived preview,Present,No,Yes,Yes,Optional studio mockup or presentation crop,6,Medium,Strong,Medium,Strong
+Grid System Dynamic Composition,Design,Supporting,Graphic design,Present,None,N/A,N/A,Derived preview,PDF,No,Yes,Yes,stronger PDF crop if needed,6,Low,Moderate,Medium,Adequate
+Package Series Design,Design,Supporting,Packaging/Branding,Present,None,N/A,N/A,Derived preview,PDF,No,Yes,Yes,package mockup or presentation crop,6,Low,Moderate,Medium,Adequate
+Typography Poster Design,Design,Supporting,Typography/Poster,Present,None,N/A,N/A,Derived preview,PDF,No,Yes,Yes,poster crop if needed,6,Low,Moderate,Medium,Adequate
+Favorite Things Magazine Spread,Design,Supporting,Editorial design,Present,None,N/A,N/A,Derived preview,PDF,No,Yes,Yes,spread crop if needed,6,Low,Moderate,Medium,Adequate
+Interactive Number Learning Publication,Design,Supporting,Publication design,Present,None,N/A,N/A,Derived preview,PDF,No,Yes,Yes,publication spread crop,6,Low,Moderate,Medium,Adequate
+Wang Center Collab Sticker,Design & Media,Supporting,Sticker/Visual communication,Present,None,N/A,N/A,Artifact thumbnail,Partial,No,Yes,Yes,Context/process detail,5,Low,Moderate,Medium,Adequate
+LLM Bias Detection Classifier,Data & AI,Supporting,Python/ML/NLP,Fallback,None,Missing,Missing,CSS fallback,Present,No,Yes,Yes,classifier report chart or output screenshot,7,Medium,Moderate,Medium,Weak
+Stock Market Visualization Analysis,Data & AI,Supporting,R/Visualization,Fallback,None,Missing,Missing,CSS fallback,Present,No,Yes,Yes,chart export from R report,6,Medium,Moderate,Medium,Weak
+CORGIS Predictive Data Analysis,Data & AI,Supporting,Python/Notebook,Fallback,None,Missing,Missing,CSS fallback,Present,No,Yes,Yes,notebook chart crop,6,Medium,Moderate,Medium,Weak
+Logistic Regression Analysis,Data & AI,Supporting,Python/Notebook/Stats,Fallback,None,N/A,N/A,CSS fallback,Notebook,No,Yes,Yes,ROC/confusion matrix/notebook output,5,Medium,Moderate,Medium,Weak
+Decision Tree Analysis,Data & AI,Supporting,Python/Notebook/ML,Fallback,None,N/A,N/A,CSS fallback,Notebook,No,Yes,Yes,tree diagram export,5,Medium,Moderate,Medium,Weak
+Neural Network Analysis,Data & AI,Supporting,Python/Notebook/ML,Fallback,None,N/A,N/A,CSS fallback,Notebook,No,Yes,Yes,training curve or architecture diagram,5,Medium,Moderate,Medium,Weak
+Multiple Regression Analysis,Data & AI,Supporting,Python/Notebook/Stats,Fallback,None,N/A,N/A,CSS fallback,Notebook,No,Yes,Yes,coefficient/residual chart export,5,Medium,Moderate,Medium,Weak
+CSCI 367 Game Systems,Games & Interactive / Code,Supporting,PHP/JavaScript/Auth/Leaderboard,Present,None,Present,N/A,Artifact thumbnail,Present,No,Yes,Yes,repo-backed UI screenshot or systems diagram,7,Medium,Strong,Medium,Adequate
+Spelling Bee Puzzle,Code,Supporting,Java,Fallback,None,N/A,N/A,CSS fallback,Source,No,Yes,Yes,UI or output screenshot,4,Low,Moderate,Low,Weak
+Mountain Terrain Pathfinding,Code,Supporting,Java/Algorithms,Fallback,None,N/A,N/A,CSS fallback,Source,No,Yes,Yes,terrain path screenshot,5,Low,Moderate,Low,Weak
+Image Tool,Code,Supporting,Java/Image processing,Fallback,None,N/A,N/A,CSS fallback,Source,No,Yes,Yes,before/after image comparison,5,Low,Moderate,Low,Weak
+Abstract Art,Creative Code,Supporting,Java/Drawing,Fallback,None,N/A,N/A,CSS fallback,Source,No,Yes,Yes,rendered Java canvas screenshot,5,Low,Moderate,Low,Weak
+Regex Pattern Analyzer,Code,Supporting,Regex/Text processing,Fallback,None,N/A,N/A,CSS fallback,Source archive,No,Yes,Yes,pattern/output screenshot,4,Low,Moderate,Low,Weak
+Processing Visual Experiment,Creative Code,Supporting,Processing,Fallback,None,N/A,N/A,CSS fallback,Source,No,Yes,Yes,exported sketch frame,4,Low,Moderate,Low,Weak
+Array Visualization Study,Creative Code,Supporting,Processing,Fallback,None,N/A,N/A,CSS fallback,Source,No,Yes,Yes,exported sketch frame,4,Low,Moderate,Low,Weak
+Animal Function Animation,Creative Code,Supporting,Processing,Fallback,None,N/A,N/A,CSS fallback,Source,No,Yes,Yes,GIF or animation still,4,Low,Moderate,Low,Weak
+Random Circles Generator,Creative Code,Supporting,Processing,Fallback,None,N/A,N/A,CSS fallback,Source,No,Yes,Yes,exported generated circles frame,4,Low,Moderate,Low,Weak
+Protein AI Pipeline,Data & AI / Research,Featured,Python/ESM-3/BLIP-2/GO similarity,Present,None,Present,N/A,Derived preview,Present,Yes,Yes,Yes,protein matrix visualization or pipeline diagram crop,10,High,Strong,High,Adequate
+Animated Short Scene,Media,Supporting,Animation/GIF,Present,None,N/A,N/A,Artifact thumbnail,Partial,No,Yes,Yes,Storyboard/process notes,6,Low,Moderate,Medium,Adequate
+Community Documentary Media,Media,Supporting,Video/Interview/Exhibit,Fallback,Present,N/A,N/A,CSS fallback,Present,No,Yes,Yes,owned still frame,7,Medium,Moderate,High,Adequate
+BJUG Day Campaign,Media,Supporting,Video/Campaign,Fallback,Present,N/A,N/A,CSS fallback,Present,No,Yes,Yes,owned campaign still,6,Medium,Moderate,Medium,Adequate
+Resume Project,Resume,Archive,HTML/PDF/CSS,N/A,None,N/A,N/A,PDF,Present,Yes,No,Yes,None,8,Low,Moderate,Medium,Adequate

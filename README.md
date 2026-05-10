@@ -78,6 +78,39 @@ Complete discoverability layer that makes sure every important project has a vis
 - Thumbnails should be original, media-driven, and copyright-safe.
 - Project pages should prioritize screenshots, process, outcomes, and links over raw file exposure.
 
+## Semantic Representation Rule
+
+Count parity is not enough. A project can have a card, thumbnail, page, and deploy-safe links while still being underrepresented if its implementation depth or career value is higher than its current presentation.
+
+Use semantic review to ask:
+
+- Does the representation level match the project's actual significance?
+- Is a strong repo-backed project buried as a weak supporting artifact?
+- Does the thumbnail communicate the real project identity?
+- Does the page expose enough of the source package to be credible?
+- Is contribution wording accurate for collaborative work?
+
+Good refinement signals:
+
+- significance scoring
+- thumbnail uniqueness scoring
+- semantic drift detection
+- recruiter-value weighting
+- repo evidence scoring
+- artifact density analysis
+- stale metadata detection
+
+Avoid refinements that create more complexity than value:
+
+- autonomous project merging
+- LLM-generated fake screenshots
+- AI-decided featured placement
+- self-modifying mapping systems
+- recursive audit layers
+- exposing every GitHub repo without curation
+
+Core rule: AI may surface inconsistencies, weak representation, and possible priority changes. Human review decides what matters most and what deserves stronger visibility.
+
 ## Repository Synchronization Rule
 
 Project pages must treat curated source folders as source-of-truth. If a folder contains PDFs, screenshots, presentations, logos, demos, or exports, the page should expose them, summarize them, or intentionally classify them. Avoid compressing multiple curated assets into a single generalized description.
@@ -94,6 +127,26 @@ Every curated repository item must satisfy at least one of these:
 - intentionally classified as archival/internal
 
 No curated project folder should become unreachable from the portfolio navigation system. Omission must be intentional and documented, never accidental.
+
+## Deployment-Safe Synchronization Rule
+
+Local success is not enough. Every webpage-visible asset reference must be validated against:
+
+- tracked Git repository contents
+- `.gitignore` exclusions
+- GitHub Pages deployability
+- case-sensitive deployment paths
+- actual deployable asset availability
+
+A project is not synchronized merely because it works on the local filesystem. A synchronized project must resolve correctly after deployment, avoid ignored/local-only artifacts, and expose curated presentation assets instead of raw archive files.
+
+If a raw source artifact is intentionally excluded from deployment, replace the link with a presentation-safe representation, classify it as source/archive/internal, or summarize it through screenshots, posters, exports, or documentation.
+
+Run before deployment:
+
+```bash
+python3 tools/deployment_safe_audit.py
+```
 
 ## GitHub Synchronization Rule
 
@@ -160,9 +213,10 @@ Some raw coursework/source files are preserved for archival transparency. Presen
 ## Publishing Checklist
 
 1. Review `portfolio-inventory.md` for missing assets or hidden work.
-2. Confirm all local links and PDFs resolve.
-3. Check mobile layout for homepage, projects, resume, and contact pages.
-4. Copy the contents of `portfolio-site/` into the root of `christopherbarker.github.io`.
+2. Run `python3 tools/deployment_safe_audit.py`.
+3. Confirm all PDFs and image thumbnails resolve.
+4. Check mobile layout for homepage, projects, resume, and contact pages.
+5. Push the deployable `webpage` repo after the audit passes.
 
 ## Curation rule
 
