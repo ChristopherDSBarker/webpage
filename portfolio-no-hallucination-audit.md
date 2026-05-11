@@ -42,6 +42,7 @@ Additional checks:
 |---|---|---|
 | Design PDFs | Verified | PDF-derived thumbnails and direct/project-page routes match canonical artifacts. |
 | Package Series Design | Verified | Project page exposes both canonical PDFs; source-folder wording corrected to `supporting projects/package-series-design`. |
+| SiDiYa Branding System | Verified | Dedicated page exposes the identity system as portfolio-relevant branding work and uses the authentic emblem artifact powering the website brand layer. |
 | Wang Center Collab Sticker | Verified | Uses actual image artifact and dedicated page. |
 | Animated Short Scene | Verified | Uses actual GIF artifact. |
 | Protein AI Pipeline | Verified integration | Featured page links the Cao Labs `lutesAI2025` `ChrisB` folder/workstream and uses the Bridging Biology And AI PDF as a supporting research communication artifact. |

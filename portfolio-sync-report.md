@@ -29,7 +29,7 @@ Scope:
 | Local/deploy links | Synced | Link audit found 0 missing local targets after patching ignored CSV/ZIP links. |
 | Raw data/archive handling | Synced | CSV and ZIP targets are intentionally excluded from webpage deployment and referenced as source-archive material. |
 | Deployment safety | Synced | HTML references were validated against tracked files and `.gitignore` exclusions. |
-| Thumbnail governance | Partial | Artifact-backed thumbnails exist for posters, PDFs, GIF, sticker, and room-studio logo; code/data studies still use CSS fallback thumbnails. |
+| Thumbnail governance | Partial | Artifact-backed thumbnails exist for posters, PDFs, GIF, sticker, identity emblem, CSCI logo, and room-studio logo; code/data studies still use CSS fallback thumbnails. |
 | GitHub contribution framing | Partial | AI Caption Generator, Protein AI Pipeline, and CSCI 367 Game Systems are linked; remaining GitHub repos are classified in `github-repo-sync.md` but not fully integrated into UI pages. |
 
 ## Deployment-Safe Synchronization
@@ -73,6 +73,7 @@ Current result:
 |---|---|---:|---|---|---|
 | `grid-system-dynamic-composition` | `supporting projects/grid-system-dynamic-composition.pdf` | Yes | Direct PDF | Derived PDF preview | Synced |
 | `package-series-design` | `supporting projects/package-series-design/` | Yes | `supporting/package-series-design.html` | Derived PDF preview | Synced |
+| `sidiya-branding-system` | `supporting projects/branding-with-name/` | Yes | `supporting/sidiya-branding-system.html` | Artifact emblem | Synced |
 | `typography-poster-design` | `supporting projects/typography-poster-design.pdf` | Yes | Direct PDF | Derived PDF preview | Synced |
 | `favorite-things-magazine-spread` | `supporting projects/favorite-things-magazine-spread.pdf` | Yes | Direct PDF | Derived PDF preview | Synced |
 | `interactive-number-learning-publication` | `supporting projects/interactive-number-learning-publication.pdf` | Yes | Direct PDF | Derived PDF preview | Synced |

@@ -224,6 +224,11 @@ Avoid automatic project merging, fake screenshots, auto-featured promotion, and 
 - [x] Processing Visual Experiment
 - [x] Random Circles Generator
 - [x] Regex Pattern Analyzer
+- [x] SiDiYa Branding System
+  - Website: `supporting/sidiya-branding-system.html`
+  - Source folder: `supporting projects/branding-with-name`
+  - Asset package: final emblem, master brand board, typeface studies, Figma drafts, sketch iterations
+  - Presentation: supporting identity system powering the website brand layer
 - [x] Spelling Bee Puzzle
 - [x] Stock Market Visualization Analysis
 - [x] Typography Poster Design
@@ -253,6 +258,7 @@ Current deterministic asset audit:
 | `featured/battleship-game` | Featured page + Projects Directory | JAR, write-up | Synced |
 | `featured/ai-caption-generator` | Featured page + Projects Directory | Reflection PDF plus app files in `assets/ai-caption` | Synced |
 | `supporting/design/*.pdf` | Supporting Reel + Projects Directory | Design PDFs and exported thumbnails | Synced |
+| `supporting/branding-with-name` | Supporting page + Supporting Reel + Projects Directory | Final emblem, master board, type studies, Figma drafts, sketch iterations | Synced |
 | `supporting/code/*` | Supporting Reel + Projects Directory | Java, Processing, and source archive files | Public/archive |
 | `supporting/data/*` | Supporting Reel + Projects Directory | Notebooks, reports, scripts, CSV/data assets | Public/archive |
 | `distcrypto/csci367_4` | Supporting page + Supporting Reel + Projects Directory | README, concept logo, gameplay logic, auth, leaderboard, save/score files | Synced |

@@ -20,18 +20,18 @@ This audit checks coverage parity, not just file existence.
 | GitHub-backed featured research integration | 1 | Verified | Protein AI Pipeline maps to `Cao-Labs/lutesAI2025/ChrisB`. |
 | Canonical supporting folders | 10 | Verified | All represented in supporting reel or directory. |
 | Canonical supporting single-file works | 16 | Verified | All represented in supporting reel or directory. |
-| Visible project cards on `projects.html` | 35 | Verified | Matches thumbnail mappings exactly. |
-| Thumbnail-map project entries | 35 | Verified | 8 featured + 27 supporting. |
-| Project directory CSV rows | 36 | Verified with intentional extra | 35 project items + 1 Resume Project row. |
+| Visible project cards on `projects.html` | 36 | Verified | Matches thumbnail mappings exactly. |
+| Thumbnail-map project entries | 36 | Verified | 8 featured + 28 supporting. |
+| Project directory CSV rows | 37 | Verified with intentional extra | 36 project items + 1 Resume Project row. |
 | Featured project pages | 9 | Verified | 8 local featured source folders plus 1 GitHub-backed research integration. |
-| Supporting project pages | 7 | Intentional | Package/media/context-heavy supporting works and verified collaborative repo integrations have dedicated pages; smaller works route directly to assets. |
+| Supporting project pages | 8 | Intentional | Package/media/context-heavy supporting works, identity systems, and verified collaborative repo integrations have dedicated pages; smaller works route directly to assets. |
 | Deployment-safe references | 0 issues | Verified | `tools/deployment_safe_audit.py` passes. |
 
 ## Thumbnail Parity
 
 | Thumbnail Type | Count | Status |
 |---|---:|---|
-| Artifact-backed | 5 | Verified |
+| Artifact-backed | 6 | Verified |
 | Derived from repo artifacts | 7 | Verified |
 | CSS fallback | 23 | Deployment-safe but semantically weak |
 
@@ -59,7 +59,7 @@ Interpretation:
 
 | Group | Canonical Items | Visible Representation | Thumbnail Map | Status |
 |---|---:|---:|---:|---|
-| Design PDFs and package | 6 | 6 | 6 | Parity verified |
+| Design PDFs, identity system, and package | 7 | 7 | 7 | Parity verified |
 | Data and AI studies | 7 | 7 | 7 | Visible but semantically weak due to fallback thumbnails |
 | Java / code utilities plus CSCI 367 game systems | 6 | 6 | 6 | CSCI 367 is artifact-backed; smaller code utilities remain semantically weak due to fallback thumbnails |
 | Processing sketches | 4 | 4 | 4 | Visible but semantically weak due to fallback thumbnails |
