@@ -76,28 +76,28 @@ a {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px; /* tightened to make logo+name read as a unit */
   text-decoration: none;
   font-weight: 800;
   letter-spacing: 0;
 }
 
 .brand-mark {
-  /* Increased size and reduced framed/bordered treatment for cleaner anchor */
-  width: 56px;
-  height: 56px;
+  /* Slightly larger emblem to strengthen brand anchor; keep lightweight presentation */
+  width: 64px;
+  height: 64px;
   border-radius: 8px;
   display: grid;
   place-items: center;
-  padding: 2px;
-  background-color: transparent; /* remove heavy framed background */
-  border: none; /* remove the framed border for cleaner look */
+  padding: 0;
+  background-color: transparent;
+  border: none;
   box-shadow: none;
 }
 
 .brand-mark img {
-  width: 82%;
-  height: 82%;
+  width: 88%;
+  height: 88%;
   object-fit: contain;
   display: block;
   transform: none;
@@ -112,13 +112,23 @@ a {
   .brand-mark {
     width: 44px;
     height: 44px;
-    padding: 2px;
+    padding: 0;
   }
 
   .brand-mark img {
     width: 78%;
     height: 78%;
   }
+}
+
+/* Tighten baseline alignment so logo and name read as a unified mark */
+.brand span:last-child {
+  display: inline-block;
+  transform: translateY(2px);
+}
+
+@media (max-width: 560px) {
+  .brand span:last-child { transform: none; }
 }
 
 .brand span:last-child {
