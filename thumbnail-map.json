@@ -101,7 +101,7 @@
     "sidiya-branding-system": {
       "title": "SiDiYa Branding System",
       "thumbnail": "assets/brand/sidiya-emblem-final.png",
-      "source_asset": "supporting projects/branding-with-name/sidiya-emblem-final.png",
+      "source_asset": "assets/brand/sidiya-emblem-final.png",
       "status": "artifact",
       "next_best_asset": "master board crop or typeface study composite"
     },
