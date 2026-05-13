@@ -51,6 +51,13 @@ a {
   backdrop-filter: blur(18px);
 }
 
+/*
+  NAVBAR / BRANDING SYSTEM
+  - Purpose: keep the navbar compact and product-focused; brand anchor sizing lives in `.brand-mark`.
+  - Intent: visual weight changes should be made in CSS (scale, padding) not by swapping images.
+  - Accessibility: emblem images are decorative; use visible text for accessibility and navigation.
+*/
+
 .site-header::before {
   content: "";
   display: block;

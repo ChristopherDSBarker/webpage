@@ -22,6 +22,12 @@
       </nav>
     </header>
 
+    <!--
+      NAVBAR (Architectural note)
+      - Main navigation is intentionally compact; the brand is an anchor for visual identity across pages.
+      - Adjust `brand-mark` sizing in `css/styles.css` to change visual weight without altering markup.
+    -->
+
     <main>
       <section class="section page-title">
         <p class="eyebrow">Projects</p>
@@ -36,6 +42,12 @@
         </nav>
       </section>
 
+      <!--
+        FEATURED REEL (Architectural note)
+        - Purpose: curated set of flagship, recruiter-facing hero visuals.
+        - Curation guidance: prefer implementation-focused crops (UI, gameplay, diagrams, charts, identity boards). Avoid full poster previews here.
+        - Thumbnail workflow: place hero crops in `images/thumbnails/` and update `thumbnail-map.json` only after all new assets are present (atomic update).
+      -->
       <section class="section" id="featured-reel">
         <div class="section-head">
           <div>

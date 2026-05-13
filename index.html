@@ -9,22 +9,37 @@
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
-    <header class="site-header">
-      <nav class="nav" aria-label="Main navigation">
-        <a class="brand" href="index.html" aria-label="Christopher Barker home">
-          <span class="brand-mark"><img src="assets/brand/sidiya-emblem-authentic-navbar.png" alt="" aria-hidden="true"></span>
-          <span>Christopher Barker</span>
-        </a>
-        <div class="nav-links">
-          <a href="projects.html">Projects</a>
-          <a href="resume.html">Resume</a>
-          <a href="contact.html">Contact</a>
-        </div>
-      </nav>
-    </header>
+    
+      <!--
+        NAVBAR / BRANDING (Architectural note)
+        Purpose: A lightweight, product-style brand anchor used across pages.
+        Intent and guidance:
+        - The `brand-mark` contains the emblem; visual weight is tuned in `css/styles.css`.
+        - Avoid swapping the emblem file frequently; adjust scale in CSS for small visual changes.
+        - Keep navigation links stable; use `projects.html` as the canonical projects index.
+      -->
+      <header class="site-header">
+        <nav class="nav" aria-label="Main navigation">
+          <a class="brand" href="index.html" aria-label="Christopher Barker home">
+            <span class="brand-mark"><img src="assets/brand/sidiya-emblem-authentic-navbar.png" alt="" aria-hidden="true"></span>
+            <span>Christopher Barker</span>
+          </a>
+          <div class="nav-links">
+            <a href="projects.html">Projects</a>
+            <a href="resume.html">Resume</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </nav>
+      </header>
 
     <main>
-      <section class="hero">
+      
+        <!--
+          HERO / LEAD (Architectural note)
+          - Purpose: concise identity and call-to-action; keep heavy visuals for the featured reel below.
+          - Avoid embedding poster-detail here; the hero image area is a photographic collage placeholder only.
+        -->
+        <section class="hero">
         <div class="hero-grid">
           <div>
             <p class="eyebrow">Applied technical creativity</p>
@@ -32,6 +47,14 @@
             <p class="lead">PLU student developer combining AI, data analysis, interactive systems, and visual communication through applied technical projects.</p>
             <div class="actions">
               <a class="button" href="resume/christopher-barker-resume.pdf" target="_blank" rel="noopener">Open Resume</a>
+        <!--
+          FEATURED REEL (Architectural note)
+          - Purpose: a curated reel of recruiter-facing hero visuals. Prioritize implementation moments (UI, gameplay, diagrams, charts, identity boards).
+          - Curation rules:
+            * Use `images/thumbnails/*-hero.png` for tight hero crops (3:2). Avoid full poster previews on the homepage.
+            * Update `thumbnail-map.json` only after all hero assets are placed and verified locally (atomic commit).
+          - Placement: this reel is intentionally separate from the supporting archive; featured projects should be the highest-impact evidence.
+        -->
               <a class="button secondary" href="projects.html">View All Work</a>
               <a class="button secondary" href="mailto:Christopher.Barker@plu.edu">Email</a>
               <a class="button secondary" href="https://github.com/ChristopherDSBarker" target="_blank" rel="noopener">GitHub</a>
