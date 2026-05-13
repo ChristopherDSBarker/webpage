@@ -449,7 +449,8 @@ p {
   overscroll-behavior-inline: contain;
   scroll-snap-type: inline mandatory;
   scroll-padding-inline: 4px;
-  padding: 34px 12px 46px;
+  /* Reduced vertical padding to tighten visual density around featured hero visuals */
+  padding: 18px 12px 24px;
   background:
     linear-gradient(#030303 0 22px, transparent 22px calc(100% - 22px), #030303 calc(100% - 22px)),
     repeating-linear-gradient(90deg, rgba(243, 247, 255, 0.84) 0 10px, transparent 10px 28px);
@@ -580,7 +581,7 @@ p {
 
 .thumb {
   width: 100%;
-  height: 224px;
+  height: 260px; /* increase to allow posters to occupy more vertical space */
   object-fit: cover;
   object-position: center;
   background: var(--navy-2);
@@ -588,16 +589,17 @@ p {
 }
 
 .artifact-thumb {
-  object-fit: contain;
-  padding: 10px;
+  /* Tighter artifact presentation: reduce padding and allow cropping for hero crops */
+  object-fit: cover;
+  padding: 4px;
   background: #05070c;
   box-sizing: border-box;
 }
 
 .visual-thumb {
   width: 100%;
-  height: 224px;
-  padding: 18px;
+  height: 260px;
+  padding: 8px; /* reduced padding to increase visual density */
   display: grid;
   place-items: center;
   background:
