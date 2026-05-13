@@ -445,7 +445,24 @@ p {
   background: rgba(63, 140, 255, 0.22);
 }
 
+/* ─── FEATURED REEL SYSTEM ───
+   Curated hero visuals for recruiter-facing proof-points. Horizontal scroll reel with
+   snap alignment. Purpose: showcase strongest projects with tight 3:2 hero crops (not
+   full poster previews). Each card is ~320–35vw wide depending on container.
+   
+   Curation strategy: featured reel prioritizes visual energy (gameplay, results, UI)
+   over artifact documentation. Underperforming assets flagged for replacement:
+   - Branding placeholder (abstract visual → master board crop priority)
+   - Full poster thumbnails (document previews → tight hero moments)
+   - Missing Derailed gameplay (interaction proof-point)
+   
+   Asset workflow: hero PNGs exported → placed in images/thumbnails/ → thumbnail-map.json
+   updated atomically with verification. Never update JSON before files exist (prevents
+   placeholder drift). See thumbnail-map-doc.md for complete export + verification workflow.
+*/
+
 .project-grid {
+  /* Horizontal scroll container with snap alignment for mobile + desktop */
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(320px, 35%);
@@ -456,8 +473,11 @@ p {
   overscroll-behavior-inline: contain;
   scroll-snap-type: inline mandatory;
   scroll-padding-inline: 4px;
-  /* Reduced vertical padding to tighten visual density around featured hero visuals */
+  
+  /* Tight padding to maximize poster visibility; reduced from 34px → 18px vertical */
   padding: 18px 12px 24px;
+  
+  /* Film-strip background: header/footer accent bars with repeating sprocket pattern */
   background:
     linear-gradient(#030303 0 22px, transparent 22px calc(100% - 22px), #030303 calc(100% - 22px)),
     repeating-linear-gradient(90deg, rgba(243, 247, 255, 0.84) 0 10px, transparent 10px 28px);
@@ -505,6 +525,7 @@ p {
   border-radius: 999px;
 }
 
+/* Project card container: wrapper for hero thumbnail + metadata */
 .project-card {
   height: 100%;
   display: flex;
@@ -524,6 +545,7 @@ p {
   isolation: isolate;
 }
 
+/* Hover lift effect: subtle vertical shift to encourage engagement */
 .project-card:hover {
   transform: translateY(-3px);
   transition: transform 180ms ease, box-shadow 180ms ease;
@@ -586,9 +608,27 @@ p {
   height: 204px;
 }
 
+/* ─── THUMBNAIL SYSTEM ───
+   Two-tier visual fallback for when hero PNG exports aren't ready:
+   
+   1. .thumb (img element): displays PNG from images/thumbnails/ or falls back to
+      CSS fallback if path missing. 260px tall for featured; 204px for supporting.
+   
+   2. .visual-thumb (div): CSS-generated gradient + pattern fallback for design/data/code
+      projects without PNG exports. Generates abstract visual that suggests project
+      type: .ai-thumb (radial + gradient), .design-thumb (grid), .data-thumb (bars),
+      .code-thumb (lines), .creative-thumb (organic).
+   
+   Workflow: replace visual-thumbs with real PNGs as exports complete. Update
+   thumbnail-map.json atomically after all exports verified in images/thumbnails/.
+   See thumbnail-map-doc.md for export + verification workflow. Critical: never update
+   JSON before files exist (prevents placeholder drift).
+*/
+
 .thumb {
+  /* Real image: PNG from images/thumbnails/ directory */
   width: 100%;
-  height: 260px; /* increase to allow posters to occupy more vertical space */
+  height: 260px; /* Featured projects: 260px height for strong visual presence */
   object-fit: cover;
   object-position: center;
   background: var(--navy-2);
@@ -596,7 +636,7 @@ p {
 }
 
 .artifact-thumb {
-  /* Tighter artifact presentation: reduce padding and allow cropping for hero crops */
+  /* Tighter artifact presentation: cover crop with minimal padding for hero moments */
   object-fit: cover;
   padding: 4px;
   background: #05070c;
@@ -604,9 +644,11 @@ p {
 }
 
 .visual-thumb {
+  /* CSS fallback visual: gradient + pattern generator for design/data/code types.
+     Replace these with .thumb (real image) as PNG exports complete. */
   width: 100%;
   height: 260px;
-  padding: 8px; /* reduced padding to increase visual density */
+  padding: 8px;
   display: grid;
   place-items: center;
   background:
