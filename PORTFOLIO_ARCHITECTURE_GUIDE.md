@@ -78,7 +78,7 @@ Generic Scaling (WRONG):
   → recruiter sees: solid color block
 
 Curated Hero Crop (CORRECT):
-  Dashboard region extracted (1600×1067 px)
+  Dashboard region extracted as a landscape crop
   → displayed at 260px height
   → dashboard readable and prominent
   → proof-point immediately visible
@@ -91,9 +91,9 @@ Each featured project has an intentional crop anchor:
 
 | Project | Focal Region | object-position | Proof-Point |
 |---------|--------------|-----------------|------------|
-| Protein AI | Pipeline diagram center | center 35% | AI research methodology |
-| Opioid | Chart cluster | center 25% | Data visualization capability |
-| Grocery | Dashboard analytics | center 45% | Analytics & insight synthesis |
+| Protein AI | Derived poster crop | center | AI research methodology |
+| Opioid | Derived chart/key findings crop | center | Data visualization capability |
+| Grocery | Derived methods/dashboard crop | center | Analytics & insight synthesis |
 | Minesweeper | Game board | center center | Game logic & interaction |
 | Battleship | Game board with state | center center | OOP & game systems |
 | HTML Resume | Hero section + reel | center center | Web design & layout |
@@ -105,10 +105,10 @@ Each featured project has an intentional crop anchor:
 
 ```css
 /* Project-specific focal positioning classes */
-.thumb.protein-ai-thumb { object-position: center 35%; }
-.thumb.opioid-thumb { object-position: center 25%; }
-.thumb.grocery-thumb { object-position: center 45%; }
-/* ... etc for all 9 featured projects */
+.thumb.protein-ai-thumb { object-position: center; }
+.thumb.opioid-thumb { object-position: center; }
+.thumb.grocery-thumb { object-position: center; }
+.thumb.ai-caption-thumb { object-position: center 55%; }
 ```
 
 **When to Update**: Only when replacing hero PNG with new source asset. The object-position value defines the intended focal region; changing it requires re-verification that the proof-point remains visible.
@@ -128,11 +128,10 @@ WRONG (causes placeholder drift):
 3. Result: JSON points to missing files → broken image references
 
 CORRECT (atomic workflow):
-1. Export all 9 hero PNGs to images/thumbnails/
-2. Verify each locally at 260px display height
-3. Update thumbnail-map.json with new filenames
-4. Atomic commit: git add images/thumbnails/* thumbnail-map.json
-5. Deploy single commit (all assets + metadata together)
+1. Export or crop the specific replacement image into images/thumbnails/
+2. Verify it locally at card scale
+3. Update thumbnail-map.json with the verified filename
+4. Commit the image and metadata together
 ```
 
 #### **Atomic Commit Strategy**
@@ -144,7 +143,7 @@ git commit -m "Add hero thumbnail crops and update thumbnail-map"
 git push origin main
 
 # NOT incremental updates:
-git add images/thumbnails/grocery-hero.png  # DON'T commit alone
+git add images/thumbnails/new-project-hero.png  # DON'T commit alone
 git add thumbnail-map.json                   # DON'T commit alone
 ```
 
@@ -155,9 +154,9 @@ git add thumbnail-map.json                   # DON'T commit alone
 Before deploying any asset changes:
 
 - [ ] All hero PNG files placed in `images/thumbnails/`
-- [ ] Each PNG is exactly 1600×1067 px (3:2 aspect ratio)
+- [ ] Each PNG is a landscape crop that reads well at card size
 - [ ] Each PNG displays readably at 260px height (test in browser DevTools)
-- [ ] File size is optimized (8–15 KB typical for hero crops)
+- [ ] File size is reasonable for static deployment
 - [ ] No broken image references in JSON or HTML
 - [ ] Featured reel displays correct hero visuals (not full posters or CSS fallbacks)
 - [ ] Focal positioning working correctly (CSS class applied, object-position applied)
@@ -217,7 +216,7 @@ Always use **relative paths** for asset references:
 
 ```html
 <!-- CORRECT: Relative paths -->
-<img src="images/thumbnails/grocery-hero.png" alt="...">
+<img src="images/thumbnails/grocery-retail-consumer-hero.png" alt="...">
 <img src="assets/featured/ai-caption-generator/screenshot.png" alt="...">
 
 <!-- WRONG: Absolute paths (breaks in different environments) -->
@@ -229,103 +228,29 @@ Always use **relative paths** for asset references:
 
 ## Part 5: Hero Thumbnail Export Framework
 
-### Export Specifications (By Project)
+Use `thumbnail-curation-architecture.md` as the canonical priority list. The
+current maturity step is selective replacement, not a complete 9-export program.
 
-#### Grocery Retail Consumer Analytics
-```
-Current: images/grocery-retail-consumer-poster.png (3300×5100 px)
-Issue: Full poster → 170px render width → invisible dashboard
-Export: images/thumbnails/grocery-hero.png
-Specs: 1600×1067 px (3:2), dashboard region only
-Crop: Middle 40% vertical (skip title, skip bottom)
-Content: Consumer analytics charts + key metrics visible
-```
+### Current Highest-ROI Replacements
 
-#### AI Caption Generator
-```
-Current: CSS fallback visual (.ai-thumb abstract mockup)
-Issue: No actual UI visible; abstract placeholder
-Export: images/thumbnails/ai-caption-hero.png
-Specs: 1600×1067 px (3:2), app screenshot
-Content: Upload panel + generated caption result both visible
-Source: Screenshot from working app deployment
-```
+1. **AI Caption Generator**: replace CSS fallback with a real app screenshot
+   showing upload plus generated caption output.
+2. **Branding master board**: replace the Data Collaboration Room logo crop only
+   if a stronger system board exists.
+3. **Gameplay screenshot**: replace CSS game covers only when a real playable
+   capture is available.
+4. **Protein/Grocery/Opioid refinements**: update only if a new crop clearly
+   reads better than the current derived thumbnail.
 
-#### Protein AI Pipeline
-```
-Current: images/thumbnails/bridging-biology-and-ai-understanding.png
-Issue: Full poster → pipeline diagram unreadable at thumbnail scale
-Export: images/thumbnails/protein-ai-hero.png
-Specs: 1600×1067 px (3:2), pipeline diagram region
-Content: ESM-3 → BLIP-2 → GO Similarity flow visible
-Crop: Central diagram area (skip title, margins)
-```
+### Export Rule
 
-#### Opioid Prescribing Risk Analysis
-```
-Current: images/opioid-prescribing-risk-poster.PNG (864×1296 px)
-Issue: Charts invisible when scaled down
-Export: images/thumbnails/opioid-hero.png
-Specs: 1600×1067 px (3:2), chart cluster
-Content: ML models, provider maps, risk metrics visible
-Crop: Upper-to-middle region (0–60% vertical)
-```
+For each replacement:
 
-#### GAN Discord Bot
-```
-Current: CSS fallback visual (.discord-thumb abstract mockup)
-Issue: No actual bot interaction or generated image visible
-Export: images/thumbnails/gan-discord-hero.png
-Specs: 1600×1067 px (3:2), Discord screenshot
-Content: Bot message + generated AI image both visible
-Source: Screenshot from actual Discord interaction
-```
-
-#### Data Collaboration Room Studio
-```
-Current: images/thumbnails/data-collab-room-logo-system.png
-Issue: Abstract branding visual weak for design leadership proof
-Export: images/thumbnails/branding-hero.png
-Specs: 1600×1067 px (3:2), design system hero
-Content: Logo + typography + color palette visible together
-Source: PDF design system page or exported screenshot
-```
-
-#### Minesweeper Game
-```
-Current: CSS fallback visual (.game-thumb abstract board)
-Issue: Abstract placeholder; no actual gameplay visible
-Export: images/thumbnails/minesweeper-hero.png
-Specs: 1600×1067 px (3:2), gameplay screenshot
-Content: Mid-game state with revealed tiles, flags visible
-Source: Screenshot from featured/minesweeper-game.html
-```
-
-#### Battleship Game
-```
-Current: CSS fallback visual (.game-thumb abstract board)
-Issue: Abstract placeholder; no actual game state visible
-Export: images/thumbnails/battleship-hero.png
-Specs: 1600×1067 px (3:2), gameplay screenshot
-Content: Game board with ships, hits, misses, stats visible
-Source: Screenshot from featured/battleship-game.html
-```
-
-#### HTML Resume Portfolio
-```
-Current: CSS fallback visual (.web-thumb abstract browser frame)
-Issue: Abstract placeholder; no actual portfolio UI visible
-Export: images/thumbnails/html-resume-hero.png
-Specs: 1600×1067 px (3:2), website screenshot
-Content: Hero section + featured reel start visible
-Source: Screenshot from index.html at localhost or live
-```
-
-### Export Priority Ranking
-
-**P1 (Fixes Worst Visuals)**: Grocery, AI Caption  
-**P2 (High Impact)**: Protein AI, Opioid, GAN Bot  
-**P3 (Supporting)**: Branding, Minesweeper, Battleship, HTML Resume
+- use a repo-owned or project-owned source artifact
+- crop to a landscape hero moment
+- place the final PNG under `images/thumbnails/`
+- update `thumbnail-map.json` only after the file exists
+- commit image and metadata together
 
 ---
 
@@ -373,9 +298,9 @@ Update these files when:
 | Change Type | Files to Update |
 |-------------|-----------------|
 | New featured project | `thumbnail-map.json`, `projects.html`, `PORTFOLIO_ARCHITECTURE_GUIDE.md` |
-| Hero thumbnail replacement | `thumbnail-map.json`, relevant export guide section |
+| Hero thumbnail replacement | `thumbnail-map.json`, `thumbnail-curation-architecture.md` if priorities or rules change |
 | CSS focal positioning change | `css/styles.css`, `thumbnail-curation-architecture.md` |
-| Export workflow refinement | `hero-export-guide.md`, deployment checklist |
+| Export workflow refinement | `thumbnail-curation-architecture.md`, `thumbnail-map-doc.md` |
 | Semantic hierarchy change | `portfolio-content-map.md`, architecture guide |
 
 **Never**: Update code without updating related documentation.
@@ -390,13 +315,12 @@ Before implementing changes:
 
 1. **Read Governance Documents**:
    - `PORTFOLIO_ARCHITECTURE_GUIDE.md` (this file)
-   - `hero-asset-replacement-audit.md` (current issues)
-   - `thumbnail-curation-architecture.md` (focal positioning)
+   - `thumbnail-curation-architecture.md` (thumbnail priorities and crop rules)
    - `thumbnail-map-doc.md` (export workflow)
 
 2. **Identify Constraints**:
    - Featured tier: 9 projects maximum
-   - Hero crops: 1600×1067 px (3:2 only)
+   - Hero crops: landscape, proof-point-first visuals
    - Atomic deployments: never partial updates
    - Semantic integrity: JSON ↔ filesystem ↔ HTML in sync
 
@@ -564,7 +488,6 @@ The portfolio maintains several audit documents:
 | `portfolio-no-hallucination-audit.md` | Catch semantic inconsistencies | Per significant change |
 | `portfolio-thumbnail-audit.md` | Verify thumbnail specs and quality | Per export batch |
 | `portfolio-sync-report.md` | Track asset synchronization | Per deployment |
-| `hero-asset-replacement-audit.md` | Identify export priorities | Per cycle |
 
 ### When to Run Audits
 
@@ -591,7 +514,7 @@ The portfolio maintains several audit documents:
 ### Add a New Featured Project
 
 1. **Create project source** in `assets/featured/{project-id}/`
-2. **Create hero thumbnail** (1600×1067 px) in `images/thumbnails/{project-id}-hero.png`
+2. **Create hero thumbnail** in `images/thumbnails/{project-id}-hero.png`
 3. **Add CSS focal class** to `css/styles.css`:
    ```css
    .thumb.{project-id}-thumb { object-position: {anchor}; }
@@ -605,7 +528,7 @@ The portfolio maintains several audit documents:
 
 ### Replace a Hero Thumbnail
 
-1. **Export new PNG** (1600×1067 px) to `images/thumbnails/{project-id}-hero.png`
+1. **Export new PNG** to `images/thumbnails/{project-id}-hero.png`
 2. **Verify focal positioning** at 260px display height
 3. **Atomic commit** (only the PNG file change)
 4. **No JSON/CSS changes needed** (metadata already in place)
@@ -632,9 +555,9 @@ The portfolio maintains several audit documents:
 ### Before Pushing to origin/main
 
 **Asset Integrity**:
-- [ ] All hero PNGs exist in `images/thumbnails/`
-- [ ] All files are 1600×1067 px (3:2 ratio)
-- [ ] All files optimized to 8–15 KB
+- [ ] Newly referenced hero PNGs exist in `images/thumbnails/`
+- [ ] New images use a landscape crop that reads at card scale
+- [ ] New images are reasonably optimized for static deployment
 - [ ] No broken image references
 
 **Code Integrity**:
@@ -650,7 +573,7 @@ The portfolio maintains several audit documents:
 - [ ] No partial/incremental updates
 
 **Verification**:
-- [ ] Featured reel displays all 9 hero visuals
+- [ ] Featured reel displays intended image or fallback visuals
 - [ ] Focal positioning working correctly
 - [ ] No console errors
 - [ ] Supporting reel unaffected
@@ -709,9 +632,9 @@ Impact: Stronger proof-point connectivity
 ### When Adding New Features
 
 1. **Maintain Tier Separation**: Don't flatten featured/supporting
-2. **Preserve Focal Positioning**: Hero crops remain 1600×1067 px
+2. **Preserve Focal Positioning**: Hero crops remain landscape, proof-point-first assets
 3. **Keep Atomic Deployments**: No partial updates
-4. **Document Thoroughly**: Add governance sections for new systems
+4. **Document Sparingly**: Update canonical docs only when guidance is reusable
 5. **Run Audits**: Verify no new inconsistencies
 
 ---
@@ -759,8 +682,7 @@ This architecture guide ensures that the portfolio system remains:
 All future changes should align with these principles and update relevant documentation atomically.
 
 For questions about specific maintenance tasks, refer to:
-- `hero-export-guide.md` — Export specifications
-- `thumbnail-curation-architecture.md` — Focal positioning details
+- `thumbnail-curation-architecture.md` — Thumbnail priorities, crop rules, and focal positioning
 - `thumbnail-map-doc.md` — Asset workflow
 - `portfolio-content-map.md` — Semantic organization
 - `portfolio-sync-report.md` — Current state documentation

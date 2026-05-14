@@ -17,7 +17,7 @@ The portfolio uses a **two-tier visual fallback system** to handle thumbnail exp
 Real images exported from source projects and placed in `images/thumbnails/` directory.
 
 - **Location**: `images/thumbnails/*.png`
-- **Dimensions**: 1600×1067 px base (3:2 aspect ratio); optional retina @2x (3200×2134 px)
+- **Dimensions**: landscape crop, usually 3:2-ish; large enough to stay sharp at card scale
 - **Content**: Tight crops of strongest project moments
   - Gameplay screenshots (visual energy)
   - Dashboard/chart results (analytical proof)
@@ -61,18 +61,14 @@ The `thumbnail-map.json` tracks this state per project, enabling atomic updates.
 portfolio-site/
 ├── images/
 │   └── thumbnails/
-│       ├── protein-ai-pipeline-hero.png          (1600×1067 px)
-│       ├── derailed-gameplay-hero.png
-│       ├── sidiya-branding-system-hero.png
-│       ├── grocery-retail-consumer-analytics-hero.png
+│       ├── protein-ai-pipeline-hero.png
+│       ├── grocery-retail-consumer-hero.png
 │       ├── opioid-prescribing-risk-hero.png
-│       ├── ai-caption-generator-hero.png
+│       ├── data-collab-room-logo-system-hero.png
 │       └── ...
 ├── thumbnail-map.json                             (source-of-truth)
-├── thumbnail-replacements.md                      (export prioritization)
-├── thumbnail-export-checklist.md                  (export workflow)
-├── thumbnail-map-proposal.md                      (ready-to-apply patch)
 ├── thumbnail-map-doc.md                           (this file)
+├── thumbnail-curation-architecture.md             (priority and crop rules)
 ├── index.html                                     (featured reel)
 ├── projects.html                                  (featured + supporting reels)
 └── css/styles.css                                 (visual system)
@@ -82,104 +78,18 @@ portfolio-site/
 
 ## Export Workflow
 
-### Priority 1: Highest ROI (Deploy First)
+Use this workflow only for replacements that are clearly stronger than the
+current thumbnail. See `thumbnail-curation-architecture.md` for the current
+priority queue.
 
-These replacements have immediate visual impact on recruiter perception.
-
-```bash
-# 1. SiDiYa Branding System (highest priority)
-#    From: assets/featured/sidiya-branding-system-hero/ (design artifacts)
-#    Extract: Master board crop (visual mark + system overview)
-#    Dimensions: 1600×1067 px (3:2)
-#    Alt text: "SiDiYa branding system master board with emblem, color palette, and typeface exploration"
-
-convert assets/featured/sidiya-branding-system-hero/master-board.png \
-  -resize 1600x1067\! \
-  -quality 82 \
-  images/thumbnails/sidiya-branding-system-hero.png
-
-# 2. Protein AI Pipeline (second priority)
-#    From: assets/featured/ai-caption-generator/ (project assets)
-#    Extract: Pipeline diagram crop showing neural architecture or model flow
-#    Dimensions: 1600×1067 px (3:2)
-#    Alt text: "Protein AI pipeline diagram showing neural network architecture for molecular property prediction"
-
-convert assets/featured/ai-caption-generator/pipeline-diagram.png \
-  -resize 1600x1067\! \
-  -quality 82 \
-  images/thumbnails/protein-ai-pipeline-hero.png
-
-# 3. Grocery Retail Analytics (third priority)
-#    From: assets/grocery/ (analysis results)
-#    Extract: Key dashboard visualization or chart result
-#    Dimensions: 1600×1067 px (3:2)
-#    Alt text: "Grocery retail consumer analytics dashboard showing sales trends and category performance"
-
-convert assets/grocery/analysis.html \
-  -resize 1600x1067\! \
-  -quality 82 \
-  images/thumbnails/grocery-retail-consumer-analytics-hero.png
-```
-
-### Priority 2: Secondary Visual Improvements
-
-Addresses "full poster" visual problem with tight crops.
-
-```bash
-# 4. Opioid Prescribing Risk Analysis (chart/result focus)
-#    From: assets/opioid/Project2.ipynb (analysis results)
-#    Extract: ML model results chart or prediction visualization
-#    Dimensions: 1600×1067 px (3:2)
-#    Alt text: "Opioid prescribing risk analysis showing ML model results and regional patterns"
-
-convert assets/opioid/model_results.csv \
-  -resize 1600x1067\! \
-  -quality 82 \
-  images/thumbnails/opioid-prescribing-risk-hero.png
-
-# 5. AI Caption Generator (app UI focus)
-#    From: assets/ai-caption/vibe_caption_generator.py (app interface)
-#    Extract: App UI screenshot or interface mockup
-#    Dimensions: 1600×1067 px (3:2)
-#    Alt text: "AI caption generator app interface for generating creative image descriptions with vibe analysis"
-
-convert assets/ai-caption/app-ui-screenshot.png \
-  -resize 1600x1067\! \
-  -quality 82 \
-  images/thumbnails/ai-caption-generator-hero.png
-```
-
-### Priority 3: Missing Proof-Points
-
-Adds critical gameplay/interaction screenshots.
-
-```bash
-# 6. Derailed Multiplayer Gameplay (missing visual)
-#    From: source project archive (not in current portfolio)
-#    Extract: Multiplayer gameplay screenshot showing interaction/UI
-#    Dimensions: 1600×1067 px (3:2)
-#    Alt text: "Derailed multiplayer strategy game showing real-time gameplay and interactive board state"
-#    NOTE: May require source project recovery or documentation of historical gameplay screenshots
-
-convert archived-derailed-screenshots/multiplayer-board.png \
-  -resize 1600x1067\! \
-  -quality 82 \
-  images/thumbnails/derailed-gameplay-hero.png
-```
-
-### Optional: Retina Exports (@2x)
-
-For future high-DPI optimization, export 2x versions:
-
-```bash
-# Generate retina @2x versions (optional; adds ~2–4 MB total)
-for file in images/thumbnails/*.png; do
-  convert "$file" \
-    -resize 3200x2134\! \
-    -quality 82 \
-    "${file%.png}@2x.png"
-done
-```
+1. Choose a repo-owned source artifact: screenshot, chart export, poster crop,
+   gameplay capture, UI state, or design-system board.
+2. Crop to the strongest landscape proof-point. Remove document borders, large
+   empty margins, and title blocks unless they are essential context.
+3. Save the image under `images/thumbnails/` using a stable kebab-case filename
+   with a `-hero.png` suffix.
+4. Verify the image at card scale on `index.html` and `projects.html`.
+5. Update `thumbnail-map.json` only after the image exists and loads locally.
 
 ---
 
@@ -190,16 +100,14 @@ done
 Before committing, verify:
 
 ```bash
-# 1. All target PNG files exist in images/thumbnails/
+# 1. All newly referenced PNG files exist in images/thumbnails/
 ls -la images/thumbnails/*.png
-# Expected output: 6 files for priority 1–2, plus optional @2x files
 
-# 2. Verify file sizes are reasonable (8–15 KB per PNG)
+# 2. Verify file sizes are reasonable for static deployment
 du -sh images/thumbnails/*.png
-# If any file is >20 KB, re-compress with higher -quality threshold
 
 # 3. Quick visual inspection: open a few in browser/preview
-open images/thumbnails/sidiya-branding-system-hero.png
+open images/thumbnails/grocery-retail-consumer-hero.png
 open images/thumbnails/protein-ai-pipeline-hero.png
 
 # 4. Validate thumbnail-map.json syntax
@@ -218,7 +126,7 @@ Update `thumbnail-map.json` and deploy as single commit:
 # 1. Ensure all PNG files are placed in images/thumbnails/
 ls -la images/thumbnails/
 
-# 2. Update thumbnail-map.json with new entries (use thumbnail-map-proposal.md as guide)
+# 2. Update thumbnail-map.json with verified asset paths
 # CRITICAL: only update after files are verified to exist above
 
 # 3. Stage files + JSON atomically
@@ -267,14 +175,11 @@ Featured projects display hero PNGs via `.project-grid` reel:
       src="images/thumbnails/protein-ai-pipeline-hero.png" 
       alt="Protein AI pipeline diagram showing neural network architecture"
     >
-    <!-- If image fails to load, CSS fallback activates (.thumb::after) -->
   </a>
   
   <!-- Or: CSS fallback for projects awaiting PNG export -->
-  <a href="featured/sidiya-branding-system.html" class="project-card">
-    <div class="visual-thumb design-thumb">
-      <!-- Grid pattern + accent colors generated by CSS -->
-    </div>
+  <a href="featured/ai-caption-generator.html" class="project-card">
+    <div class="visual-thumb ai-thumb" aria-label="AI caption generator interface preview"></div>
   </a>
 </div>
 ```
@@ -285,11 +190,13 @@ Same system repeated for full `projects.html` featured reel section.
 
 ### Fallback Cascade
 
-If PNG doesn't exist, browser automatically displays CSS fallback:
+If a PNG does not exist, do not point an `<img>` at the missing file. Keep the
+card on a `.visual-thumb` fallback until the real image is present:
 
-1. **Attempted**: `<img src="images/thumbnails/protein-ai-pipeline-hero.png">`
-2. **If missing**: CSS `.thumb` background shows, then `.visual-thumb` fallback renders if JS strips broken `<img>`
-3. **User sees**: Design-system CSS visual instead of broken image
+1. Use `<div class="visual-thumb ...">` while the image is pending.
+2. Add the PNG to `images/thumbnails/`.
+3. Replace the fallback with `<img class="thumb" ...>`.
+4. Update `thumbnail-map.json` in the same change.
 
 ---
 
@@ -331,7 +238,7 @@ If PNG doesn't exist, browser automatically displays CSS fallback:
 
 Featured projects display with:
 - **Height**: 260px (prominent, recruiter-facing)
-- **Aspect**: 3:2 (1600×1067 px base)
+- **Aspect**: landscape hero crop, usually close to 3:2
 - **Gap**: 10px (tight spacing for visual density)
 - **Reel animation**: Horizontal scroll snap (mobile-friendly)
 
@@ -349,14 +256,11 @@ Supporting projects display with:
 ```json
 {
   "protein-ai-pipeline": {
-    "displayName": "Protein AI Pipeline",
-    "category": "Featured",
-    "thumbnailPath": "images/thumbnails/protein-ai-pipeline-hero.png",
-    "sourceAsset": "assets/featured/ai-caption-generator/pipeline-diagram.png",
-    "status": "artifact",
-    "dimensions": "1600×1067",
-    "fallbackVisual": "ai-thumb",
-    "nextBestAsset": "assets/featured/ai-caption-generator/process-screenshot.png"
+    "title": "Protein AI Pipeline",
+    "thumbnail": "images/thumbnails/protein-ai-pipeline-hero.png",
+    "source_asset": "assets/supporting/design/bridging-biology-and-ai-understanding.pdf",
+    "status": "derived",
+    "next_best_asset": "cleaner pipeline diagram export"
   }
 }
 ```
@@ -386,13 +290,11 @@ Supporting projects display with:
 Every 3–4 months, audit featured reel:
 
 ```bash
-# 1. Check for stale fallback visuals (CSS-generated; should be 0 for featured)
+# 1. Check current fallback count
 grep '"fallback"' thumbnail-map.json | wc -l
-# Expected: 0 (all featured should be "artifact")
 
 # 2. Spot-check PNG quality and relevance
 ls -la images/thumbnails/ | sort -k5 -rn
-# Review file sizes; if >20 KB, consider re-compression
 
 # 3. Test reel rendering across devices
 # Mobile: ensure snap alignment works
@@ -410,7 +312,7 @@ When project changes or visual updates needed:
 
 ```bash
 # 1. Export new PNG from updated project
-# Follow dimensions: 1600×1067 px (3:2 aspect)
+# Use a landscape crop that reads clearly at card scale
 
 # 2. Place in images/thumbnails/ with existing naming convention
 # Example: protein-ai-pipeline-hero.png (keep same filename)
@@ -428,11 +330,10 @@ git push origin main
 
 When changing this workflow, update:
 
-1. `thumbnail-replacements.md` — If export priorities change
-2. `thumbnail-export-checklist.md` — If ImageMagick commands change
-3. `thumbnail-map-doc.md` — This file (instructions, JSON structure, status values)
-4. Architectural comments in `css/styles.css` — If visual system changes
-5. `README.md` — If high-level governance changes
+1. `thumbnail-curation-architecture.md` — If export priorities or crop rules change
+2. `thumbnail-map-doc.md` — This file, if routing or deployment steps change
+3. Architectural comments in `css/styles.css` — If visual system changes
+4. `README.md` — If high-level governance changes
 
 ---
 
@@ -441,7 +342,7 @@ When changing this workflow, update:
 ### "I just added a new PNG export. How do I deploy?"
 
 1. Verify file exists: `ls images/thumbnails/new-project-hero.png`
-2. Check dimensions: `identify images/thumbnails/new-project-hero.png` (should be 1600×1067 or close)
+2. Check that it is a landscape crop and not oversized for static deployment.
 3. Update `thumbnail-map.json` with new entry or modify existing
 4. Stage + commit + push:
    ```bash
@@ -452,7 +353,7 @@ When changing this workflow, update:
 
 ### "I want to replace the CSS fallback visual. What do I do?"
 
-1. Export PNG from project source (1600×1067 px, 3:2 aspect)
+1. Export a landscape PNG from project source.
 2. Place in `images/thumbnails/` with project-slug naming
 3. Change HTML from `<div class="visual-thumb ai-thumb">` to `<img class="thumb" src="...png">`
 4. Update `thumbnail-map.json` status to `"artifact"`
@@ -471,9 +372,7 @@ When changing this workflow, update:
 ## Related Files
 
 - **`thumbnail-map.json`** — Source-of-truth asset routing (ONLY update after PNG files verified)
-- **`thumbnail-replacements.md`** — Export prioritization with exact filenames and specs
-- **`thumbnail-export-checklist.md`** — ImageMagick commands and deployment workflow
-- **`thumbnail-map-proposal.md`** — Ready-to-apply JSON patch (review before merging)
+- **`thumbnail-curation-architecture.md`** — Canonical thumbnail priorities, crop rules, and focal-positioning guidance
 - **`css/styles.css`** — Visual system (`.project-grid`, `.thumb`, `.visual-thumb` implementation)
 - **`index.html` & `projects.html`** — HTML reel rendering (featured + supporting)
 
@@ -497,4 +396,4 @@ The shift from engineering-constrained to curation-constrained means visual sele
 
 **Last Updated**: Current session  
 **Maintainer**: Portfolio curation system  
-**Questions?** See `thumbnail-replacements.md`, `thumbnail-export-checklist.md`, or architectural comments in `css/styles.css`
+**Questions?** See `thumbnail-curation-architecture.md` or architectural comments in `css/styles.css`
