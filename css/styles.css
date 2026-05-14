@@ -342,9 +342,19 @@ p {
   height: 100%;
   min-height: 0;
   object-fit: contain;
+  object-position: center;
   border-radius: 6px;
   background: #f9fbff;
   padding: 8px;
+}
+
+/* Hero image focal positioning: support same project-specific classes */
+.hero-image img.grocery-thumb {
+  object-position: center 45%;
+}
+
+.hero-image img.opioid-thumb {
+  object-position: center 25%;
 }
 
 .hero-image .visual-thumb {
@@ -1855,6 +1865,62 @@ p {
   height: 10px;
   border-radius: 999px;
   background: rgba(255, 250, 240, 0.28);
+}
+
+/* ─── PROJECT-SPECIFIC FOCAL POSITIONING ───
+   Curated hero thumbnail system: each featured project intentionally crops
+   to highlight the strongest implementation proof-point, not a generic
+   document preview centered on the canvas.
+   
+   Philosophy: Posters, dashboards, diagrams, and UI screenshots are NOT
+   treated as generic images. Each has:
+   - Intentional hero visual (recruiter-facing proof-point)
+   - Intentional focal crop (visual hierarchy + removes whitespace)
+   - Intentional object-position anchor (vertical shift from "center")
+   
+   Result: Thumbnails read as curated hero moments with clear focal regions,
+   not scaled-down documents with random center crops.
+   
+   See thumbnail-curation-architecture.md for complete strategy, crop
+   coordinates, and export priority roadmap.
+*/
+
+/* Protein AI Pipeline: shift focus to pipeline diagram center (skip title block) */
+.thumb.protein-ai-thumb {
+  object-position: center 35%;
+}
+
+/* Opioid Analysis: anchor to chart cluster upper-to-middle region */
+.thumb.opioid-thumb {
+  object-position: center 25%;
+}
+
+/* Grocery Analytics: shift down from title to dashboard + charts */
+.thumb.grocery-thumb {
+  object-position: center 45%;
+}
+
+/* AI Caption Generator: shift focus to result panel (generated captions) */
+.visual-thumb.ai-caption-thumb {
+  /* Applied to CSS fallback; will inherit when PNG exported */
+}
+
+.thumb.ai-caption-thumb {
+  object-position: center 55%;
+}
+
+/* GAN Discord Bot: emphasize generated image output area */
+.visual-thumb.discord-bot-thumb {
+  /* Applied to CSS fallback; will inherit when PNG exported */
+}
+
+.thumb.discord-bot-thumb {
+  object-position: center 60%;
+}
+
+/* Data Collaboration Room: center focus for logo/branding system */
+.thumb.branding-thumb {
+  object-position: center center;
 }
 
 .project-body {
