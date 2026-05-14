@@ -1,0 +1,34 @@
+# Battleships
+
+Console-based Battleship game written in Java.
+
+## Features
+
+- 10x10 game board
+- Random preset ship layouts
+- Missile counter system
+- Hit and miss tracking
+- Ship sinking detection
+- Win/loss conditions
+- Console interface
+
+## Ship Types
+
+| Ship        | Size |
+|-------------|------|
+| Destroyer   | 2    |
+| Cruiser     | 3    |
+| Battleship  | 4    |
+| Carrier     | 5    |
+
+## Symbols
+
+| Symbol | Meaning |
+|--------|---------|
+| *      | Hit     |
+| !      | Miss    |
+
+## Compile
+
+```bash
+javac BattleShipsGame.java
