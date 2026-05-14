@@ -9,7 +9,11 @@ document.querySelectorAll(".reel-shell").forEach((shell) => {
 
   const move = (direction) => {
     const card = reel.querySelector(".project-card");
-    const distance = card ? card.getBoundingClientRect().width + 18 : reel.clientWidth * 0.8;
+    const styles = window.getComputedStyle(reel);
+    const gap = parseFloat(styles.columnGap);
+    const distance = card
+      ? card.getBoundingClientRect().width + (Number.isNaN(gap) ? 0 : gap)
+      : reel.clientWidth * 0.8;
     reel.scrollBy({ left: direction * distance, behavior: "smooth" });
   };
 
