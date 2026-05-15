@@ -21,7 +21,7 @@
   "featured": {
     "protein-ai-pipeline": {
       "title": "Protein AI Pipeline",
-      "thumbnail": "images/thumbnails/protein-ai-pipeline-hero.png",
+      "thumbnail": "images/thumbnails/protein-ai-pipeline-hero-refined.png",
       "source_asset": "assets/supporting/design/bridging-biology-and-ai-understanding.pdf + https://github.com/Cao-Labs/lutesAI2025/tree/main/ChrisB",
       "status": "derived",
       "next_best_asset": "protein matrix visualization or pipeline diagram crop"
@@ -84,7 +84,7 @@
     },
     "data-collab-room-studio": {
       "title": "Data Collaboration Room Studio",
-      "thumbnail": "images/thumbnails/data-collab-room-logo-system-hero.png",
+      "thumbnail": "images/thumbnails/data-collab-room-studio-hero-refined.png",
       "source_asset": "assets/featured/data-collab-room-studio/room-studio-logo.pdf",
       "status": "derived",
       "next_best_asset": "capstone presentation crop or studio mockup"
