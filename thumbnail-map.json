@@ -93,14 +93,14 @@
   "supporting": {
     "grid-system-dynamic-composition": {
       "title": "Grid System Dynamic Composition",
-      "thumbnail": "images/thumbnails/grid-system-dynamic-composition.png",
+      "thumbnail": "images/thumbnails/grid-system-dynamic-composition-card-refined.png",
       "source_asset": "assets/supporting/design/grid-system-dynamic-composition.pdf",
       "status": "derived",
       "next_best_asset": "stronger PDF crop if needed"
     },
     "package-series-design": {
       "title": "Package Series Design",
-      "thumbnail": "images/thumbnails/package-series-design.png",
+      "thumbnail": "images/thumbnails/package-series-design-card-refined.png",
       "source_asset": "assets/supporting/design/package-series-design.pdf",
       "status": "derived",
       "next_best_asset": "package mockup or presentation crop"
@@ -114,21 +114,21 @@
     },
     "typography-poster-design": {
       "title": "Typography Poster Design",
-      "thumbnail": "images/thumbnails/typography-poster-design.png",
+      "thumbnail": "images/thumbnails/typography-poster-design-card-refined.png",
       "source_asset": "assets/supporting/design/typography-poster-design.pdf",
       "status": "derived",
       "next_best_asset": "poster crop if needed"
     },
     "favorite-things-magazine-spread": {
       "title": "Favorite Things Magazine Spread",
-      "thumbnail": "images/thumbnails/favorite-things-magazine-spread.png",
+      "thumbnail": "images/thumbnails/favorite-things-magazine-spread-card-refined.png",
       "source_asset": "assets/supporting/design/favorite-things-magazine-spread.pdf",
       "status": "derived",
       "next_best_asset": "spread crop if needed"
     },
     "interactive-number-learning-publication": {
       "title": "Interactive Number Learning Publication",
-      "thumbnail": "images/thumbnails/interactive-number-learning-publication.png",
+      "thumbnail": "images/thumbnails/interactive-number-learning-publication-card-refined.png",
       "source_asset": "assets/supporting/design/interactive-number-learning-publication.pdf",
       "status": "derived",
       "next_best_asset": "publication spread crop"
