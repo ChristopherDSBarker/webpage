@@ -28,7 +28,7 @@
     },
     "opioid-prescribing-risk-analysis": {
       "title": "Opioid Prescribing Risk Analysis",
-      "thumbnail": "images/thumbnails/opioid-prescribing-risk-hero.png",
+      "thumbnail": "images/thumbnails/opioid-prescribing-risk-hero-refined.png",
       "source_asset": "images/opioid-prescribing-risk-poster-refined.png",
       "status": "derived",
       "next_best_asset": "chart crops from notebook or poster"
@@ -42,21 +42,21 @@
     },
     "pixel-progression": {
       "title": "Pixel Progression",
-      "thumbnail": "assets/featured/pixel-progression/pixel-progression-logo.png",
+      "thumbnail": "images/thumbnails/pixel-progression-hero.png",
       "source_asset": "assets/featured/pixel-progression/pixel-progression-logo.png",
-      "status": "artifact",
+      "status": "derived",
       "next_best_asset": "gameplay screenshot after role wording is fully verified"
     },
     "minesweeper-game": {
       "title": "Minesweeper Game",
-      "thumbnail": "assets/minesweeper/screenshots/minesweeper-revealed-board.png",
+      "thumbnail": "images/thumbnails/minesweeper-gameplay-hero.png",
       "source_asset": "assets/minesweeper/screenshots/minesweeper-revealed-board.png",
       "status": "artifact",
       "next_best_asset": "tighter gameplay crop if needed"
     },
     "battleship-game": {
       "title": "Battleship Game",
-      "thumbnail": "assets/featured/battleship-game/screenshots/battleship-gameplay.png",
+      "thumbnail": "images/thumbnails/battleship-gameplay-hero.png",
       "source_asset": "assets/featured/battleship-game/screenshots/battleship-gameplay.png",
       "status": "artifact",
       "next_best_asset": "tighter terminal crop if needed"
