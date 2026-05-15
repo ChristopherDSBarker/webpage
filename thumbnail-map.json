@@ -35,10 +35,10 @@
     },
     "grocery-retail-consumer-analytics": {
       "title": "Grocery Retail Consumer Analytics",
-      "thumbnail": "images/thumbnails/grocery-retail-consumer-hero.png",
+      "thumbnail": "images/thumbnails/grocery-retail-consumer-hero-refined.png",
       "source_asset": "images/grocery-retail-consumer-poster.png",
       "status": "derived",
-      "next_best_asset": "dashboard or visualization crop"
+      "next_best_asset": "dashboard or visualization crop if a more focused chart export is needed"
     },
     "pixel-progression": {
       "title": "Pixel Progression",
