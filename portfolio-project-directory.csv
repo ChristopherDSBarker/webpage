@@ -1,8 +1,9 @@
 project_title,category,layer,technologies,screenshot_status,video_status,github_status,live_demo_status,poster_status,writeup_status,homepage_linked,projects_linked,archive_linked,missing_assets,priority_score,implementation_depth,repo_evidence_strength,recruiter_value,semantic_representation_quality
 Opioid Prescribing Risk Analysis,Data & AI,Featured,Python/Jupyter/ML,Present,None,Missing,Missing,Artifact thumbnail,Partial,Yes,Yes,Yes,GitHub link; more notebook visuals,10,High,Moderate,High,Strong
 Grocery Retail Consumer Analytics,Data & AI,Featured,Python/Jupyter/Visualization,Present,None,Missing,Missing,Artifact thumbnail,Partial,Yes,Yes,Yes,GitHub link; dashboard screenshots,9,High,Moderate,High,Strong
-Minesweeper Game,Games & Interactive,Featured,JavaScript/HTML/CSS,Fallback,None,Missing,Missing,CSS fallback,Partial,Yes,Yes,Yes,gameplay screenshot,8,Medium,Moderate,Medium,Adequate
-Battleship Game,Games & Interactive,Featured,Java/OOP,Fallback,None,Missing,Missing,CSS fallback,Present,No,Yes,Yes,gameplay screenshot or title screen,7,Medium,Moderate,Medium,Adequate
+Minesweeper Game,Games & Interactive,Featured,JavaScript/HTML/CSS,Present,None,Missing,Missing,Gameplay screenshot,Partial,Yes,Yes,Yes,tighter gameplay crop if needed,8,Medium,Moderate,Medium,Improved
+Battleship Game,Games & Interactive,Featured,Java/OOP,Present,None,Missing,Missing,Gameplay screenshot,Present,Yes,Yes,Yes,tighter terminal crop if needed,7,Medium,Moderate,Medium,Improved
+Pixel Progression,Games & Interactive,Featured,PHP/JavaScript/Auth/Leaderboard,Present,None,Missing,Missing,Artifact logo,Presentation,Yes,Yes,Yes,role wording and gameplay screenshot,8,Medium,Moderate,High,Adequate
 HTML Resume Portfolio,Web,Featured,HTML/CSS,Fallback,None,Missing,Missing,CSS fallback,Present,No,Yes,Yes,browser screenshot,7,Medium,Moderate,Medium,Adequate
 AI Caption Generator,AI Tool,Featured,Python/Streamlit/OpenAI,Fallback,None,Present,Missing,CSS fallback,Present,Yes,Yes,Yes,app upload/output screenshot,9,Medium,Strong,High,Adequate
 GAN Discord Bot,AI Tool,Featured,Python/Bot/Image generation,Fallback,None,Missing,Missing,CSS fallback,Missing,No,Yes,Yes,bot output screenshot,6,Medium,Moderate,Medium,Weak

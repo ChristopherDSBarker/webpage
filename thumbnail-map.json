@@ -29,7 +29,7 @@
     "opioid-prescribing-risk-analysis": {
       "title": "Opioid Prescribing Risk Analysis",
       "thumbnail": "images/thumbnails/opioid-prescribing-risk-hero.png",
-      "source_asset": "images/opioid-prescribing-risk-poster.PNG",
+      "source_asset": "images/opioid-prescribing-risk-poster-refined.png",
       "status": "derived",
       "next_best_asset": "chart crops from notebook or poster"
     },
@@ -40,19 +40,26 @@
       "status": "derived",
       "next_best_asset": "dashboard or visualization crop"
     },
+    "pixel-progression": {
+      "title": "Pixel Progression",
+      "thumbnail": "assets/featured/pixel-progression/pixel-progression-logo.png",
+      "source_asset": "assets/featured/pixel-progression/pixel-progression-logo.png",
+      "status": "artifact",
+      "next_best_asset": "gameplay screenshot after role wording is fully verified"
+    },
     "minesweeper-game": {
       "title": "Minesweeper Game",
-      "thumbnail": "css-generated game board cover",
-      "source_asset": "generated fallback",
-      "status": "fallback",
-      "next_best_asset": "gameplay screenshot"
+      "thumbnail": "assets/minesweeper/screenshots/minesweeper-revealed-board.png",
+      "source_asset": "assets/minesweeper/screenshots/minesweeper-revealed-board.png",
+      "status": "artifact",
+      "next_best_asset": "tighter gameplay crop if needed"
     },
     "battleship-game": {
       "title": "Battleship Game",
-      "thumbnail": "css-generated board cover",
-      "source_asset": "generated fallback",
-      "status": "fallback",
-      "next_best_asset": "gameplay screenshot or title screen"
+      "thumbnail": "assets/featured/battleship-game/screenshots/battleship-gameplay.png",
+      "source_asset": "assets/featured/battleship-game/screenshots/battleship-gameplay.png",
+      "status": "artifact",
+      "next_best_asset": "tighter terminal crop if needed"
     },
     "html-resume-portfolio": {
       "title": "HTML Resume Portfolio",
