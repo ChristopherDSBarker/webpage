@@ -107,7 +107,7 @@
     },
     "sidiya-branding-system": {
       "title": "SiDiYa Branding System",
-      "thumbnail": "assets/brand/sidiya-emblem-final.png",
+      "thumbnail": "images/thumbnails/sidiya-branding-system-card-light.png",
       "source_asset": "assets/brand/sidiya-emblem-final.png",
       "status": "artifact",
       "next_best_asset": "master board crop or typeface study composite"
@@ -191,7 +191,7 @@
     },
     "csci367-game-systems": {
       "title": "CSCI 367 Game Systems",
-      "thumbnail": "assets/supporting/media/csci367-conceptlogo.png",
+      "thumbnail": "images/thumbnails/csci367-game-systems-card-light.png",
       "source_asset": "https://github.com/distcrypto/csci367_4/blob/main/conceptlogo.png",
       "status": "artifact",
       "next_best_asset": "repo-backed UI screenshot or systems diagram"
