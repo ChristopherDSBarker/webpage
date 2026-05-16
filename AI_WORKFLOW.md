@@ -1,130 +1,144 @@
-# AI workflow prompts for building the portfolio
+# AI Workflow
 
-Use this as your step-by-step script when asking AI for help. Each step includes what you should ask, the kind of answer you want, and common mistakes to avoid.
+This file is the execution protocol for AI work in this portfolio repo.
 
-## Step 1: Create the main GitHub Pages repo
+Mandatory first rule:
 
-Ask AI:
-
-```text
-Help me create one GitHub Pages portfolio repository named christopherbarker.github.io. Give me the exact steps for GitHub desktop or terminal, and explain where my website files should go.
-```
-
-Good answer:
-
-Create one repo named `christopherbarker.github.io`. Put `index.html`, `projects.html`, `resume.html`, `contact.html`, folders, and assets at the root of that repo. GitHub Pages will publish it at `https://christopherbarker.github.io`.
-
-Common mistakes:
-
-- Naming the repo something like `portfolio` and expecting the same URL.
-- Uploading the whole parent folder so the homepage is hidden inside `portfolio-site/`.
-- Making separate portfolio sites for every class project.
-
-## Step 2: Build the website structure
-
-Ask AI:
+Before execution, read and obey:
 
 ```text
-Create a clean GitHub Pages portfolio structure with index, projects, resume, contact, css, js, images, assets, featured, supporting, and resume folders.
+core_knowledge/PORTFOLIO_ARCHITECTURE_GUIDE.md
 ```
 
-Good answer:
+That guide is canonical for portfolio structure, representation rules,
+deployable boundaries, featured/supporting hierarchy, source-vs-webpage
+separation, and semantic parity expectations.
 
-Use a shallow structure with simple top navigation: Home, Projects, Resume, Contact. Keep project pages inside `featured/`, supporting work inside `supporting/`, and downloadable files inside `assets/` or `resume/`.
+## Execution Order
 
-Common mistakes:
+Use this order for every portfolio task:
 
-- Deep menus with too many categories.
-- Making reviewers click through several pages before seeing work.
-- Mixing raw notebooks, PDFs, screenshots, and site files without clean folders.
+1. Read the relevant `core_knowledge/` files.
+2. Confirm repository identity.
+3. Classify the task.
+4. Inspect current files before editing.
+5. Patch only the requested scope.
+6. Run the right validation.
+7. Summarize changed files before commit or push.
 
-## Step 3: Curate the homepage
+Do not treat audits, markdown files, or workflow rules as the product. The
+visible portfolio is the product.
 
-Ask AI:
+## Repository Confirmation
+
+Before changing anything, run:
+
+```bash
+pwd
+git remote -v
+git status --short --branch
+```
+
+The deployable webpage repo must be:
 
 ```text
-Design my homepage so it only has a short intro, hero image, 4 to 6 featured project cards, resume button, and contact button.
+https://github.com/ChristopherDSBarker/webpage
 ```
 
-Good answer:
+If the repo is wrong, stop and report it.
 
-Homepage should feel visual and quick. It should show Christopher Barker, a short positioning sentence, a strong project collage, and selected featured work. The homepage should not be an archive.
+If the worktree has existing changes, inspect them before editing. Do not
+overwrite user changes or mix unrelated work into the same commit.
 
-Common mistakes:
+## Task Classification
 
-- Listing every assignment on the homepage.
-- Using giant paragraphs before showing project images.
-- Adding a complicated bio before the reviewer sees the work.
+Classify work before patching:
 
-## Step 4: Build featured project pages
+- `frontend presentation`
+- `assets`
+- `resume`
+- `documentation`
+- `audit tooling`
+- `deployment synchronization`
+- `portfolio parity`
+- `visual QA`
 
-Ask AI:
+Keep separate categories in separate patches unless the user explicitly asks to
+combine them.
+
+## Core Rules
+
+- Refine, do not reinvent.
+- Do not overbuild.
+- Do not invent missing facts.
+- Do not redesign unless explicitly asked.
+- Do not infer representation.
+- Do not mix source/archive work with deployable webpage work.
+- Do not add audit scripts when the task asks for content, parity, or visual QA.
+- Do not create empty commits.
+- Do not push unless explicitly requested.
+
+## Source And Deploy Boundaries
+
+Default source/archive location:
 
 ```text
-For each featured project, create a concise case study page with title, summary, technologies, screenshots, problem, process, outcome, and GitHub link placeholder.
+/Users/songsidiya/Documents/portfolio
 ```
 
-Good answer:
-
-Each page should be scannable. Use short sections, project screenshots, and a clear link to code or demo. The featured projects come from the `featured_projects` source folder: Opioid Prescribing Risk Analysis, Grocery Retail Consumer Analytics, Minesweeper Game, Battleship Game, HTML Resume Portfolio, AI Caption Generator, GAN Discord Bot, and Data Collaboration Room Studio.
-
-Common mistakes:
-
-- Writing long school-assignment explanations.
-- Forgetting screenshots.
-- Linking only to a download file instead of a repo or live demo.
-
-## Step 5: Move supporting work into an archive
-
-Ask AI:
+Default deployable webpage location:
 
 ```text
-Create a compact supporting work section for extra class projects so they do not clutter the homepage.
+/Users/songsidiya/Desktop/collaborative_experience_website/portfolio-site
 ```
 
-Good answer:
+Do not modify the source/archive repo unless explicitly instructed.
 
-Use one archive section with short descriptions. Supporting work should show range but stay secondary.
+Do not deploy raw videos, databases, saves, scores, `.git` folders, full repos,
+or private/archive source files unless the user explicitly approves and the file
+is deployment-safe.
 
-Common mistakes:
+## Validation
 
-- Treating every project as equally important.
-- Making supporting work visually louder than featured work.
-- Including unfinished files without context.
+For deployable webpage changes, run:
 
-## Step 6: Polish branding
+```bash
+python3 tools/deployment_safe_audit.py
+```
 
-Ask AI:
+For JSON changes, also run:
+
+```bash
+python3 -m json.tool thumbnail-map.json > /dev/null
+```
+
+For visual QA, inspect the rendered pages or screenshots, not filenames alone.
+
+For parity work, compare source folders to actual webpage artifacts. A project is
+represented only if it has a reel card, dedicated page, directory entry,
+thumbnail-map entry, resume link, or intentional archive/internal
+classification.
+
+## Commit And Push Protocol
+
+Before committing or pushing, report:
+
+- changed files
+- staged files
+- validation result
+- whether unrelated local changes remain
+
+Use targeted `git add` commands. Do not stage unrelated files.
+
+If there are no deployable changes, report:
 
 ```text
-Apply one consistent portfolio identity using dark navy, cream/off-white, and one muted accent color. Keep typography, cards, buttons, and spacing consistent across all pages.
+No deployable changes detected.
 ```
 
-Good answer:
+## Portfolio Work Reminder
 
-The whole site should feel like one professional portfolio, even though the projects span AI, design, frontend, and research.
+The portfolio exists for recruiter readability, project clarity, truthful
+representation, visual quality, and deployment stability.
 
-Common mistakes:
-
-- Different colors and styles on every project page.
-- Too many accent colors.
-- Making the site look like a class folder instead of a curated portfolio.
-
-## Step 7: Finish deployment details
-
-Ask AI:
-
-```text
-Review my portfolio before I publish it. Check links, image paths, resume PDF, project pages, mobile layout, and missing placeholders.
-```
-
-Good answer:
-
-AI should list broken links, placeholders, missing images, missing repo links, missing live demos, and any layout problems.
-
-Common mistakes:
-
-- Publishing before replacing placeholder email.
-- Not testing on mobile.
-- Forgetting to add README files to separate project repos.
-- Leaving project pages without GitHub links or screenshots.
+Core knowledge comes first, workflow second, execution third.
