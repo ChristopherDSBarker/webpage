@@ -34,6 +34,7 @@ Array Visualization Study,Creative Code,Supporting,Processing,Fallback,None,N/A,
 Animal Function Animation,Creative Code,Supporting,Processing,Fallback,None,N/A,N/A,CSS fallback,Source,No,Yes,Yes,GIF or animation still,4,Low,Moderate,Low,Weak
 Random Circles Generator,Creative Code,Supporting,Processing,Fallback,None,N/A,N/A,CSS fallback,Source,No,Yes,Yes,exported generated circles frame,4,Low,Moderate,Low,Weak
 Protein AI Pipeline,Data & AI / Research,Featured,Python/ESM-3/BLIP-2/GO similarity,Present,None,Present,N/A,Derived preview,Present,Yes,Yes,Yes,protein matrix visualization or pipeline diagram crop,10,High,Strong,High,Adequate
+Mabi AI,Games & Interactive / AI Tool,Featured,Rule-based AI/XML/Behavior logic/Legacy game AI,Present,Present,Present,N/A,Artifact thumbnail,Present,Yes,Yes,Yes,None,8,Medium,Strong,High,Strong
 Animated Short Scene,Media,Supporting,Animation/GIF,Present,None,N/A,N/A,Artifact thumbnail,Partial,No,Yes,Yes,Storyboard/process notes,6,Low,Moderate,Medium,Adequate
 Community Documentary Media,Media,Supporting,Video/Interview/Exhibit,Fallback,Present,N/A,N/A,CSS fallback,Present via short-film-antiracist-exhibit route,No,Yes,Yes,owned still frame,7,Medium,Moderate,High,Adequate
 BJUG Day Campaign,Media,Supporting,Video/Campaign,Fallback,Present,N/A,N/A,CSS fallback,Present,No,Yes,Yes,owned campaign still,6,Medium,Moderate,Medium,Adequate

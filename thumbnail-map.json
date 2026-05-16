@@ -26,6 +26,13 @@
       "status": "derived",
       "next_best_asset": "protein matrix visualization or pipeline diagram crop"
     },
+    "mabi-ai": {
+      "title": "Mabi AI",
+      "thumbnail": "images/thumbnails/mabi-ai-hero.png",
+      "source_asset": "assets/featured/mabi-ai/FinalAIMarkdown.html + https://github.com/ChristopherDSBarker/Mabinogi.git + https://www.youtube.com/watch?v=BcLEQsy83Dw&t=11s",
+      "status": "derived",
+      "next_best_asset": "in-game demo still or exported rule-editor screenshot if available"
+    },
     "opioid-prescribing-risk-analysis": {
       "title": "Opioid Prescribing Risk Analysis",
       "thumbnail": "images/thumbnails/opioid-prescribing-risk-hero-refined.png",
