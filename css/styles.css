@@ -653,6 +653,12 @@ p {
   box-sizing: border-box;
 }
 
+.thumb.light-artifact-thumb {
+  object-fit: contain;
+  padding: 0;
+  background: #f8fafc;
+}
+
 .visual-thumb {
   /* CSS fallback visual: gradient + pattern generator for design/data/code types.
      Replace these with .thumb (real image) as PNG exports complete. */
@@ -2037,6 +2043,10 @@ p {
   object-fit: contain;
   padding: 24px;
   background: #05070c;
+}
+
+.case-hero > img.light-artifact-hero {
+  background: #f8fafc;
 }
 
 .video-poster {
