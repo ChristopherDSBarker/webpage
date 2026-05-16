@@ -88,6 +88,13 @@
       "source_asset": "assets/featured/data-collab-room-studio/room-studio-logo.pdf",
       "status": "derived",
       "next_best_asset": "capstone presentation crop or studio mockup"
+    },
+    "env-design": {
+      "title": "Env Design",
+      "thumbnail": "assets/featured/env-design/env-design-final.png",
+      "source_asset": "assets/featured/env-design/env-design-final.png",
+      "status": "artifact",
+      "next_best_asset": "keep final environmental design board"
     }
   },
   "supporting": {

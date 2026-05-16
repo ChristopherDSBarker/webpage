@@ -8,6 +8,7 @@ HTML Resume Portfolio,Web,Featured,HTML/CSS,Fallback,None,Missing,Missing,CSS fa
 AI Caption Generator,AI Tool,Featured,Python/Streamlit/OpenAI,Fallback,None,Present,Missing,CSS fallback,Present,Yes,Yes,Yes,app upload/output screenshot,9,Medium,Strong,High,Adequate
 GAN Discord Bot,AI Tool,Featured,Python/Bot/Image generation,Fallback,None,Missing,Missing,CSS fallback,Missing,No,Yes,Yes,bot output screenshot,6,Medium,Moderate,Medium,Weak
 Data Collaboration Room Studio,Research & Design,Featured,Research/Presentation/Studio design,Present,None,Missing,Missing,Derived preview,Present,No,Yes,Yes,Optional studio mockup or presentation crop,6,Medium,Strong,Medium,Strong
+Env Design,Design,Featured,Environmental design/Visual composition,Present,None,N/A,N/A,Artifact thumbnail,Present,Yes,Yes,Yes,None,6,Medium,Strong,Medium,Strong
 Grid System Dynamic Composition,Design,Supporting,Graphic design,Present,None,N/A,N/A,Derived preview,PDF,No,Yes,Yes,stronger PDF crop if needed,6,Low,Moderate,Medium,Adequate
 Package Series Design,Design,Supporting,Packaging/Branding,Present,None,N/A,N/A,Derived preview,PDF,No,Yes,Yes,package mockup or presentation crop,6,Low,Moderate,Medium,Adequate
 SiDiYa Branding System,Design / Identity System,Supporting,Branding/Typography/Visual identity,Present,None,N/A,N/A,Artifact thumbnail,Present,No,Yes,Yes,master board crop or typeface study composite,7,Medium,Strong,Medium,Strong
