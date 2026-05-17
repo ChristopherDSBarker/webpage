@@ -13,9 +13,54 @@ from __future__ import annotations
 import re
 import subprocess
 from pathlib import Path
+from html.parser import HTMLParser
 
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+class ExposureParser(HTMLParser):
+    """Collect links and images that a reviewer can actually see or open."""
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.exposures: list[tuple[str, str]] = []
+        self._active_href: str | None = None
+        self._active_text: list[str] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        data = dict(attrs)
+        if tag == "a":
+            self._active_href = data.get("href")
+            self._active_text = []
+        elif tag == "img":
+            src = data.get("src")
+            if src and is_asset_ref(src):
+                self.exposures.append(((data.get("alt") or src).strip(), src.strip()))
+
+    def handle_data(self, data: str) -> None:
+        if self._active_href:
+            text = data.strip()
+            if text:
+                self._active_text.append(text)
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag == "a" and self._active_href:
+            label = " ".join(self._active_text).strip() or self._active_href
+            if is_asset_ref(self._active_href):
+                self.exposures.append((label, self._active_href.strip()))
+            self._active_href = None
+            self._active_text = []
+
+
+def is_asset_ref(ref: str) -> bool:
+    """Return true for concrete portfolio artifacts, not navigation links."""
+    if ref.startswith(("http://", "https://", "mailto:", "tel:", "#", "data:")):
+        return False
+    ref_lower = ref.lower()
+    if any(part in ref_lower for part in ("/assets/", "/images/", "assets/", "images/")):
+        return True
+    return bool(re.search(r"\.(pdf|png|jpe?g|gif|webp|ipynb|py|java|pde|md|docx|zip|jar|r)$", ref_lower))
 
 
 def get_deployed_assets(prefix: str) -> set[str]:
@@ -30,7 +75,7 @@ def get_deployed_assets(prefix: str) -> set[str]:
     )
     if result.returncode != 0:
         return set()
-    
+
     assets = set()
     for line in result.stdout.splitlines():
         if prefix in line:
@@ -45,15 +90,22 @@ def parse_curated_assets_claim(html_text: str) -> list[str]:
     if not match:
         return []
     
-    claim_text = match.group(1).replace(" and ", ", ")
-    return [item.strip() for item in claim_text.split(",")]
+    claim_text = match.group(1)
+    claim_sentences = []
+    for sentence in re.split(r"(?<=\.)\s+", claim_text):
+        lowered = sentence.lower()
+        if "source/archive/internal" in lowered or "remains source" in lowered:
+            continue
+        claim_sentences.append(sentence)
+    claim_text = " ".join(claim_sentences).replace(" and ", ", ")
+    return [item.rstrip(".").strip() for item in claim_text.split(",") if item.rstrip(".").strip()]
 
 
 def parse_exposed_assets(html_text: str) -> list[tuple[str, str]]:
     """Extract (label, href) for all exposed asset links."""
-    pattern = r'<a\s+[^>]*href="([^"]*)"[^>]*>.*?<strong>([^<]+)</strong>'
-    matches = re.findall(pattern, html_text, re.DOTALL)
-    return [(label.strip(), href.strip()) for href, label in matches]
+    parser = ExposureParser()
+    parser.feed(html_text)
+    return parser.exposures
 
 
 def get_asset_dir_contents(asset_subdir: str) -> set[str]:
@@ -69,6 +121,58 @@ def get_asset_dir_contents(asset_subdir: str) -> set[str]:
     return files
 
 
+def normalize(text: str) -> str:
+    """Normalize labels, hrefs, and claim phrases for fuzzy but concrete matching."""
+    text = re.sub(r"[^a-z0-9]+", " ", text.lower())
+    noise = {
+        "asset",
+        "assets",
+        "curated",
+        "and",
+        "or",
+        "the",
+        "a",
+        "an",
+        "png",
+        "pdf",
+        "jpg",
+        "jpeg",
+        "html",
+        "file",
+        "files",
+    }
+    return " ".join(part for part in text.split() if part not in noise)
+
+
+def claim_is_exposed(claim: str, exposures: list[tuple[str, str]]) -> bool:
+    count_match = re.search(r"\b(\d+)\s+(pdfs?|pngs?|jpe?gs?|gifs?|images?|files?)\b", claim.lower())
+    if count_match:
+        expected = int(count_match.group(1))
+        kind = count_match.group(2)
+        kind = kind.rstrip("s")
+        if kind == "image":
+            pattern = r"\.(png|jpe?g|gif|webp)$"
+        elif kind == "file":
+            pattern = r"\.[a-z0-9]+$"
+        else:
+            pattern = rf"\.{kind}$"
+        return sum(1 for _, href in exposures if re.search(pattern, href.lower())) >= expected
+
+    claim_norm = normalize(claim)
+    if not claim_norm:
+        return True
+
+    for label, href in exposures:
+        exposure_norm = normalize(f"{label} {href}")
+        if claim_norm in exposure_norm or exposure_norm in claim_norm:
+            return True
+        claim_terms = set(claim_norm.split())
+        exposure_terms = set(exposure_norm.split())
+        if claim_terms and claim_terms.issubset(exposure_terms):
+            return True
+    return False
+
+
 def analyze_page(page_path: Path) -> dict | None:
     """Full analysis of a project page."""
     html = page_path.read_text(errors="ignore")
@@ -79,13 +183,18 @@ def analyze_page(page_path: Path) -> dict | None:
     
     exposed = parse_exposed_assets(html)
     
-    # Extract asset subdirectory from page references
+    # Extract asset subdirectories from page references. Keep this page-specific:
+    # assets/featured/env-design/x.png should scan assets/featured/env-design/,
+    # not every file under assets/featured/.
     asset_refs = re.findall(r'href="\.\./(assets/[^"]+)"', html)
-    asset_dirs = {ref.split("/")[1] for ref in asset_refs if "/" in ref}
+    asset_refs += re.findall(r'src="\.\./(assets/[^"]+)"', html)
+    asset_dirs = {"/".join(ref.split("/")[:3]) for ref in asset_refs if len(ref.split("/")) >= 3}
     
     deployed = set()
     for asset_dir in asset_dirs:
-        deployed.update(get_asset_dir_contents(asset_dir))
+        deployed.update(get_asset_dir_contents(asset_dir.removeprefix("assets/")))
+
+    uncovered = [claim for claim in claimed if not claim_is_exposed(claim, exposed)]
     
     return {
         "page": str(page_path.relative_to(ROOT)),
@@ -93,6 +202,7 @@ def analyze_page(page_path: Path) -> dict | None:
         "exposed": exposed,
         "deployed_assets": deployed,
         "asset_dirs": asset_dirs,
+        "uncovered": uncovered,
     }
 
 
@@ -101,23 +211,26 @@ def format_recommendation(analysis: dict) -> str:
     claimed_count = len(analysis["claimed"])
     exposed_count = len(analysis["exposed"])
     deployed_count = len(analysis["deployed_assets"])
+    uncovered_count = len(analysis["uncovered"])
     
     lines = []
-    lines.append(f"\n📋 BRANDING SYSTEM PAGE ANALYSIS")
+    lines.append(f"\nPAGE ANALYSIS: {analysis['page']}")
     lines.append(f"━" * 50)
-    lines.append(f"\n1️⃣  WHAT THE PAGE CLAIMS:")
+    lines.append(f"\n1. WHAT THE PAGE CLAIMS:")
     lines.append(f"   • {', '.join(analysis['claimed'])}")
     lines.append(f"   → {claimed_count} asset types mentioned")
     
-    lines.append(f"\n2️⃣  WHAT'S ACTUALLY SURFACED:")
+    lines.append(f"\n2. WHAT'S ACTUALLY SURFACED:")
     if analysis["exposed"]:
-        for label, href in analysis["exposed"]:
+        for label, href in analysis["exposed"][:12]:
             lines.append(f"   ✅ {label} → {href}")
+        if len(analysis["exposed"]) > 12:
+            lines.append(f"   ... and {len(analysis['exposed']) - 12} more page-visible refs")
     else:
         lines.append(f"   ❌ No direct asset links")
     lines.append(f"   → {exposed_count} assets exposed")
     
-    lines.append(f"\n3️⃣  WHAT'S DEPLOYED IN ASSETS:")
+    lines.append(f"\n3. WHAT'S DEPLOYED IN THIS PAGE'S ASSET FOLDERS:")
     if analysis["deployed_assets"]:
         for asset in sorted(analysis["deployed_assets"])[:10]:
             lines.append(f"   📦 {asset}")
@@ -127,28 +240,22 @@ def format_recommendation(analysis: dict) -> str:
         lines.append(f"   ❌ No assets found in deployed directory")
     lines.append(f"   → {deployed_count} files available")
     
-    lines.append(f"\n4️⃣  SEMANTIC REPRESENTATION GAP:")
-    if deployed_count > 0 and exposed_count < claimed_count:
-        gap = claimed_count - exposed_count
-        lines.append(f"   ⚠️  Claims {claimed_count} assets, exposes {exposed_count}")
-        lines.append(f"   ⚠️  {gap} claimed asset types are NOT directly downloadable")
-        lines.append(f"   ⚠️  But {deployed_count} files are available in assets/")
-    elif deployed_count == 0 and exposed_count < claimed_count:
-        lines.append(f"   🚨 CRITICAL: Page claims assets that don't exist")
-        lines.append(f"   🚨 Source folder may not be tracked in Git")
+    lines.append(f"\n4. SEMANTIC REPRESENTATION GAP:")
+    if uncovered_count:
+        lines.append(f"   Warning lead: {uncovered_count} claimed asset type(s) were not matched to a visible link/image")
+        lines.append(f"   Unmatched claims: {', '.join(analysis['uncovered'])}")
+        if deployed_count:
+            lines.append(f"   Some page-specific assets exist; verify whether these should be linked, shown, or classified as source/internal.")
     else:
-        lines.append(f"   ✅ Representation matches exposure")
-    
-    lines.append(f"\n5️⃣  RECOMMENDATIONS:")
-    if deployed_count > exposed_count:
-        lines.append(f"   1. Add direct download links for {deployed_count - exposed_count} hidden assets")
-        lines.append(f"   2. Update 'Curated assets' claim to reflect only exposed items")
-        lines.append(f"   3. Or surface more assets as an 'Additional Assets' section")
-        lines.append(f"   4. Archive unexposed assets as 'source materials (not deployed)'")
+        lines.append(f"   OK: curated asset wording is backed by visible links or images.")
+
+    lines.append(f"\n5. RECOMMENDATIONS:")
+    if uncovered_count:
+        lines.append(f"   1. Tighten the claim, expose the missing item, or mark it source/archive/internal.")
+        lines.append(f"   2. Prefer a visible screenshot, artifact link, or thumbnail-map entry over more process documentation.")
     else:
-        lines.append(f"   1. Verify source folder path is correct")
-        lines.append(f"   2. Check Git tracking: are source assets in .gitignore?")
-        lines.append(f"   3. Update claim to reflect actual exposure")
+        lines.append(f"   1. No patch required from this warning.")
+        lines.append(f"   2. If the page still feels weak, improve visual evidence rather than adding audit layers.")
     
     return "\n".join(lines)
 
@@ -167,8 +274,8 @@ def main() -> None:
         if not analysis:
             continue
         
-        # Flag if claims don't match exposure
-        if len(analysis["exposed"]) < len(analysis["claimed"]):
+        # Flag only if a claim cannot be matched to a visible link or image.
+        if analysis["uncovered"]:
             findings.append(analysis)
     
     if not findings:

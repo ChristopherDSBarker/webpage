@@ -2,6 +2,8 @@
 
 Goal: every project card should have an original, portfolio-safe visual with consistent aspect ratio, clear visual weight, and no copyright-risk external thumbnail.
 
+Operating principle: the audit should support the portfolio, not consume it. Prefer better warnings, clearer source-to-frontend mapping, and stronger visual evidence over new governance layers, recursive audits, or automation for its own sake.
+
 Thumbnail rule: every reel card must use one of these: poster, screenshot, UI mockup, diagram, logo, gameplay image, generated cover, branded title card, or original CSS/SVG cover.
 
 Recommended base ratio: 16:10 in the current reel system. 16:9 is also acceptable for future exported image assets, but cards should crop or pad consistently.
@@ -43,6 +45,15 @@ Stop active thumbnail refinement once:
 
 Further refinement beyond this point is optional polish and should be driven by real project screenshots, exported charts, or owned media stills.
 
+## Warning Levels
+
+- `Missing`: no concrete frontend representation or archive/internal classification exists. This blocks parity.
+- `Weak`: the item is represented, but the card relies on fallback art, a generic cover, or a low-evidence crop.
+- `Mismapped`: the frontend title/category/source path is not clearly tied to the canonical source name.
+- `Visual Evidence Gap`: the source exists and is represented, but the thumbnail does not show the strongest available proof.
+
+Tool warnings are leads. A warning should result in one of three outcomes: improve the page/media, clarify the mapping, or explicitly mark the source as archive/internal. Do not create another audit layer just to restate the same uncertainty.
+
 ## Thumbnail Map
 
 `thumbnail-map.json` is the operational source-of-truth for reel thumbnail selection. It records:
@@ -77,13 +88,16 @@ Projects marked `fallback` should be upgraded only when a real repo-backed artif
 | Project | Current Thumbnail Status | Thumbnail Type | Visual Quality | Aspect Ratio | Missing Assets | Replacement Recommendation | Priority |
 |---|---|---|---|---|---|---|---|
 | Opioid Prescribing Risk Analysis | Present | Poster preview | Good | Consistent | More chart crops | Keep poster; add chart-detail alt thumbnail later | Medium |
-| Grocery Retail Consumer Analytics | Present | Poster preview | Good | Consistent | Dashboard/process screenshots | Keep poster; add dashboard crop later | Medium |
-| Minesweeper Game | Upgraded | Original game-board cover | Improved | Consistent | Real gameplay screenshot | Replace with gameplay screenshot when deployed | High |
-| Battleship Game | Present | Original board cover | Good fallback | Consistent | Real gameplay screenshot | Replace with actual gameplay or title screen | High |
+| Grocery Retail Consumer Analytics | Present | Poster/chart crop | Weak crop | Consistent | Dashboard/process screenshots | Refine to a stronger chart or poster crop; current image is real evidence but visually cramped | Medium |
+| Minesweeper Game | Upgraded | Gameplay screenshot | Good | Consistent | Optional tighter crop | Keep real gameplay evidence; crop only if scan quality needs polish | Low |
+| Battleship Game | Upgraded | Terminal gameplay screenshot | Good | Consistent | Optional tighter crop | Keep real gameplay evidence; avoid overstating runtime reliability | Low |
 | HTML Resume Portfolio | Present | Original web/resume cover | Good fallback | Consistent | Responsive screenshots | Replace with browser mockup screenshot | Medium |
 | AI Caption Generator | Present | Original AI workflow cover | Good fallback | Consistent | App upload/output screenshots | Replace with UI screenshot and example captions | High |
 | GAN Discord Bot | Present | Original AI workflow cover | Good fallback | Consistent | Bot output examples | Replace with Discord interaction/output screenshot | Medium |
 | Data Collaboration Room Studio | Upgraded | Logo System PDF preview | Good | Consistent | Optional studio mockup crop | Keep repo-backed logo artifact; add presentation crop later if stronger | Low |
+| Protein AI Pipeline | Present | Research poster / derived crop | Adequate | Consistent | Pipeline or matrix visualization | Keep only if mapping stays explicit: external Cao Labs workstream plus Bridging Biology And AI poster | Medium |
+| Mabi AI | Present | Rule/AI visual artifact | Good | Consistent | Optional in-game still | Keep unless a stronger in-game demo still is available | Low |
+| Env Design | Present | Final environmental design board | Good | Consistent | None urgent | Keep final PNG; source-note PNG is supporting evidence, not the card visual | Low |
 
 ## Supporting Reel Audit
 
@@ -120,19 +134,18 @@ Projects marked `fallback` should be upgraded only when a real repo-backed artif
 
 - No reel card is missing a visual.
 - Several cards still use original generated covers instead of true project screenshots.
+- Some frontend titles intentionally differ from source names; keep mappings explicit for `Protein AI Pipeline` / `Bridging Biology And AI`, `SiDiYa Branding System` / `branding-with-name`, and `Short Film And Anti-Racist Art Exhibit` / `community-documentary-media`.
 - Data Collaboration Room Studio now uses a repo-backed Logo System PDF preview instead of a generated studio cover.
 - Media cards no longer depend on external YouTube thumbnails.
 - Media cards now use graphic thumbnail scenes instead of text-only title cards.
 - Reel cards now share a consistent fixed media height, border radius, hover behavior, and body rhythm.
-- Game cards are stronger than before, but real gameplay screenshots would still be better.
+- Game cards now have real visual evidence where available; remaining work is crop quality, not basic representation.
 - Design PDFs now use exported PNG thumbnails.
 
 ## NO_REAL_THUMBNAIL Tags
 
 These projects have original, copyright-safe generated covers, but still need real exported screenshots, PDF previews, renders, or captured outputs for final polish.
 
-- Minesweeper Game
-- Battleship Game
 - HTML Resume Portfolio
 - AI Caption Generator
 - GAN Discord Bot
@@ -157,8 +170,9 @@ These projects have original, copyright-safe generated covers, but still need re
 
 ## Priority Queue
 
-1. Replace Minesweeper and Battleship covers with real gameplay screenshots.
-2. Add AI Caption Generator UI screenshot and generated-caption example.
+1. Add AI Caption Generator UI screenshot and generated-caption example.
+2. Refine Grocery Retail Consumer Analytics to a stronger chart or poster crop.
 3. Export chart thumbnails for data notebooks.
 4. Add screenshots or renders for Java and Processing projects.
 5. Replace media title cards with owned still frames only if the stills are original/cleared.
+6. Tighten mapping labels for source-name aliases before adding more process documentation.
