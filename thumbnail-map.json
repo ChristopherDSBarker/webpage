@@ -21,10 +21,10 @@
   "featured": {
     "protein-ai-pipeline": {
       "title": "Protein AI Pipeline",
-      "thumbnail": "images/thumbnails/protein-ai-pipeline-hero-refined.png",
+      "thumbnail": "images/thumbnails/protein-ai-pipeline-card-refined.png",
       "source_asset": "assets/supporting/design/bridging-biology-and-ai-understanding.pdf + https://github.com/Cao-Labs/lutesAI2025/tree/main/ChrisB",
       "status": "derived",
-      "next_best_asset": "protein matrix visualization or pipeline diagram crop"
+      "next_best_asset": "direct pipeline output or matrix visualization if available"
     },
     "mabi-ai": {
       "title": "Mabi AI",
@@ -35,17 +35,17 @@
     },
     "opioid-prescribing-risk-analysis": {
       "title": "Opioid Prescribing Risk Analysis",
-      "thumbnail": "images/thumbnails/opioid-prescribing-risk-hero-refined.png",
+      "thumbnail": "images/thumbnails/opioid-prescribing-risk-card-refined.png",
       "source_asset": "images/opioid-prescribing-risk-poster-refined.png",
       "status": "derived",
-      "next_best_asset": "chart crops from notebook or poster"
+      "next_best_asset": "keep card crop; use full poster on detail page"
     },
     "grocery-retail-consumer-analytics": {
       "title": "Grocery Retail Consumer Analytics",
-      "thumbnail": "images/thumbnails/grocery-retail-consumer-card-thumb.png",
+      "thumbnail": "images/thumbnails/grocery-retail-consumer-card-refined.png",
       "source_asset": "images/grocery-retail-consumer-poster.png",
       "status": "derived",
-      "next_best_asset": "dashboard or visualization crop if a more focused chart export is needed"
+      "next_best_asset": "dashboard screenshot if a stronger runtime visual becomes available"
     },
     "pixel-progression": {
       "title": "Pixel Progression",
@@ -98,10 +98,10 @@
     },
     "env-design": {
       "title": "Env Design",
-      "thumbnail": "assets/featured/env-design/env-design-final.png",
+      "thumbnail": "images/thumbnails/env-design-card-refined.png",
       "source_asset": "assets/featured/env-design/env-design-final.png",
       "status": "artifact",
-      "next_best_asset": "keep final environmental design board"
+      "next_best_asset": "keep landscape card crop; use full board on detail page"
     }
   },
   "supporting": {
@@ -205,10 +205,10 @@
     },
     "csci367-game-systems": {
       "title": "CSCI 367 Game Systems",
-      "thumbnail": "images/thumbnails/csci367-game-systems-card-light.png",
-      "source_asset": "https://github.com/distcrypto/csci367_4/blob/main/conceptlogo.png",
-      "status": "artifact",
-      "next_best_asset": "repo-backed UI screenshot or systems diagram"
+      "thumbnail": "images/thumbnails/csci367-game-systems-evidence.png",
+      "source_asset": "https://github.com/distcrypto/csci367_4",
+      "status": "derived",
+      "next_best_asset": "real gameplay or UI screenshot if available"
     },
     "spelling-bee-puzzle": {
       "title": "Spelling Bee Puzzle",
