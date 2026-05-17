@@ -106,6 +106,10 @@ For deployable webpage changes, run:
 python3 tools/deployment_safe_audit.py
 ```
 
+This audit is required, but it only checks deploy/link safety. It does not
+prove thumbnail quality, crop quality, context fit, semantic representation, or
+whether a visual patch actually works in the rendered portfolio.
+
 For JSON changes, also run:
 
 ```bash
@@ -113,6 +117,62 @@ python3 -m json.tool thumbnail-map.json > /dev/null
 ```
 
 For visual QA, inspect the rendered pages or screenshots, not filenames alone.
+
+## Visual Patch Verification
+
+For thumbnail, hero, media, poster, image-reference, or visual-card changes,
+run every available relevant check before reporting success:
+
+```bash
+python3 tools/deployment_safe_audit.py
+python3 tools/claimed_vs_exposed_audit.py
+python3 tools/semantic_asset_audit.py
+python3 tools/semantic_representation_audit.py
+python3 tools/semantic_representation_report.py
+```
+
+Use judgment for relevance, but do not skip an available audit just because
+`deployment_safe_audit.py` passed. If a tool is unavailable, blocked, or fails,
+report that explicitly and do not claim full visual QA passed.
+
+A visual patch is not complete when the file reference changes.
+It is complete only when every affected rendering context has been inspected:
+1. homepage/index preview
+2. projects reel preview
+3. project detail page hero/media section
+4. thumbnail-map/reference metadata
+5. deploy-safe audit
+
+This prevents a "1 of 3 fixed" patch where one image works in a project hero
+but fails in the homepage or projects reel.
+
+## Three-Context Thumbnail Rule
+
+Check these contexts separately for any project thumbnail or hero change:
+
+- `index.html` homepage preview
+- `projects.html` reel card
+- the individual `featured/*.html` or `supporting/*.html` project page hero
+  and media section
+
+One asset may work in one context and fail in another. Do not call a visual
+patch fixed until every affected context passes.
+
+## Visual Patch Report Template
+
+For visual patches, report:
+
+- tools run
+- tools not run and why
+- pages visually checked
+- screenshots or manual evidence used
+- changed image assets
+- changed references
+- deployment audit result
+
+If rendered inspection was impossible, say so directly and describe what was
+checked instead. Do not present markup-only or filename-only checks as visual
+QA.
 
 For parity work, compare source folders to actual webpage artifacts. A project is
 represented only if it has a reel card, dedicated page, directory entry,

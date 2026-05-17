@@ -35,6 +35,54 @@ For page-level visual QA, check:
 Do not stop after homepage/projects when the request includes independent
 project pages.
 
+## Mandatory Visual Patch Verification
+
+Deployment-safe validation is required, but it is not visual QA. It only checks
+whether references resolve to deployable files.
+
+A visual patch is not complete when the file reference changes.
+It is complete only when every affected rendering context has been inspected:
+1. homepage/index preview
+2. projects reel preview
+3. project detail page hero/media section
+4. thumbnail-map/reference metadata
+5. deploy-safe audit
+
+For thumbnail, hero, card, poster, or media changes, check these contexts
+separately:
+
+- homepage/index preview
+- `projects.html` reel preview
+- individual project detail page hero/media section
+- `thumbnail-map.json` and changed references
+- deploy/link safety
+
+One asset may work in one context and fail in another. Do not call fixed until
+all affected contexts pass.
+
+Run all available relevant audit scripts before reporting success:
+
+- `python3 tools/deployment_safe_audit.py`
+- `python3 tools/claimed_vs_exposed_audit.py`
+- `python3 tools/semantic_asset_audit.py`
+- `python3 tools/semantic_representation_audit.py`
+- `python3 tools/semantic_representation_report.py`
+
+If a tool is unavailable, blocked, or fails, report that explicitly. Do not
+pretend visual QA passed.
+
+## Visual Patch Report
+
+Every visual patch report must include:
+
+- tools run
+- tools not run and why
+- pages visually checked
+- screenshots or manual evidence used
+- changed image assets
+- changed references
+- deployment audit result
+
 ## Thumbnail Selection
 
 Prefer real project artifacts:

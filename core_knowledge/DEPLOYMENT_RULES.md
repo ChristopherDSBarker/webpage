@@ -55,6 +55,11 @@ The audit must report:
 - ignored-file references: 0
 - untracked references: 0
 
+Passing this audit means the deployable references are safe. It does not prove
+that thumbnails, heroes, crops, cards, or media are visually acceptable. For
+visual patches, also follow `VISUAL_QA_RULES.md` and inspect every affected
+rendering context.
+
 ## JSON Validation
 
 When editing `thumbnail-map.json`, run:
