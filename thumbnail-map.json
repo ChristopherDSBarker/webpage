@@ -60,7 +60,7 @@
           "asset": "images/thumbnails/reels/protein-ai-pipeline-reel.png",
           "status": "derived",
           "purpose": "recognition",
-          "note": "Recognition: project-card crop kept separate from detail evidence."
+          "note": "Recognition: pipeline-focused crop selected for card-scale readability."
         },
         "hero": {
           "asset": "images/thumbnails/heroes/protein-ai-pipeline-hero.png",
@@ -138,7 +138,7 @@
           "asset": "images/thumbnails/reels/grocery-retail-consumer-analytics-reel.png",
           "status": "derived",
           "purpose": "recognition",
-          "note": "Recognition: projects-reel crop can diverge from homepage if needed."
+          "note": "Recognition: chart-first crop selected for quick reel scanning."
         },
         "hero": {
           "asset": "images/thumbnails/heroes/grocery-retail-consumer-analytics-hero.png",
