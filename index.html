@@ -51,8 +51,8 @@
           FEATURED REEL (Architectural note)
           - Purpose: a curated reel of recruiter-facing hero visuals. Prioritize implementation moments (UI, gameplay, diagrams, charts, identity boards).
           - Curation rules:
-            * Use `images/thumbnails/*-hero.png` for tight hero crops (3:2). Avoid full poster previews on the homepage.
-            * Update `thumbnail-map.json` only after all hero assets are placed and verified locally (atomic commit).
+            * Use `images/thumbnails/homepage/*-home.png` for hook crops. Do not reuse detail-page heroes here.
+            * Update the context entry in `thumbnail-map.json` only after all assets are placed and verified locally.
           - Placement: this reel is intentionally separate from the supporting archive; featured projects should be the highest-impact evidence.
         -->
               <a class="button secondary" href="projects.html">View All Work</a>
@@ -91,7 +91,7 @@
           </div>
           <div class="project-grid" data-reel>
             <a class="project-card" href="featured/protein-ai-pipeline.html">
-            <img class="thumb protein-ai-thumb light-artifact-thumb" src="images/thumbnails/protein-ai-pipeline-card-refined.png" alt="Protein AI Pipeline protein visuals and flowchart crop">
+            <img class="thumb protein-ai-thumb light-artifact-thumb" src="images/thumbnails/homepage/protein-ai-pipeline-home.png" alt="Protein AI Pipeline protein visuals and flowchart crop">
             <div class="project-body">
               <h3>Protein AI Pipeline</h3>
               <p>Research implementation connecting ESM-3 embeddings, protein visuals, BLIP-2 captions, and GO similarity evaluation.</p>
@@ -99,7 +99,7 @@
             </div>
             </a>
             <a class="project-card" href="featured/mabi-ai.html">
-            <img class="thumb" src="images/thumbnails/mabi-ai-hero.png" alt="Mabi AI legacy XML behavior logic thumbnail">
+            <img class="thumb" src="images/thumbnails/homepage/mabi-ai-home.png" alt="Mabi AI legacy XML behavior logic thumbnail">
             <div class="project-body">
               <h3>Mabi AI</h3>
               <p>Legacy Mabinogi pet AI project using rule-based XML behavior logic and in-game compatibility testing.</p>
@@ -107,7 +107,7 @@
             </div>
             </a>
             <a class="project-card" href="featured/pixel-progression.html">
-            <img class="thumb artifact-thumb" src="images/thumbnails/pixel-progression-gameplay-hero.png" alt="Pixel Progression gameplay screen with platforms and player">
+            <img class="thumb artifact-thumb" src="images/thumbnails/homepage/pixel-progression-home.png" alt="Pixel Progression gameplay screen with platforms and player">
             <div class="project-body">
               <h3>Pixel Progression</h3>
               <p>Collaborative PHP and JavaScript game project with auth, saves, scores, and gameplay systems.</p>
@@ -115,7 +115,7 @@
             </div>
             </a>
             <a class="project-card" href="featured/minesweeper-game.html">
-            <img class="thumb" src="images/thumbnails/minesweeper-gameplay-hero.png" alt="Minesweeper revealed gameplay board">
+            <img class="thumb" src="images/thumbnails/homepage/minesweeper-game-home.png" alt="Minesweeper revealed gameplay board">
             <div class="project-body">
               <h3>Minesweeper Game</h3>
               <p>Interactive game logic with tile states, board generation, and player feedback.</p>
@@ -123,7 +123,7 @@
             </div>
             </a>
             <a class="project-card" href="featured/opioid-prescribing-risk-analysis.html">
-            <img class="thumb opioid-thumb" src="images/thumbnails/opioid-prescribing-risk-card-refined.png" alt="Opioid prescribing risk analysis findings and chart crop">
+            <img class="thumb opioid-thumb" src="images/thumbnails/homepage/opioid-prescribing-risk-analysis-home.png" alt="Opioid prescribing risk analysis findings and chart crop">
             <div class="project-body">
               <h3>Opioid Prescribing Risk Analysis</h3>
               <p>Healthcare data analysis using public prescribing datasets and model interpretation.</p>
@@ -131,7 +131,7 @@
             </div>
             </a>
             <a class="project-card" href="featured/grocery-retail-consumer-analytics.html">
-            <img class="thumb grocery-thumb" src="images/thumbnails/grocery-retail-consumer-card-refined.png" alt="Grocery retail analytics chart-forward poster crop">
+            <img class="thumb grocery-thumb" src="images/thumbnails/homepage/grocery-retail-consumer-analytics-home.png" alt="Grocery retail analytics chart-forward poster crop">
             <div class="project-body">
               <h3>Grocery Retail Consumer Analytics</h3>
               <p>Consumer segmentation and retail insight presentation built from survey data.</p>
@@ -149,7 +149,7 @@
             </div>
             </a>
             <a class="project-card" href="featured/battleship-game.html">
-            <img class="thumb" src="images/thumbnails/battleship-gameplay-hero.png" alt="Battleship terminal gameplay board">
+            <img class="thumb" src="images/thumbnails/homepage/battleship-game-home.png" alt="Battleship terminal gameplay board">
             <div class="project-body">
               <h3>Battleship Game</h3>
               <p>Java game project with board logic, OOP structure, and packaged play.</p>
@@ -157,7 +157,7 @@
             </div>
             </a>
             <a class="project-card" href="featured/html-resume-portfolio.html">
-            <div class="visual-thumb web-thumb" aria-label="HTML resume portfolio preview"><div class="thumb-art browser-preview" aria-hidden="true"><span class="browser-bar"></span><span class="browser-hero"></span><span class="browser-card"></span><span class="phone-frame"></span></div></div>
+            <img class="thumb artifact-thumb" src="images/thumbnails/homepage/html-resume-portfolio-home.png" alt="Rendered HTML resume portfolio page screenshot">
             <div class="project-body">
               <h3>HTML Resume Portfolio</h3>
               <p>Responsive resume foundation refined into the current portfolio system.</p>
@@ -173,7 +173,7 @@
             </div>
             </a>
             <a class="project-card" href="featured/data-collab-room-studio.html">
-            <img class="thumb artifact-thumb light-artifact-thumb branding-thumb" src="images/thumbnails/data-collab-room-studio-hero-refined.png" alt="Data Collaboration Room Studio logo system preview">
+            <img class="thumb artifact-thumb light-artifact-thumb" src="images/thumbnails/homepage/data-collaboration-room-studio-home.png" alt="Data Collaboration Room Studio capstone title slide preview">
             <div class="project-body">
               <h3>Data Collaboration Room Studio</h3>
               <p>Studio consultation and capstone materials for collaborative technical space design.</p>
@@ -181,7 +181,7 @@
             </div>
             </a>
             <a class="project-card" href="featured/env-design.html">
-            <img class="thumb" src="images/thumbnails/env-design-card-refined.png" alt="Mount Rainier ecosystem illustration crop">
+            <img class="thumb" src="images/thumbnails/homepage/env-design-home.png" alt="Mount Rainier ecosystem illustration crop">
             <div class="project-body">
               <h3>Env Design</h3>
               <p>Environmental design and visual composition artifact for the Mount Rainier Paradise Area ecosystem.</p>

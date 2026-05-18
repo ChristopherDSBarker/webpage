@@ -1,298 +1,741 @@
 {
   "schema": {
-    "purpose": "Repository-driven thumbnail source map for portfolio reels.",
+    "purpose": "Context-aware thumbnail source map for rendered portfolio visuals.",
+    "principle": "Context determines crop. A homepage hook, projects-page reel card, and detail-page hero should be mapped independently.",
+    "contexts": {
+      "homepage": {
+        "goal": "hook",
+        "needs": [
+          "strongest single focal point",
+          "highest contrast",
+          "fastest readability",
+          "simplest composition"
+        ]
+      },
+      "reel": {
+        "goal": "recognition",
+        "needs": [
+          "project identity",
+          "readable evidence",
+          "neighboring-card rhythm"
+        ]
+      },
+      "hero": {
+        "goal": "depth",
+        "needs": [
+          "fuller project context",
+          "richer evidence",
+          "implementation proof"
+        ]
+      }
+    },
     "status_values": [
       "artifact",
       "derived",
       "fallback"
     ],
     "selection_order": [
-      "hero.* or thumbnail.*",
+      "real gameplay",
+      "real UI",
+      "charts/results",
+      "pipeline diagrams",
+      "exported design boards",
       "logos",
-      "posters",
-      "screenshots",
-      "gameplay captures",
-      "notebook visualizations",
-      "exported sketches",
-      "PDF previews",
-      "generated fallback graphics"
+      "CSS fallback covers"
     ]
   },
   "featured": {
     "protein-ai-pipeline": {
       "title": "Protein AI Pipeline",
-      "thumbnail": "images/thumbnails/protein-ai-pipeline-card-refined.png",
       "source_asset": "assets/supporting/design/bridging-biology-and-ai-understanding.pdf + https://github.com/Cao-Labs/lutesAI2025/tree/main/ChrisB",
       "status": "derived",
+      "contexts": {
+        "homepage": {
+          "asset": "images/thumbnails/homepage/protein-ai-pipeline-home.png",
+          "status": "derived",
+          "purpose": "hook",
+          "note": "Hook: tighter card crop for fast protein/pipeline recognition."
+        },
+        "reel": {
+          "asset": "images/thumbnails/reels/protein-ai-pipeline-reel.png",
+          "status": "derived",
+          "purpose": "recognition",
+          "note": "Recognition: project-card crop kept separate from detail evidence."
+        },
+        "hero": {
+          "asset": "images/thumbnails/heroes/protein-ai-pipeline-hero.png",
+          "status": "derived",
+          "purpose": "depth",
+          "note": "Depth: fuller research-poster context for the dedicated page."
+        }
+      },
       "next_best_asset": "direct pipeline output or matrix visualization if available"
     },
     "mabi-ai": {
       "title": "Mabi AI",
-      "thumbnail": "images/thumbnails/mabi-ai-hero.png",
       "source_asset": "assets/featured/mabi-ai/FinalAIMarkdown.html + https://github.com/ChristopherDSBarker/Mabinogi.git + https://www.youtube.com/watch?v=BcLEQsy83Dw&t=11s",
       "status": "derived",
+      "contexts": {
+        "homepage": {
+          "asset": "images/thumbnails/homepage/mabi-ai-home.png",
+          "status": "derived",
+          "purpose": "hook",
+          "note": "Hook: readable XML/game-AI cue at card scale."
+        },
+        "reel": {
+          "asset": "images/thumbnails/reels/mabi-ai-reel.png",
+          "status": "derived",
+          "purpose": "recognition",
+          "note": "Recognition: same evidence isolated for projects-page tuning."
+        },
+        "hero": {
+          "asset": "images/thumbnails/heroes/mabi-ai-hero.png",
+          "status": "derived",
+          "purpose": "depth",
+          "note": "Depth: full legacy behavior-logic preview."
+        }
+      },
       "next_best_asset": "in-game demo still or exported rule-editor screenshot if available"
     },
     "opioid-prescribing-risk-analysis": {
       "title": "Opioid Prescribing Risk Analysis",
-      "thumbnail": "images/thumbnails/opioid-prescribing-risk-card-refined.png",
       "source_asset": "images/opioid-prescribing-risk-poster-refined.png",
       "status": "derived",
+      "contexts": {
+        "homepage": {
+          "asset": "images/thumbnails/homepage/opioid-prescribing-risk-analysis-home.png",
+          "status": "derived",
+          "purpose": "hook",
+          "note": "Hook: chart/result crop instead of full poster compression."
+        },
+        "reel": {
+          "asset": "images/thumbnails/reels/opioid-prescribing-risk-analysis-reel.png",
+          "status": "derived",
+          "purpose": "recognition",
+          "note": "Recognition: readable project evidence in the projects reel."
+        },
+        "hero": {
+          "asset": "images/thumbnails/heroes/opioid-prescribing-risk-analysis-hero.png",
+          "status": "derived",
+          "purpose": "depth",
+          "note": "Depth: full poster-style analysis evidence."
+        }
+      },
       "next_best_asset": "keep card crop; use full poster on detail page"
     },
     "grocery-retail-consumer-analytics": {
       "title": "Grocery Retail Consumer Analytics",
-      "thumbnail": "images/thumbnails/grocery-retail-consumer-card-refined.png",
       "source_asset": "images/grocery-retail-consumer-poster.png",
       "status": "derived",
+      "contexts": {
+        "homepage": {
+          "asset": "images/thumbnails/homepage/grocery-retail-consumer-analytics-home.png",
+          "status": "derived",
+          "purpose": "hook",
+          "note": "Hook: chart-forward crop for fast scan clarity."
+        },
+        "reel": {
+          "asset": "images/thumbnails/reels/grocery-retail-consumer-analytics-reel.png",
+          "status": "derived",
+          "purpose": "recognition",
+          "note": "Recognition: projects-reel crop can diverge from homepage if needed."
+        },
+        "hero": {
+          "asset": "images/thumbnails/heroes/grocery-retail-consumer-analytics-hero.png",
+          "status": "derived",
+          "purpose": "depth",
+          "note": "Depth: broader landscape poster crop for detail-page context."
+        }
+      },
       "next_best_asset": "dashboard screenshot if a stronger runtime visual becomes available"
     },
     "pixel-progression": {
       "title": "Pixel Progression",
-      "thumbnail": "images/thumbnails/pixel-progression-gameplay-hero.png",
       "source_asset": "assets/featured/pixel-progression/pixel-progression-gameplay.png",
       "status": "artifact",
+      "contexts": {
+        "homepage": {
+          "asset": "images/thumbnails/homepage/pixel-progression-home.png",
+          "status": "artifact",
+          "purpose": "hook",
+          "note": "Hook: real gameplay frame."
+        },
+        "reel": {
+          "asset": "images/thumbnails/reels/pixel-progression-reel.png",
+          "status": "artifact",
+          "purpose": "recognition",
+          "note": "Recognition: gameplay identity for the projects reel."
+        },
+        "hero": {
+          "asset": "images/thumbnails/heroes/pixel-progression-hero.png",
+          "status": "artifact",
+          "purpose": "depth",
+          "note": "Depth: gameplay evidence on the detail page."
+        }
+      },
       "next_best_asset": "additional gameplay or systems screenshot if needed"
     },
     "minesweeper-game": {
       "title": "Minesweeper Game",
-      "thumbnail": "images/thumbnails/minesweeper-gameplay-hero.png",
       "source_asset": "assets/minesweeper/screenshots/minesweeper-revealed-board.png",
       "status": "artifact",
+      "contexts": {
+        "homepage": {
+          "asset": "images/thumbnails/homepage/minesweeper-game-home.png",
+          "status": "artifact",
+          "purpose": "hook",
+          "note": "Hook: real revealed-board gameplay."
+        },
+        "reel": {
+          "asset": "images/thumbnails/reels/minesweeper-game-reel.png",
+          "status": "artifact",
+          "purpose": "recognition",
+          "note": "Recognition: board-state identity for the projects reel."
+        },
+        "hero": {
+          "asset": "images/thumbnails/heroes/minesweeper-game-hero.png",
+          "status": "artifact",
+          "purpose": "depth",
+          "note": "Depth: gameplay board evidence on the detail page."
+        }
+      },
       "next_best_asset": "tighter gameplay crop if needed"
     },
     "battleship-game": {
       "title": "Battleship Game",
-      "thumbnail": "images/thumbnails/battleship-gameplay-hero.png",
       "source_asset": "assets/featured/battleship-game/screenshots/battleship-gameplay.png",
       "status": "artifact",
+      "contexts": {
+        "homepage": {
+          "asset": "images/thumbnails/homepage/battleship-game-home.png",
+          "status": "artifact",
+          "purpose": "hook",
+          "note": "Hook: terminal gameplay board as immediate proof."
+        },
+        "reel": {
+          "asset": "images/thumbnails/reels/battleship-game-reel.png",
+          "status": "artifact",
+          "purpose": "recognition",
+          "note": "Recognition: Java game evidence for the projects reel."
+        },
+        "hero": {
+          "asset": "images/thumbnails/heroes/battleship-game-hero.png",
+          "status": "artifact",
+          "purpose": "depth",
+          "note": "Depth: terminal gameplay evidence on the detail page."
+        }
+      },
       "next_best_asset": "tighter terminal crop if needed"
     },
     "html-resume-portfolio": {
       "title": "HTML Resume Portfolio",
-      "thumbnail": "css-generated web/resume cover",
       "source_asset": "generated fallback",
       "status": "fallback",
+      "contexts": {
+        "homepage": {
+          "asset": "images/thumbnails/homepage/html-resume-portfolio-home.png",
+          "status": "artifact",
+          "purpose": "hook",
+          "note": "Hook: real rendered browser screenshot instead of fallback cover."
+        },
+        "reel": {
+          "asset": "images/thumbnails/reels/html-resume-portfolio-reel.png",
+          "status": "artifact",
+          "purpose": "recognition",
+          "note": "Recognition: browser UI evidence for the projects reel."
+        },
+        "hero": {
+          "asset": "images/thumbnails/heroes/html-resume-portfolio-hero.png",
+          "status": "artifact",
+          "purpose": "depth",
+          "note": "Depth: rendered HTML portfolio screenshot on the detail page."
+        }
+      },
       "next_best_asset": "browser screenshot"
     },
     "ai-caption-generator": {
       "title": "AI Caption Generator",
-      "thumbnail": "css-generated AI app cover",
       "source_asset": "generated fallback",
       "status": "fallback",
+      "contexts": {
+        "homepage": {
+          "asset": "css-generated AI app cover",
+          "status": "fallback",
+          "purpose": "hook",
+          "note": "Hook gap: no real app/output screenshot is currently mapped."
+        },
+        "reel": {
+          "asset": "css-generated AI app cover",
+          "status": "fallback",
+          "purpose": "recognition",
+          "note": "Recognition gap: replace only when a real Streamlit/upload-output screenshot exists."
+        },
+        "hero": {
+          "asset": "css-generated AI app cover",
+          "status": "fallback",
+          "purpose": "depth",
+          "note": "Depth gap: no real detail-page hero artifact is mapped yet."
+        }
+      },
       "next_best_asset": "app upload/output screenshot"
     },
     "gan-discord-bot": {
       "title": "GAN Discord Bot",
-      "thumbnail": "css-generated Discord bot cover",
       "source_asset": "generated fallback",
       "status": "fallback",
+      "contexts": {
+        "homepage": {
+          "asset": "css-generated Discord bot cover",
+          "status": "fallback",
+          "purpose": "hook",
+          "note": "Hook gap: no real Discord interaction/output screenshot is currently mapped."
+        },
+        "reel": {
+          "asset": "css-generated Discord bot cover",
+          "status": "fallback",
+          "purpose": "recognition",
+          "note": "Recognition gap: replace only when real bot evidence exists."
+        },
+        "hero": {
+          "asset": "css-generated Discord bot cover",
+          "status": "fallback",
+          "purpose": "depth",
+          "note": "Depth gap: no real detail-page hero artifact is mapped yet."
+        }
+      },
       "next_best_asset": "bot output screenshot"
     },
     "data-collab-room-studio": {
       "title": "Data Collaboration Room Studio",
-      "thumbnail": "images/thumbnails/data-collab-room-studio-hero-refined.png",
       "source_asset": "assets/featured/data-collab-room-studio/room-studio-logo.pdf",
       "status": "derived",
+      "contexts": {
+        "homepage": {
+          "asset": "images/thumbnails/homepage/data-collaboration-room-studio-home.png",
+          "status": "derived",
+          "purpose": "hook",
+          "note": "Hook: stronger capstone/title-slide evidence rather than pure logo emphasis."
+        },
+        "reel": {
+          "asset": "images/thumbnails/reels/data-collaboration-room-studio-reel.png",
+          "status": "derived",
+          "purpose": "recognition",
+          "note": "Recognition: projects-reel evidence separated from the detail hero."
+        },
+        "hero": {
+          "asset": "images/thumbnails/heroes/data-collaboration-room-studio-hero.png",
+          "status": "derived",
+          "purpose": "depth",
+          "note": "Depth: fuller studio/capstone package title slide on detail page."
+        }
+      },
       "next_best_asset": "capstone presentation crop or studio mockup"
     },
     "env-design": {
       "title": "Env Design",
-      "thumbnail": "images/thumbnails/env-design-card-refined.png",
       "source_asset": "assets/featured/env-design/env-design-final.png",
       "status": "artifact",
+      "contexts": {
+        "homepage": {
+          "asset": "images/thumbnails/homepage/env-design-home.png",
+          "status": "artifact",
+          "purpose": "hook",
+          "note": "Hook: landscape crop of the environmental design board."
+        },
+        "reel": {
+          "asset": "images/thumbnails/reels/env-design-reel.png",
+          "status": "artifact",
+          "purpose": "recognition",
+          "note": "Recognition: projects-reel crop isolated for future tuning."
+        },
+        "hero": {
+          "asset": "images/thumbnails/heroes/env-design-hero.png",
+          "status": "artifact",
+          "purpose": "depth",
+          "note": "Depth: full environmental design board on the detail page."
+        }
+      },
       "next_best_asset": "keep landscape card crop; use full board on detail page"
     }
   },
   "supporting": {
     "grid-system-dynamic-composition": {
       "title": "Grid System Dynamic Composition",
-      "thumbnail": "images/thumbnails/grid-system-dynamic-composition-card-refined.png",
       "source_asset": "assets/supporting/design/grid-system-dynamic-composition.pdf",
       "status": "derived",
+      "contexts": {
+        "reel": {
+          "asset": "images/thumbnails/reels/grid-system-dynamic-composition-reel.png",
+          "status": "derived",
+          "purpose": "recognition",
+          "note": "Supporting-project reel visual isolated under the projects-page reel context."
+        }
+      },
       "next_best_asset": "stronger PDF crop if needed"
     },
     "package-series-design": {
       "title": "Package Series Design",
-      "thumbnail": "images/thumbnails/package-series-design-card-refined.png",
       "source_asset": "assets/supporting/design/package-series-design.pdf",
       "status": "derived",
+      "contexts": {
+        "reel": {
+          "asset": "images/thumbnails/reels/package-series-design-reel.png",
+          "status": "derived",
+          "purpose": "recognition",
+          "note": "Supporting-project reel visual isolated under the projects-page reel context."
+        }
+      },
       "next_best_asset": "package mockup or presentation crop"
     },
     "sidiya-branding-system": {
       "title": "SiDiYa Branding System",
-      "thumbnail": "images/thumbnails/sidiya-branding-system-card-light.png",
       "source_asset": "assets/brand/sidiya-emblem-final.png",
       "status": "artifact",
+      "contexts": {
+        "reel": {
+          "asset": "images/thumbnails/reels/sidiya-branding-system-reel.png",
+          "status": "artifact",
+          "purpose": "recognition",
+          "note": "Supporting-project reel visual isolated under the projects-page reel context."
+        }
+      },
       "next_best_asset": "master board crop or typeface study composite"
     },
     "typography-poster-design": {
       "title": "Typography Poster Design",
-      "thumbnail": "images/thumbnails/typography-poster-design-card-refined.png",
       "source_asset": "assets/supporting/design/typography-poster-design.pdf",
       "status": "derived",
+      "contexts": {
+        "reel": {
+          "asset": "images/thumbnails/reels/typography-poster-design-reel.png",
+          "status": "derived",
+          "purpose": "recognition",
+          "note": "Supporting-project reel visual isolated under the projects-page reel context."
+        }
+      },
       "next_best_asset": "poster crop if needed"
     },
     "favorite-things-magazine-spread": {
       "title": "Favorite Things Magazine Spread",
-      "thumbnail": "images/thumbnails/favorite-things-magazine-spread-card-refined.png",
       "source_asset": "assets/supporting/design/favorite-things-magazine-spread.pdf",
       "status": "derived",
+      "contexts": {
+        "reel": {
+          "asset": "images/thumbnails/reels/favorite-things-magazine-spread-reel.png",
+          "status": "derived",
+          "purpose": "recognition",
+          "note": "Supporting-project reel visual isolated under the projects-page reel context."
+        }
+      },
       "next_best_asset": "spread crop if needed"
     },
     "interactive-number-learning-publication": {
       "title": "Interactive Number Learning Publication",
-      "thumbnail": "images/thumbnails/interactive-number-learning-publication-card-refined.png",
       "source_asset": "assets/supporting/design/interactive-number-learning-publication.pdf",
       "status": "derived",
+      "contexts": {
+        "reel": {
+          "asset": "images/thumbnails/reels/interactive-number-learning-publication-reel.png",
+          "status": "derived",
+          "purpose": "recognition",
+          "note": "Supporting-project reel visual isolated under the projects-page reel context."
+        }
+      },
       "next_best_asset": "publication spread crop"
     },
     "wang-center-collab-sticker": {
       "title": "Wang Center Collab Sticker",
-      "thumbnail": "assets/supporting/media/wang-center-collab.jpeg",
       "source_asset": "assets/supporting/media/wang-center-collab.jpeg",
       "status": "artifact",
+      "contexts": {
+        "reel": {
+          "asset": "images/thumbnails/reels/wang-center-collab-sticker-reel.jpeg",
+          "status": "artifact",
+          "purpose": "recognition",
+          "note": "Supporting-project reel visual isolated under the projects-page reel context."
+        }
+      },
       "next_best_asset": "crop if needed"
     },
     "llm-bias-detection-classifier": {
       "title": "LLM Bias Detection Classifier",
-      "thumbnail": "css-generated data cover",
       "source_asset": "generated fallback",
       "status": "fallback",
+      "contexts": {
+        "reel": {
+          "asset": "css-generated data cover",
+          "status": "fallback",
+          "purpose": "recognition",
+          "note": "Supporting-project reel visual; promote to hero context only when a dedicated stronger detail artifact is selected."
+        }
+      },
       "next_best_asset": "classifier report chart or output screenshot"
     },
     "stock-market-visualization-analysis": {
       "title": "Stock Market Visualization Analysis",
-      "thumbnail": "css-generated data cover",
       "source_asset": "generated fallback",
       "status": "fallback",
+      "contexts": {
+        "reel": {
+          "asset": "css-generated data cover",
+          "status": "fallback",
+          "purpose": "recognition",
+          "note": "Supporting-project reel visual; promote to hero context only when a dedicated stronger detail artifact is selected."
+        }
+      },
       "next_best_asset": "chart export from R report"
     },
     "corgis-predictive-data-analysis": {
       "title": "CORGIS Predictive Data Analysis",
-      "thumbnail": "css-generated data cover",
       "source_asset": "generated fallback",
       "status": "fallback",
+      "contexts": {
+        "reel": {
+          "asset": "css-generated data cover",
+          "status": "fallback",
+          "purpose": "recognition",
+          "note": "Supporting-project reel visual; promote to hero context only when a dedicated stronger detail artifact is selected."
+        }
+      },
       "next_best_asset": "notebook chart crop"
     },
     "logistic-regression-analysis": {
       "title": "Logistic Regression Analysis",
-      "thumbnail": "css-generated statistics cover",
       "source_asset": "generated fallback",
       "status": "fallback",
+      "contexts": {
+        "reel": {
+          "asset": "css-generated statistics cover",
+          "status": "fallback",
+          "purpose": "recognition",
+          "note": "Supporting-project reel visual; promote to hero context only when a dedicated stronger detail artifact is selected."
+        }
+      },
       "next_best_asset": "ROC/confusion matrix/notebook output"
     },
     "decision-tree-analysis": {
       "title": "Decision Tree Analysis",
-      "thumbnail": "css-generated tree cover",
       "source_asset": "generated fallback",
       "status": "fallback",
+      "contexts": {
+        "reel": {
+          "asset": "css-generated tree cover",
+          "status": "fallback",
+          "purpose": "recognition",
+          "note": "Supporting-project reel visual; promote to hero context only when a dedicated stronger detail artifact is selected."
+        }
+      },
       "next_best_asset": "tree diagram export"
     },
     "neural-network-analysis": {
       "title": "Neural Network Analysis",
-      "thumbnail": "css-generated neural cover",
       "source_asset": "generated fallback",
       "status": "fallback",
+      "contexts": {
+        "reel": {
+          "asset": "css-generated neural cover",
+          "status": "fallback",
+          "purpose": "recognition",
+          "note": "Supporting-project reel visual; promote to hero context only when a dedicated stronger detail artifact is selected."
+        }
+      },
       "next_best_asset": "training curve or architecture diagram"
     },
     "multiple-regression-analysis": {
       "title": "Multiple Regression Analysis",
-      "thumbnail": "css-generated regression cover",
       "source_asset": "generated fallback",
       "status": "fallback",
+      "contexts": {
+        "reel": {
+          "asset": "css-generated regression cover",
+          "status": "fallback",
+          "purpose": "recognition",
+          "note": "Supporting-project reel visual; promote to hero context only when a dedicated stronger detail artifact is selected."
+        }
+      },
       "next_best_asset": "coefficient/residual chart export"
     },
     "csci367-game-systems": {
       "title": "CSCI 367 Game Systems",
-      "thumbnail": "images/thumbnails/csci367-game-systems-evidence.png",
       "source_asset": "https://github.com/distcrypto/csci367_4",
       "status": "derived",
+      "contexts": {
+        "reel": {
+          "asset": "images/thumbnails/reels/csci367-game-systems-reel.png",
+          "status": "derived",
+          "purpose": "recognition",
+          "note": "Supporting-project reel visual isolated under the projects-page reel context."
+        }
+      },
       "next_best_asset": "real gameplay or UI screenshot if available"
     },
     "spelling-bee-puzzle": {
       "title": "Spelling Bee Puzzle",
-      "thumbnail": "css-generated puzzle cover",
       "source_asset": "generated fallback",
       "status": "fallback",
+      "contexts": {
+        "reel": {
+          "asset": "css-generated puzzle cover",
+          "status": "fallback",
+          "purpose": "recognition",
+          "note": "Supporting-project reel visual; promote to hero context only when a dedicated stronger detail artifact is selected."
+        }
+      },
       "next_best_asset": "UI or output screenshot"
     },
     "mountain-terrain-pathfinding": {
       "title": "Mountain Terrain Pathfinding",
-      "thumbnail": "css-generated terrain cover",
       "source_asset": "generated fallback",
       "status": "fallback",
+      "contexts": {
+        "reel": {
+          "asset": "css-generated terrain cover",
+          "status": "fallback",
+          "purpose": "recognition",
+          "note": "Supporting-project reel visual; promote to hero context only when a dedicated stronger detail artifact is selected."
+        }
+      },
       "next_best_asset": "terrain path screenshot"
     },
     "image-tool": {
       "title": "Image Tool",
-      "thumbnail": "css-generated image tool cover",
       "source_asset": "generated fallback",
       "status": "fallback",
+      "contexts": {
+        "reel": {
+          "asset": "css-generated image tool cover",
+          "status": "fallback",
+          "purpose": "recognition",
+          "note": "Supporting-project reel visual; promote to hero context only when a dedicated stronger detail artifact is selected."
+        }
+      },
       "next_best_asset": "before/after image comparison"
     },
     "abstract-art": {
       "title": "Abstract Art",
-      "thumbnail": "css-generated abstract cover",
       "source_asset": "generated fallback",
       "status": "fallback",
+      "contexts": {
+        "reel": {
+          "asset": "css-generated abstract cover",
+          "status": "fallback",
+          "purpose": "recognition",
+          "note": "Supporting-project reel visual; promote to hero context only when a dedicated stronger detail artifact is selected."
+        }
+      },
       "next_best_asset": "rendered Java canvas screenshot"
     },
     "regex-pattern-analyzer": {
       "title": "Regex Pattern Analyzer",
-      "thumbnail": "css-generated regex cover",
       "source_asset": "generated fallback",
       "status": "fallback",
+      "contexts": {
+        "reel": {
+          "asset": "css-generated regex cover",
+          "status": "fallback",
+          "purpose": "recognition",
+          "note": "Supporting-project reel visual; promote to hero context only when a dedicated stronger detail artifact is selected."
+        }
+      },
       "next_best_asset": "pattern/output screenshot"
     },
     "processing-visual-experiment": {
       "title": "Processing Visual Experiment",
-      "thumbnail": "css-generated creative cover",
       "source_asset": "generated fallback",
       "status": "fallback",
+      "contexts": {
+        "reel": {
+          "asset": "css-generated creative cover",
+          "status": "fallback",
+          "purpose": "recognition",
+          "note": "Supporting-project reel visual; promote to hero context only when a dedicated stronger detail artifact is selected."
+        }
+      },
       "next_best_asset": "exported sketch frame"
     },
     "array-visualization-study": {
       "title": "Array Visualization Study",
-      "thumbnail": "css-generated array cover",
       "source_asset": "generated fallback",
       "status": "fallback",
+      "contexts": {
+        "reel": {
+          "asset": "css-generated array cover",
+          "status": "fallback",
+          "purpose": "recognition",
+          "note": "Supporting-project reel visual; promote to hero context only when a dedicated stronger detail artifact is selected."
+        }
+      },
       "next_best_asset": "exported sketch frame"
     },
     "animal-function-animation": {
       "title": "Animal Function Animation",
-      "thumbnail": "css-generated motion cover",
       "source_asset": "generated fallback",
       "status": "fallback",
+      "contexts": {
+        "reel": {
+          "asset": "css-generated motion cover",
+          "status": "fallback",
+          "purpose": "recognition",
+          "note": "Supporting-project reel visual; promote to hero context only when a dedicated stronger detail artifact is selected."
+        }
+      },
       "next_best_asset": "GIF or animation still"
     },
     "random-circles-generator": {
       "title": "Random Circles Generator",
-      "thumbnail": "css-generated circles cover",
       "source_asset": "generated fallback",
       "status": "fallback",
+      "contexts": {
+        "reel": {
+          "asset": "css-generated circles cover",
+          "status": "fallback",
+          "purpose": "recognition",
+          "note": "Supporting-project reel visual; promote to hero context only when a dedicated stronger detail artifact is selected."
+        }
+      },
       "next_best_asset": "exported generated circles frame"
     },
     "animated-short-scene": {
       "title": "Animated Short Scene",
-      "thumbnail": "assets/supporting/animated-short-scene.gif",
       "source_asset": "assets/supporting/animated-short-scene.gif",
       "status": "artifact",
+      "contexts": {
+        "reel": {
+          "asset": "images/thumbnails/reels/animated-short-scene-reel.gif",
+          "status": "artifact",
+          "purpose": "recognition",
+          "note": "Supporting-project reel visual isolated under the projects-page reel context."
+        }
+      },
       "next_best_asset": "keep current GIF"
     },
     "community-documentary-media": {
       "title": "Community Documentary Media",
-      "route": "supporting/short-film-antiracist-exhibit.html",
-      "thumbnail": "css-generated media title card",
       "source_asset": "generated fallback; same project as short-film-antiracist-exhibit route",
       "status": "fallback",
-      "next_best_asset": "owned still frame"
+      "contexts": {
+        "reel": {
+          "asset": "css-generated media title card",
+          "status": "fallback",
+          "purpose": "recognition",
+          "note": "Supporting-project reel visual; promote to hero context only when a dedicated stronger detail artifact is selected."
+        }
+      },
+      "next_best_asset": "owned still frame",
+      "route": "supporting/short-film-antiracist-exhibit.html"
     },
     "bjug-day-campaign": {
       "title": "BJUG Day Campaign",
-      "thumbnail": "css-generated campaign title card",
       "source_asset": "generated fallback",
       "status": "fallback",
+      "contexts": {
+        "reel": {
+          "asset": "css-generated campaign title card",
+          "status": "fallback",
+          "purpose": "recognition",
+          "note": "Supporting-project reel visual; promote to hero context only when a dedicated stronger detail artifact is selected."
+        }
+      },
       "next_best_asset": "owned campaign still"
     }
   }
