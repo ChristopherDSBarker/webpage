@@ -21,6 +21,8 @@ are deployable.
 best_works / portfolio = canonical source, archive, and knowledge layer
 webpage / portfolio-site = deployable recruiter-facing visualization layer
 core_knowledge = governance and semantic system layer
+audits = temporary reports and warnings, not canonical truth
+docs = reference and support material
 ```
 
 The visible portfolio is the product. Core knowledge exists to keep AI work

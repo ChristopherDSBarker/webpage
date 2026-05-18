@@ -67,8 +67,10 @@ portfolio-site/
 │       ├── data-collab-room-logo-system-hero.png
 │       └── ...
 ├── thumbnail-map.json                             (source-of-truth)
-├── thumbnail-map-doc.md                           (this file)
-├── thumbnail-curation-architecture.md             (priority and crop rules)
+├── docs/
+│   └── thumbnails/
+│       ├── thumbnail-map-doc.md                   (this file)
+│       └── thumbnail-curation-architecture.md     (priority and crop rules)
 ├── index.html                                     (featured reel)
 ├── projects.html                                  (featured + supporting reels)
 └── css/styles.css                                 (visual system)
@@ -79,7 +81,7 @@ portfolio-site/
 ## Export Workflow
 
 Use this workflow only for replacements that are clearly stronger than the
-current thumbnail. See `thumbnail-curation-architecture.md` for the current
+current thumbnail. See `docs/thumbnails/thumbnail-curation-architecture.md` for the current
 priority queue.
 
 1. Choose a repo-owned source artifact: screenshot, chart export, poster crop,
@@ -330,8 +332,8 @@ git push origin main
 
 When changing this workflow, update:
 
-1. `thumbnail-curation-architecture.md` — If export priorities or crop rules change
-2. `thumbnail-map-doc.md` — This file, if routing or deployment steps change
+1. `docs/thumbnails/thumbnail-curation-architecture.md` — If export priorities or crop rules change
+2. `docs/thumbnails/thumbnail-map-doc.md` — This file, if routing or deployment steps change
 3. Architectural comments in `css/styles.css` — If visual system changes
 4. `README.md` — If high-level governance changes
 
@@ -372,7 +374,7 @@ When changing this workflow, update:
 ## Related Files
 
 - **`thumbnail-map.json`** — Source-of-truth asset routing (ONLY update after PNG files verified)
-- **`thumbnail-curation-architecture.md`** — Canonical thumbnail priorities, crop rules, and focal-positioning guidance
+- **`docs/thumbnails/thumbnail-curation-architecture.md`** — Canonical thumbnail priorities, crop rules, and focal-positioning guidance
 - **`css/styles.css`** — Visual system (`.project-grid`, `.thumb`, `.visual-thumb` implementation)
 - **`index.html` & `projects.html`** — HTML reel rendering (featured + supporting)
 
@@ -396,4 +398,4 @@ The shift from engineering-constrained to curation-constrained means visual sele
 
 **Last Updated**: Current session  
 **Maintainer**: Portfolio curation system  
-**Questions?** See `thumbnail-curation-architecture.md` or architectural comments in `css/styles.css`
+**Questions?** See `docs/thumbnails/thumbnail-curation-architecture.md` or architectural comments in `css/styles.css`

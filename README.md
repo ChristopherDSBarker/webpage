@@ -52,7 +52,20 @@ portfolio-site/
   featured/
   supporting/
   resume/
+  core_knowledge/
+  audits/
+  docs/
+  tools/
+  thumbnail-map.json
 ```
+
+## Documentation Layout
+
+- `README.md` and `AI_WORKFLOW.md` stay at the repo root for quick orientation.
+- `core_knowledge/` contains canonical rules that AI should obey before editing.
+- `audits/` contains temporary reports, warnings, parity checks, and review outputs.
+- `docs/` contains reference material such as GitHub mapping, inventory, thumbnail guidance, and content maps.
+- `thumbnail-map.json` remains at root because it is an operational data file used by the visible site.
 
 ## Content Layers
 
@@ -150,7 +163,7 @@ python3 tools/deployment_safe_audit.py
 
 ## GitHub Synchronization Rule
 
-Public GitHub repositories should be mapped through `github-repo-sync.md` before they are added to reels or project pages. GitHub links should reinforce existing project identities when possible. Collaborative repositories require contribution clarification and should not imply sole ownership.
+Public GitHub repositories should be mapped through `docs/github/github-repo-sync.md` before they are added to reels or project pages. GitHub links should reinforce existing project identities when possible. Collaborative repositories require contribution clarification and should not imply sole ownership.
 
 Contribution framing should be explicit. Use labels such as `Lead developer`, `Research implementation`, `Physics systems / gameplay mechanics`, `Solo / Full implementation`, or `Archive/reference` so collaborative work is neither hidden nor overstated.
 
@@ -212,7 +225,7 @@ Some raw coursework/source files are preserved for archival transparency. Presen
 
 ## Publishing Checklist
 
-1. Review `portfolio-inventory.md` for missing assets or hidden work.
+1. Review `docs/inventory/portfolio-inventory.md` for missing assets or hidden work.
 2. Run `python3 tools/deployment_safe_audit.py`.
 3. Confirm all PDFs and image thumbnails resolve.
 4. Check mobile layout for homepage, projects, resume, and contact pages.

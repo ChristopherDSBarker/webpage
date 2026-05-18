@@ -14,10 +14,10 @@ This document treats the portfolio like a content database: projects are entitie
 | `about.html` | Short identity/context page | Footer |
 | `featured/*.html` | Dedicated featured project pages | Homepage reel, Projects reel, Projects directory |
 | `supporting/*.html` | Dedicated supporting project pages for media/sticker work | Supporting reel, Projects directory |
-| `portfolio-inventory.md` | Maintenance checklist and presentation roadmap | Projects directory |
-| `portfolio-thumbnail-audit.md` | Visual QA checklist for reel thumbnails and replacement priorities | Projects directory |
+| `docs/inventory/portfolio-inventory.md` | Maintenance checklist and presentation roadmap | Projects directory |
+| `audits/thumbnails/portfolio-thumbnail-audit.md` | Visual QA checklist for reel thumbnails and replacement priorities | Projects directory |
 | `thumbnail-map.json` | Operational thumbnail source map with artifact/derived/fallback status | Maintenance docs |
-| `github-repo-sync.md` | GitHub-to-portfolio placement audit and repo classification | Maintenance docs |
+| `docs/github/github-repo-sync.md` | GitHub-to-portfolio placement audit and repo classification | Maintenance docs |
 
 ## Source Inventory Counts
 

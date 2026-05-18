@@ -89,7 +89,7 @@ Interpretation:
 
 ### Metadata Drift
 
-`portfolio-project-directory.csv` has been refreshed against `thumbnail-map.json`.
+`../../docs/inventory/portfolio-project-directory.csv` has been refreshed against `../../thumbnail-map.json`.
 
 Current status:
 

@@ -100,11 +100,11 @@ Before generating or editing a project page, enumerate the folder contents and m
 
 Related tracking files:
 
-- `portfolio-content-map.md`
-- `portfolio-thumbnail-audit.md`
-- `portfolio-project-directory.csv`
+- `docs/mappings/portfolio-content-map.md`
+- `audits/thumbnails/portfolio-thumbnail-audit.md`
+- `docs/inventory/portfolio-project-directory.csv`
 - `thumbnail-map.json`
-- `github-repo-sync.md`
+- `docs/github/github-repo-sync.md`
 
 ## Status Definitions
 
@@ -290,4 +290,4 @@ Current deterministic asset audit:
 - Some technical studies still depend on CSS-generated thumbnails until real screenshots or notebook exports are available.
 - Some raw source links should eventually become small project pages with context, screenshots, and GitHub links.
 - Contact, GitHub, LinkedIn, and PDF resume links should be checked before every deployment.
-- GitHub repos should be mapped through `github-repo-sync.md` before adding new pages or reel cards.
+- GitHub repos should be mapped through `docs/github/github-repo-sync.md` before adding new pages or reel cards.

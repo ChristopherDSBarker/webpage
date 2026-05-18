@@ -14,7 +14,7 @@ the webpage contains at least one explicit artifact:
 - supporting reel card
 - dedicated `featured/*.html` page
 - dedicated `supporting/*.html` page
-- `portfolio-project-directory.csv` row
+- `docs/inventory/portfolio-project-directory.csv` row
 - `thumbnail-map.json` entry
 - resume page/link
 - intentional archive/internal classification
@@ -61,7 +61,7 @@ If an asset is not exposed, decide whether it is:
 
 Every reel card should have a corresponding `thumbnail-map.json` entry.
 
-Every important source project should have a `portfolio-project-directory.csv`
+Every important source project should have a `docs/inventory/portfolio-project-directory.csv`
 row unless it is intentionally archive/internal.
 
 `thumbnail-map.json` records current visual routing. It should not claim an

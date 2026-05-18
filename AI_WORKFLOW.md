@@ -29,6 +29,13 @@ Use this order for every portfolio task:
 Do not treat audits, markdown files, or workflow rules as the product. The
 visible portfolio is the product.
 
+## Documentation Architecture
+
+- `core_knowledge/` is canonical. Use it for rules and source-of-truth guidance.
+- `audits/` is temporary reporting. Do not treat old audit conclusions as truth without rechecking current files/rendered pages.
+- `docs/` is reference/support material. Use it for mappings, inventory, GitHub sync notes, and thumbnail process docs.
+- Keep the repo root minimal: `README.md`, `AI_WORKFLOW.md`, deployable pages/assets, and operational data such as `thumbnail-map.json`.
+
 ## Repository Confirmation
 
 Before changing anything, run:

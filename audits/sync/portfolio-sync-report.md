@@ -30,7 +30,7 @@ Scope:
 | Raw data/archive handling | Synced | CSV and ZIP targets are intentionally excluded from webpage deployment and referenced as source-archive material. |
 | Deployment safety | Synced | HTML references were validated against tracked files and `.gitignore` exclusions. |
 | Thumbnail governance | Partial | Artifact-backed thumbnails exist for posters, PDFs, GIF, sticker, identity emblem, CSCI logo, and room-studio logo; code/data studies still use CSS fallback thumbnails. |
-| GitHub contribution framing | Partial | AI Caption Generator, Protein AI Pipeline, and CSCI 367 Game Systems are linked; remaining GitHub repos are classified in `github-repo-sync.md` but not fully integrated into UI pages. |
+| GitHub contribution framing | Partial | AI Caption Generator, Protein AI Pipeline, and CSCI 367 Game Systems are linked; remaining GitHub repos are classified in `../../docs/github/github-repo-sync.md` but not fully integrated into UI pages. |
 
 ## Deployment-Safe Synchronization
 
@@ -147,6 +147,6 @@ Top-level canonical coverage:
 ## Next Surgical Sync Passes
 
 1. Replace CSS fallback thumbnails with repo-derived artifacts where possible.
-2. Add GitHub buttons and role labels one repo at a time from `github-repo-sync.md`.
+2. Add GitHub buttons and role labels one repo at a time from `../../docs/github/github-repo-sync.md`.
 3. Create stronger artifact pages only where source folders contain enough material to justify them.
 4. Keep raw datasets, ZIPs, and videos in `best_works`; do not duplicate them into `webpage`.
