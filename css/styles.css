@@ -468,7 +468,7 @@ p {
    
    Asset workflow: hero PNGs exported → placed in images/thumbnails/ → thumbnail-map.json
    updated atomically with verification. Never update JSON before files exist (prevents
-   placeholder drift). See thumbnail-map-doc.md for complete export + verification workflow.
+   placeholder drift). See docs/thumbnails/thumbnail-map-doc.md for complete export + verification workflow.
 */
 
 .project-grid {
@@ -631,7 +631,7 @@ p {
    
    Workflow: replace visual-thumbs with real PNGs as exports complete. Update
    thumbnail-map.json atomically after all exports verified in images/thumbnails/.
-   See thumbnail-map-doc.md for export + verification workflow. Critical: never update
+   See docs/thumbnails/thumbnail-map-doc.md for export + verification workflow. Critical: never update
    JSON before files exist (prevents placeholder drift).
 */
 
@@ -1887,7 +1887,7 @@ p {
    Result: Thumbnails read as curated hero moments with clear focal regions,
    not scaled-down documents with random center crops.
    
-   See thumbnail-curation-architecture.md for complete strategy, crop
+   See docs/thumbnails/thumbnail-curation-architecture.md for complete strategy, crop
    coordinates, and export priority roadmap.
 */
 
