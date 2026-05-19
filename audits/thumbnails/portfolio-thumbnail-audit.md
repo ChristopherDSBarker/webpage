@@ -4,7 +4,11 @@ Goal: every project card should have an original, portfolio-safe visual with con
 
 Operating principle: the audit should support the portfolio, not consume it. Prefer better warnings, clearer source-to-frontend mapping, and stronger visual evidence over new governance layers, recursive audits, or automation for its own sake.
 
-Thumbnail rule: every reel card must use one of these: poster, screenshot, UI mockup, diagram, logo, gameplay image, generated cover, branded title card, or original CSS/SVG cover.
+Thumbnail existence rule: every reel card must use one of these: poster, screenshot, UI mockup, diagram, logo, gameplay image, generated cover, branded title card, or original CSS/SVG cover.
+
+Reel readability rule: existence is not approval. A reel card passes visual QA
+only when it works at small scale, next to neighboring cards, during fast
+recruiter scanning.
 
 Recommended base ratio: 16:10 in the current reel system. 16:9 is also acceptable for future exported image assets, but cards should crop or pad consistently.
 
@@ -17,12 +21,47 @@ Recommended base ratio: 16:10 in the current reel system. 16:9 is also acceptabl
 - Preserve the dark navy, blue, and yellow portfolio palette.
 - Use category-specific fallback covers when real screenshots are not ready.
 
+## Reel Composition Rules
+
+A reel card is a hook and recognition cue. It is not a full project explanation,
+compressed report, or document archive.
+
+Good reel cards usually have:
+
+- one focal idea
+- one dominant visual shape
+- low text density
+- readable contrast
+- a recognizable silhouette or project identity
+- enough breathing room to survive next to neighboring cards
+
+Bad reel cards usually show:
+
+- full posters or full PDF pages
+- raw document pages
+- tiny unreadable charts
+- overly dense scientific or presentation boards
+- generic fallback covers next to evidence-heavy artifacts
+- gameplay screens zoomed too far out
+- title slides with weak focal hierarchy
+
+If a reel thumbnail is semantically accurate but visually unreadable at reel
+scale, prefer a simpler honest composition.
+
+## Reel Categories
+
+| Category | Good Reel Composition | Bad Reel Composition |
+|---|---|---|
+| Gameplay / UI | active interaction state, readable board, real app/output moment | entire screen, distant board, empty terminal, tiny interface |
+| Diagram / System | one system flow, result cluster, model/output relationship | full report, compressed pipeline poster, dense slide |
+| Artifact / Design | one composition moment, extracted crop, strong hierarchy | full poster, raw PDF page, full spread, text-heavy document |
+
 ## Thumbnail Selection Priority
 
 When choosing reel thumbnails, use this order:
 
-1. Real project artifacts already present in the curated repo: screenshots, logos, posters, exported sketches, gameplay captures, PDF previews, notebook visualizations, and UI captures.
-2. Derived project visuals: cropped PDF previews, extracted chart visuals, rendered outputs, or frames generated from owned project files.
+1. Real project artifacts already present in the curated repo: gameplay captures, UI captures, chart/result visuals, pipeline diagrams, exported design boards, logos, PDF previews, and notebook visualizations.
+2. Derived project visuals: cropped PDF previews, extracted chart visuals, rendered outputs, or frames generated from owned project files, but only when the crop becomes a reel composition rather than a full document page.
 3. Generated abstract thumbnails only when no project-specific media exists.
 
 Generated covers should never replace strong original project visuals already present in the repo.
@@ -87,27 +126,27 @@ Projects marked `fallback` should be upgraded only when a real repo-backed artif
 
 | Project | Current Thumbnail Status | Thumbnail Type | Visual Quality | Aspect Ratio | Missing Assets | Replacement Recommendation | Priority |
 |---|---|---|---|---|---|---|---|
-| Opioid Prescribing Risk Analysis | Present | Poster preview | Good | Consistent | More chart crops | Keep poster; add chart-detail alt thumbnail later | Medium |
-| Grocery Retail Consumer Analytics | Present | Poster/chart crop | Weak crop | Consistent | Dashboard/process screenshots | Refine to a stronger chart or poster crop; current image is real evidence but visually cramped | Medium |
-| Minesweeper Game | Upgraded | Gameplay screenshot | Good | Consistent | Optional tighter crop | Keep real gameplay evidence; crop only if scan quality needs polish | Low |
-| Battleship Game | Upgraded | Terminal gameplay screenshot | Good | Consistent | Optional tighter crop | Keep real gameplay evidence; avoid overstating runtime reliability | Low |
+| Opioid Prescribing Risk Analysis | Present | Poster preview | Review | Consistent | More chart crops | Prefer one chart/result cluster if full poster compresses at reel scale | Medium |
+| Grocery Retail Consumer Analytics | Present | Poster/chart crop | Weak crop | Consistent | Dashboard/process screenshots | Refine to a single insight graphic; current image is real evidence but visually dense | Medium |
+| Minesweeper Game | Upgraded | Gameplay screenshot | Review | Consistent | Optional tighter crop | Keep real gameplay evidence; verify board is not too zoomed out at reel scale | Low |
+| Battleship Game | Upgraded | Terminal gameplay screenshot | Review | Consistent | Optional tighter crop | Keep real gameplay evidence; reduce empty terminal space if it weakens scan clarity | Low |
 | HTML Resume Portfolio | Present | Original web/resume cover | Good fallback | Consistent | Responsive screenshots | Replace with browser mockup screenshot | Medium |
-| AI Caption Generator | Present | Original AI workflow cover | Good fallback | Consistent | App upload/output screenshots | Replace with UI screenshot and example captions | High |
-| GAN Discord Bot | Present | Original AI workflow cover | Good fallback | Consistent | Bot output examples | Replace with Discord interaction/output screenshot | Medium |
-| Data Collaboration Room Studio | Upgraded | Logo System PDF preview | Good | Consistent | Optional studio mockup crop | Keep repo-backed logo artifact; add presentation crop later if stronger | Low |
+| AI Caption Generator | Present | Original AI workflow cover | Intentional fallback | Consistent | App upload/output screenshots | Keep only as honest fallback; replace with real UI/output evidence when available | High |
+| GAN Discord Bot | Present | Original AI workflow cover | Intentional fallback | Consistent | Bot output examples | Keep only as honest fallback; replace with Discord interaction/output screenshot | Medium |
+| Data Collaboration Room Studio | Upgraded | Logo System PDF preview | Review | Consistent | Optional studio mockup crop | Avoid title-slide feel; prefer room/system identity if available | Medium |
 | Protein AI Pipeline | Present | Research poster / derived crop | Adequate | Consistent | Pipeline or matrix visualization | Keep only if mapping stays explicit: external Cao Labs workstream plus Bridging Biology And AI poster | Medium |
 | Mabi AI | Present | Rule/AI visual artifact | Good | Consistent | Optional in-game still | Keep unless a stronger in-game demo still is available | Low |
-| Env Design | Present | Final environmental design board | Good | Consistent | None urgent | Keep final PNG; source-note PNG is supporting evidence, not the card visual | Low |
+| Env Design | Present | Final environmental design board | Review | Consistent | None urgent | Prefer ecosystem/mountain focal composition over full educational poster | Medium |
 
 ## Supporting Reel Audit
 
 | Project | Current Thumbnail Status | Thumbnail Type | Visual Quality | Aspect Ratio | Missing Assets | Replacement Recommendation | Priority |
 |---|---|---|---|---|---|---|---|
-| Grid System Composition | Upgraded | Exported PDF preview | Good | Consistent | Stronger crop optional | Keep exported preview; refine crop later if needed | Low |
+| Grid System Composition | Upgraded | Exported PDF preview | Review | Consistent | Stronger crop optional | Extract one hierarchy/composition moment instead of raw poster page | Medium |
 | Package Series Design | Upgraded | Exported PDF preview | Good | Consistent | Package mockup optional | Keep exported preview; add product mockup later if available | Low |
 | Typography Poster Design | Upgraded | Exported PDF preview | Good | Consistent | None urgent | Keep exported poster preview | Low |
-| Favorite Things Magazine Spread | Upgraded | Exported PDF preview | Good | Consistent | Spread crop optional | Keep exported preview; refine crop later if needed | Low |
-| Interactive Number Learning Publication | Upgraded | Exported PDF preview | Good | Consistent | Spread crop optional | Keep exported preview; refine crop later if needed | Low |
+| Favorite Things Magazine Spread | Upgraded | Exported PDF preview | Review | Consistent | Spread crop optional | Extract one typography/composition focal crop instead of raw page scan | Medium |
+| Interactive Number Learning Publication | Upgraded | Exported PDF preview | Review | Consistent | Spread crop optional | Extract one learning interaction or publication detail instead of full document page | Medium |
 | Wang Center Collab Sticker | Present | Project image | Good | Consistent | None urgent | Keep, crop if needed | Low |
 | LLM Bias Detection Classifier | Present | Original data cover | Good fallback | Consistent | Chart/model screenshot | Add classifier report visual | Medium |
 | Stock Market Visualization Analysis | Present | Original data cover | Good fallback | Consistent | Chart thumbnail | Export a strong plot from report | Medium |

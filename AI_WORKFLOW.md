@@ -125,6 +125,14 @@ python3 -m json.tool thumbnail-map.json > /dev/null
 
 For visual QA, inspect the rendered pages or screenshots, not filenames alone.
 
+For reel QA, separate asset existence from reel readability:
+
+- existence: the thumbnail file resolves, is tracked, and is deployable
+- readability: the card has one focal idea, readable contrast, low density,
+  clear project identity, and does not collapse next to neighboring cards
+
+Do not report a reel as visually approved just because deploy/link checks pass.
+
 ## Visual Patch Verification
 
 For thumbnail, hero, media, poster, image-reference, or visual-card changes,
@@ -164,6 +172,18 @@ Check these contexts separately for any project thumbnail or hero change:
 
 One asset may work in one context and fail in another. Do not call a visual
 patch fixed until every affected context passes.
+
+## Reel Readability Rule
+
+Projects-page reel cards are recognition cues, not full artifact previews.
+Review them by category:
+
+- Gameplay / UI: show an interaction or output moment, not the full screen.
+- Diagram / System: show one system flow or result cluster, not a full report.
+- Artifact / Design: extract one composition moment, not a full poster or PDF.
+
+If a semantically accurate thumbnail is visually unreadable at reel scale,
+prefer a simpler composition that remains honest to the project.
 
 ## Visual Patch Report Template
 

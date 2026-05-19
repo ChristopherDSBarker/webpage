@@ -8,6 +8,9 @@ but don't actually surface downloadable links to those assets.
 This detects the exact pattern:
 - Page says "Curated assets: X, Y, Z"
 - But only exposes subset in links or visible images
+
+Scope boundary: this checks truthful exposure, not reel readability. A passing
+result does not approve thumbnail composition at card scale.
 """
 
 from __future__ import annotations
@@ -154,6 +157,7 @@ def claim_is_exposed(claim: str, exposures: list[tuple[str, str]]) -> bool:
 
 def main() -> None:
     print("=== SEMANTIC MISMATCH: CLAIMED vs EXPOSED ASSETS ===\n")
+    print("Scope: asset exposure only; not a reel-composition approval.\n")
     
     findings = []
     

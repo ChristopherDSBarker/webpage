@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Audit local HTML references against deployable Git-tracked files."""
+"""Audit local HTML references against deployable Git-tracked files.
+
+Scope boundary: this is an existence/deployment check only. A passing result
+does not approve reel readability, crop quality, focal hierarchy, or visual
+composition.
+"""
 
 from __future__ import annotations
 
@@ -78,6 +83,7 @@ def main() -> int:
     print(f"Missing references: {len(missing)}")
     print(f"Ignored-file references: {len(ignored_refs)}")
     print(f"Untracked references: {len(untracked_refs)}")
+    print("Scope: deployment/path safety only; not a reel-readability approval.")
 
     for label, rows in (
         ("MISSING", missing),

@@ -7,6 +7,9 @@ Key checks:
 2. Narrative claims about assets that aren't surfaced on the page
 3. Asset type mentions in narrative vs actual exposed file count
 4. "Curated assets" descriptions vs reality
+
+Scope boundary: this checks representation coverage. It does not validate
+whether reel thumbnails are readable, balanced, or well-composed at card scale.
 """
 
 from __future__ import annotations
@@ -96,6 +99,7 @@ def analyze_page_mismatch(page_path: Path) -> dict | None:
 
 def main() -> None:
     print("=== SEMANTIC ASSET REPRESENTATION AUDIT ===\n")
+    print("Scope: semantic coverage only; not a reel-readability approval.\n")
     
     findings = []
     

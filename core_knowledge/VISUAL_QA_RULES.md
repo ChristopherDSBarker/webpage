@@ -17,6 +17,48 @@ It should catch:
 - tiny images floating awkwardly
 - thumbnails that do not match project identity
 - hero images that are too dark or poorly framed
+- reel cards that exist but fail at card scale
+- full posters, PDFs, or document pages compressed into thumbnails
+- thumbnails with no dominant focal idea
+- neighboring cards whose visual weight collapses the reel rhythm
+
+The core distinction:
+
+- asset existence means the file resolves and is deployable
+- reel readability means the card works during fast recruiter scanning
+
+Do not treat one as proof of the other.
+
+## Reel Composition Rules
+
+A reel card is a hook, recognition cue, and recruiter scan target. It is not a
+full project explanation, compressed report, or document archive preview.
+
+Every reel thumbnail should have:
+
+- one focal idea
+- one dominant shape or visual cluster
+- readable contrast at small scale
+- low text density
+- a recognizable project identity
+- enough breathing room to survive next to neighboring cards
+
+If a reel thumbnail is semantically accurate but visually unreadable at reel
+scale, prefer a simpler honest composition.
+
+## Reel Categories
+
+Use these categories for review leads, not automatic redesign:
+
+| Category | Good Reel Composition | Bad Reel Composition |
+|---|---|---|
+| Gameplay / UI | interaction state, active board, readable app/output moment | entire screen, distant board, empty terminal, tiny UI |
+| Diagram / System | one flow, result cluster, model/output relationship | full report, scientific poster compression, unreadable pipeline |
+| Artifact / Design | one composition moment, crop with clear hierarchy | full PDF page, full poster, raw publication spread, dense text block |
+
+Intentional fallback cards are allowed when no real evidence exists, but they
+should remain clearly marked as fallback review leads until a real screenshot,
+output, chart, or artifact-derived crop exists.
 
 ## Inspection Rule
 
@@ -88,13 +130,13 @@ Every visual patch report must include:
 Prefer real project artifacts:
 
 1. screenshots
-2. logos
-3. posters
-4. exported sketches
-5. gameplay captures
-6. PDF previews
-7. notebook visualizations
-8. UI captures
+2. gameplay captures
+3. UI captures
+4. charts/results
+5. pipeline diagrams
+6. exported design boards
+7. logos
+8. intentional fallback covers
 
 Use generated or CSS fallback visuals only when no project-specific visual
 exists.
@@ -106,6 +148,9 @@ when that improves readability.
 
 Use padded full-context crops for posters, boards, design systems, pipeline
 diagrams, and UI screenshots.
+
+Use reel-specific composition crops when the full-context asset becomes dense,
+document-like, or poster-like at card scale.
 
 Do not make the crop so tight that the project evidence becomes misleading.
 

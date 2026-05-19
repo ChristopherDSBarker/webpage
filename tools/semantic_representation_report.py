@@ -6,6 +6,7 @@ Generates a detailed report showing:
 1. What the page claims vs what it exposes
 2. What actually exists in deployed assets
 3. Recommendations for truthful portfolio exposure
+4. Reel-readability leads that still need human visual review
 """
 
 from __future__ import annotations
@@ -14,6 +15,8 @@ import re
 import subprocess
 from pathlib import Path
 from html.parser import HTMLParser
+
+from semantic_representation_audit import analyze_reel_readability
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -260,6 +263,43 @@ def format_recommendation(analysis: dict) -> str:
     return "\n".join(lines)
 
 
+def format_reel_readability_section(findings: list[dict]) -> str:
+    """Format reel-composition leads without pretending to automate art direction."""
+    lines = []
+    lines.append("\nREEL READABILITY REVIEW")
+    lines.append("━" * 50)
+    lines.append(
+        "Purpose: surface likely weak reel compositions after path and exposure "
+        "checks pass. These are review leads, not automatic redesign instructions."
+    )
+    lines.append("")
+    lines.append("Composition categories:")
+    lines.append("   • Gameplay/UI: show an interaction moment, not the entire screen.")
+    lines.append("   • Diagram/System: show one readable flow or result cluster, not a full report.")
+    lines.append("   • Artifact/Design: extract one composition moment, not a full poster or PDF page.")
+    lines.append("")
+
+    if not findings:
+        lines.append("No likely reel-readability leads detected.")
+        return "\n".join(lines)
+
+    lines.append(f"Found {len(findings)} reel-readability lead(s):")
+    for finding in findings:
+        lines.append("")
+        lines.append(f"   CARD: {finding['title']}")
+        lines.append(f"   Reel: {finding['section']}")
+        lines.append(f"   Category: {finding['category']}")
+        lines.append(f"   Issue: {finding['issue']}")
+        lines.append(f"   Human review: {finding['detail']}")
+
+    lines.append("")
+    lines.append(
+        "Rule: if a reel thumbnail is semantically accurate but visually "
+        "unreadable at reel scale, prefer a simpler honest composition."
+    )
+    return "\n".join(lines)
+
+
 def main() -> None:
     print("=== COMPREHENSIVE SEMANTIC REPRESENTATION AUDIT ===")
     print("Checking claimed vs exposed vs deployed assets...\n")
@@ -280,13 +320,13 @@ def main() -> None:
     
     if not findings:
         print("✅ All project pages have matching claims and exposure.\n")
-        return
-    
-    print(f"Found {len(findings)} pages with semantic representation gaps:\n")
-    
-    for analysis in findings:
-        print(format_recommendation(analysis))
-        print("\n" + "=" * 50)
+    else:
+        print(f"Found {len(findings)} pages with semantic representation gaps:\n")
+        for analysis in findings:
+            print(format_recommendation(analysis))
+            print("\n" + "=" * 50)
+
+    print(format_reel_readability_section(analyze_reel_readability()))
 
 
 if __name__ == "__main__":
