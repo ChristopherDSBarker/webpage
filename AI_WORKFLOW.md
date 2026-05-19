@@ -2,39 +2,37 @@
 
 This file is the execution protocol for AI work in this portfolio repo.
 
-Mandatory first rule:
+`AI_WORKFLOW.md` is not the portfolio source of truth.
+The source of truth lives in `core_knowledge/`.
 
-Before execution, read and obey:
+The purpose of this file is simple:
+
+1. Read core knowledge first.
+2. Protect the repo from AI drift.
+3. Patch only the requested scope.
+4. Add useful comments when editing code.
+5. Run the required validation/audit tools before reporting success.
+
+## Mandatory First Rule
+
+Before doing any portfolio work, read the relevant files in:
+
+```text
+core_knowledge/
+```
+
+The primary canonical guide is:
 
 ```text
 core_knowledge/PORTFOLIO_ARCHITECTURE_GUIDE.md
 ```
 
-That guide is canonical for portfolio structure, representation rules,
-deployable boundaries, featured/supporting hierarchy, source-vs-webpage
-separation, and semantic parity expectations.
+That guide is canonical for portfolio structure, deployable boundaries,
+featured/supporting hierarchy, source-vs-webpage separation, representation
+rules, and semantic parity expectations.
 
-## Execution Order
-
-Use this order for every portfolio task:
-
-1. Read the relevant `core_knowledge/` files.
-2. Confirm repository identity.
-3. Classify the task.
-4. Inspect current files before editing.
-5. Patch only the requested scope.
-6. Run the right validation.
-7. Summarize changed files before commit or push.
-
-Do not treat audits, markdown files, or workflow rules as the product. The
-visible portfolio is the product.
-
-## Documentation Architecture
-
-- `core_knowledge/` is canonical. Use it for rules and source-of-truth guidance.
-- `audits/` is temporary reporting. Do not treat old audit conclusions as truth without rechecking current files/rendered pages.
-- `docs/` is reference/support material. Use it for mappings, inventory, GitHub sync notes, and thumbnail process docs.
-- Keep the repo root minimal: `README.md`, `AI_WORKFLOW.md`, deployable pages/assets, and operational data such as `thumbnail-map.json`.
+Do not duplicate the full architecture guide inside this workflow file.
+Do not treat this workflow file as core knowledge.
 
 ## Repository Confirmation
 
@@ -46,7 +44,7 @@ git remote -v
 git status --short --branch
 ```
 
-The deployable webpage repo must be:
+Confirm the deployable webpage repo is:
 
 ```text
 https://github.com/ChristopherDSBarker/webpage
@@ -54,58 +52,57 @@ https://github.com/ChristopherDSBarker/webpage
 
 If the repo is wrong, stop and report it.
 
-If the worktree has existing changes, inspect them before editing. Do not
-overwrite user changes or mix unrelated work into the same commit.
+If there are existing local changes, inspect them before editing.
+Do not overwrite user work.
+Do not mix unrelated changes into the same patch.
 
-## Task Classification
+## Execution Order
 
-Classify work before patching:
+Use this order for every task:
 
-- `frontend presentation`
-- `assets`
-- `resume`
-- `documentation`
-- `audit tooling`
-- `deployment synchronization`
-- `portfolio parity`
-- `visual QA`
+1. Read the relevant `core_knowledge/` files.
+2. Confirm repository identity.
+3. Inspect the current files before editing.
+4. Classify the requested task.
+5. Patch only the requested scope.
+6. Add clear comments when editing code.
+7. Run the required validation/audit tools.
+8. Report changed files, tools run, and validation results.
 
-Keep separate categories in separate patches unless the user explicitly asks to
-combine them.
-
-## Core Rules
+## Scope Rules
 
 - Refine, do not reinvent.
 - Do not overbuild.
 - Do not invent missing facts.
 - Do not redesign unless explicitly asked.
 - Do not infer representation.
-- Do not mix source/archive work with deployable webpage work.
-- Do not add audit scripts when the task asks for content, parity, or visual QA.
+- Do not modify source/archive files unless explicitly asked.
+- Do not add new tools or audit scripts unless explicitly asked.
+- Do not edit `AI_WORKFLOW.md` unless the user explicitly asks to change workflow rules.
 - Do not create empty commits.
 - Do not push unless explicitly requested.
 
-## Source And Deploy Boundaries
+## Code Comment Rule
 
-Default source/archive location:
+Code comments are a standing requirement for AI-edited code.
 
-```text
-/Users/songsidiya/Documents/portfolio
-```
+When editing code, preserve existing useful comments and add clear comments
+throughout the changed logic so future AI and human maintainers can understand
+the intent.
 
-Default deployable webpage location:
+Required comments should explain:
 
-```text
-/Users/songsidiya/Desktop/collaborative_experience_website/portfolio-site
-```
+- why the change exists
+- what behavior the logic protects
+- how the code supports deployment safety, visual QA, semantic parity, or portfolio behavior
+- any non-obvious condition, path, selector, mapping, validation rule, or fallback
 
-Do not modify the source/archive repo unless explicitly instructed.
+Do not remove useful existing comments.
+Do not add comments that only restate obvious syntax.
+Do not use comments to justify unrelated changes.
+Comments should make future edits safer, not noisier.
 
-Do not deploy raw videos, databases, saves, scores, `.git` folders, full repos,
-or private/archive source files unless the user explicitly approves and the file
-is deployment-safe.
-
-## Validation
+## Required Validation/Audit Tools
 
 For deployable webpage changes, run:
 
@@ -113,9 +110,9 @@ For deployable webpage changes, run:
 python3 tools/deployment_safe_audit.py
 ```
 
-This audit is required, but it only checks deploy/link safety. It does not
-prove thumbnail quality, crop quality, context fit, semantic representation, or
-whether a visual patch actually works in the rendered portfolio.
+This tool is required, but it only checks deploy/link safety.
+It does not prove visual quality, semantic accuracy, crop quality, thumbnail
+readability, or rendered portfolio correctness.
 
 For JSON changes, also run:
 
@@ -123,20 +120,8 @@ For JSON changes, also run:
 python3 -m json.tool thumbnail-map.json > /dev/null
 ```
 
-For visual QA, inspect the rendered pages or screenshots, not filenames alone.
-
-For reel QA, separate asset existence from reel readability:
-
-- existence: the thumbnail file resolves, is tracked, and is deployable
-- readability: the card has one focal idea, readable contrast, low density,
-  clear project identity, and does not collapse next to neighboring cards
-
-Do not report a reel as visually approved just because deploy/link checks pass.
-
-## Visual Patch Verification
-
-For thumbnail, hero, media, poster, image-reference, or visual-card changes,
-run every available relevant check before reporting success:
+For thumbnail, hero, media, poster, image-reference, visual-card, or
+representation changes, run every relevant available audit:
 
 ```bash
 python3 tools/deployment_safe_audit.py
@@ -146,76 +131,38 @@ python3 tools/semantic_representation_audit.py
 python3 tools/semantic_representation_report.py
 ```
 
-Use judgment for relevance, but do not skip an available audit just because
-`deployment_safe_audit.py` passed. If a tool is unavailable, blocked, or fails,
-report that explicitly and do not claim full visual QA passed.
+Do not skip an available relevant audit just because
+`deployment_safe_audit.py` passed.
 
-A visual patch is not complete when the file reference changes.
-It is complete only when every affected rendering context has been inspected:
-1. homepage/index preview
-2. projects reel preview
-3. project detail page hero/media section
-4. thumbnail-map/reference metadata
-5. deploy-safe audit
+If a tool is unavailable, blocked, missing, or fails, report that explicitly.
+Do not claim full validation passed unless the relevant tools actually ran.
 
-This prevents a "1 of 3 fixed" patch where one image works in a project hero
-but fails in the homepage or projects reel.
+## Visual QA Rule
 
-## Three-Context Thumbnail Rule
+For visual changes, inspect rendered output when possible.
 
-Check these contexts separately for any project thumbnail or hero change:
+Check the affected context, such as:
 
-- `index.html` homepage preview
-- `projects.html` reel card
-- the individual `featured/*.html` or `supporting/*.html` project page hero
-  and media section
+- homepage/index preview
+- projects reel preview
+- project detail page hero/media section
+- thumbnail-map/reference metadata
 
-One asset may work in one context and fail in another. Do not call a visual
-patch fixed until every affected context passes.
+Do not report visual success from filenames, file paths, or markup alone.
 
-## Reel Readability Rule
+## Reporting Rule
 
-Projects-page reel cards are recognition cues, not full artifact previews.
-Review them by category:
-
-- Gameplay / UI: show an interaction or output moment, not the full screen.
-- Diagram / System: show one system flow or result cluster, not a full report.
-- Artifact / Design: extract one composition moment, not a full poster or PDF.
-
-If a semantically accurate thumbnail is visually unreadable at reel scale,
-prefer a simpler composition that remains honest to the project.
-
-## Visual Patch Report Template
-
-For visual patches, report:
-
-- tools run
-- tools not run and why
-- pages visually checked
-- screenshots or manual evidence used
-- changed image assets
-- changed references
-- deployment audit result
-
-If rendered inspection was impossible, say so directly and describe what was
-checked instead. Do not present markup-only or filename-only checks as visual
-QA.
-
-For parity work, compare source folders to actual webpage artifacts. A project is
-represented only if it has a reel card, dedicated page, directory entry,
-thumbnail-map entry, resume link, or intentional archive/internal
-classification.
-
-## Commit And Push Protocol
-
-Before committing or pushing, report:
+Before staging, committing, or pushing, report:
 
 - changed files
 - staged files
-- validation result
+- tools run
+- tools not run and why
+- validation results
 - whether unrelated local changes remain
 
-Use targeted `git add` commands. Do not stage unrelated files.
+Use targeted `git add` commands.
+Do not stage unrelated files.
 
 If there are no deployable changes, report:
 
@@ -223,9 +170,10 @@ If there are no deployable changes, report:
 No deployable changes detected.
 ```
 
-## Portfolio Work Reminder
+## Final Reminder
 
-The portfolio exists for recruiter readability, project clarity, truthful
-representation, visual quality, and deployment stability.
+Core knowledge comes first.
+Workflow comes second.
+Execution comes third.
 
-Core knowledge comes first, workflow second, execution third.
+The visible portfolio is the product.
