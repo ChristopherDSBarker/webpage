@@ -2,8 +2,8 @@
 """Audit local HTML references against deployable Git-tracked files.
 
 Scope boundary: this is an existence/deployment check only. A passing result
-does not approve reel readability, crop quality, focal hierarchy, or visual
-composition.
+does not approve reel readability, crop quality, focal hierarchy, semantic
+strength, recruiter scan quality, or visual composition.
 """
 
 from __future__ import annotations
