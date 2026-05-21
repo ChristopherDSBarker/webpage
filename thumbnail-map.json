@@ -51,16 +51,16 @@
       "status": "derived",
       "contexts": {
         "homepage": {
-          "asset": "images/thumbnails/homepage/protein-ai-pipeline-home.png",
+          "asset": "images/thumbnails/heroes/protein-ai-pipeline-hero.png",
           "status": "derived",
           "purpose": "hook",
-          "note": "Hook: tighter card crop for fast protein/pipeline recognition."
+          "note": "Hook: uses an existing approved detail hero after the deleted homepage crop was removed; HUMAN_REVIEW for a future homepage-specific crop."
         },
         "reel": {
-          "asset": "images/thumbnails/homepage/protein-ai-pipeline-home.png",
+          "asset": "images/thumbnails/heroes/protein-ai-pipeline-hero.png",
           "status": "derived",
           "purpose": "recognition",
-          "note": "Recognition: reuses the approved homepage hook after deleted reel crops were removed."
+          "note": "Recognition: uses an existing approved detail hero after the deleted homepage/reel crop was removed; HUMAN_REVIEW for a future reel-specific visual."
         },
         "hero": {
           "asset": "images/thumbnails/heroes/protein-ai-pipeline-hero.png",
@@ -103,16 +103,16 @@
       "status": "derived",
       "contexts": {
         "homepage": {
-          "asset": "images/thumbnails/homepage/opioid-prescribing-risk-analysis-home.png",
+          "asset": "images/thumbnails/opioid-prescribing-risk-hero-refined.png",
           "status": "derived",
           "purpose": "hook",
-          "note": "Hook: chart/result crop instead of full poster compression."
+          "note": "Hook: uses an existing approved recovery poster preview after the deleted homepage crop was removed; HUMAN_REVIEW for a future homepage-specific crop."
         },
         "reel": {
-          "asset": "images/thumbnails/homepage/opioid-prescribing-risk-analysis-home.png",
+          "asset": "images/thumbnails/opioid-prescribing-risk-hero-refined.png",
           "status": "derived",
           "purpose": "recognition",
-          "note": "Recognition: reuses the approved homepage hook after deleted reel crops were removed."
+          "note": "Recognition: uses an existing approved recovery poster preview after the deleted homepage/reel crop was removed; HUMAN_REVIEW for a future reel-specific visual."
         },
         "hero": {
           "asset": "images/thumbnails/heroes/opioid-prescribing-risk-analysis-hero.png",
@@ -121,7 +121,7 @@
           "note": "Depth: full poster-style analysis evidence."
         }
       },
-      "next_best_asset": "keep card crop; use full poster on detail page"
+      "next_best_asset": "HUMAN_REVIEW: choose a future homepage/reel-specific visual; current live references use an existing approved recovery poster preview."
     },
     "grocery-retail-consumer-analytics": {
       "title": "Grocery Retail Consumer Analytics",
@@ -129,16 +129,16 @@
       "status": "derived",
       "contexts": {
         "homepage": {
-          "asset": "images/thumbnails/homepage/grocery-retail-consumer-analytics-home.png",
+          "asset": "images/thumbnails/grocery-retail-consumer-home-preview.png",
           "status": "derived",
           "purpose": "hook",
-          "note": "Hook: chart-forward crop for fast scan clarity."
+          "note": "Hook: uses an existing approved recovery poster preview after the deleted homepage crop was removed; HUMAN_REVIEW for a future homepage-specific crop."
         },
         "reel": {
-          "asset": "images/thumbnails/homepage/grocery-retail-consumer-analytics-home.png",
+          "asset": "images/thumbnails/grocery-retail-consumer-home-preview.png",
           "status": "derived",
           "purpose": "recognition",
-          "note": "Recognition: reuses the approved homepage hook after deleted reel crops were removed."
+          "note": "Recognition: uses an existing approved recovery poster preview after the deleted homepage/reel crop was removed; HUMAN_REVIEW for a future reel-specific visual."
         },
         "hero": {
           "asset": "images/thumbnails/heroes/grocery-retail-consumer-analytics-hero.png",
@@ -337,16 +337,16 @@
       "status": "artifact",
       "contexts": {
         "homepage": {
-          "asset": "images/thumbnails/homepage/env-design-home.png",
+          "asset": "images/thumbnails/heroes/env-design-hero.png",
           "status": "artifact",
           "purpose": "hook",
-          "note": "Hook: landscape crop of the environmental design board."
+          "note": "Hook: uses an existing approved detail hero after the deleted homepage crop was removed; HUMAN_REVIEW for a future homepage-specific crop."
         },
         "reel": {
-          "asset": "images/thumbnails/homepage/env-design-home.png",
+          "asset": "images/thumbnails/heroes/env-design-hero.png",
           "status": "artifact",
           "purpose": "recognition",
-          "note": "Recognition: reuses the approved homepage hook after deleted reel crops were removed."
+          "note": "Recognition: uses an existing approved detail hero after the deleted homepage/reel crop was removed; HUMAN_REVIEW for a future reel-specific visual."
         },
         "hero": {
           "asset": "images/thumbnails/heroes/env-design-hero.png",
@@ -355,7 +355,7 @@
           "note": "Depth: full environmental design board on the detail page."
         }
       },
-      "next_best_asset": "keep landscape card crop; use full board on detail page"
+      "next_best_asset": "HUMAN_REVIEW: choose a future homepage/reel-specific visual; current live references use the existing approved detail hero."
     }
   },
   "supporting": {
