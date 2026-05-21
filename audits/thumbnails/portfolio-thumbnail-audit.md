@@ -171,7 +171,7 @@ Projects marked `fallback` should be upgraded only when a real repo-backed artif
 
 ## Current Gaps
 
-- No reel card is missing a visual.
+- Previous audited state had no missing reel visuals; the 2026-05-21 patch removes live references to deleted reel crops instead of restoring them.
 - Several cards still use original generated covers instead of true project screenshots.
 - Some frontend titles intentionally differ from source names; keep mappings explicit for `Protein AI Pipeline` / `Bridging Biology And AI`, `SiDiYa Branding System` / `branding-with-name`, and `Short Film And Anti-Racist Art Exhibit` / `community-documentary-media`.
 - Data Collaboration Room Studio now uses a repo-backed Logo System PDF preview instead of a generated studio cover.
@@ -180,6 +180,102 @@ Projects marked `fallback` should be upgraded only when a real repo-backed artif
 - Reel cards now share a consistent fixed media height, border radius, hover behavior, and body rhythm.
 - Game cards now have real visual evidence where available; remaining work is crop quality, not basic representation.
 - Design PDFs now use exported PNG thumbnails.
+- Validate paths before relying on older `Present` or `Upgraded` labels, because several file-backed thumbnail assets are currently deleted locally.
+
+## 2026-05-21 Semantic Reference Audit
+
+Scope inspected:
+
+- `core_knowledge/PORTFOLIO_ARCHITECTURE_GUIDE.md`
+- `core_knowledge/PORTFOLIO_REPRESENTATION_RULES.md`
+- `core_knowledge/VISUAL_QA_RULES.md`
+- `projects.html`
+- `thumbnail-map.json`
+- `images/thumbnails/reels/`
+- `audits/thumbnails/portfolio-thumbnail-audit.md`
+- `/Users/songsidiya/Documents/portfolio` source archive, read-only
+
+Architecture finding:
+
+- `best_works` / `/Users/songsidiya/Documents/portfolio` remains the source/archive layer.
+- `core_knowledge/` defines the rules for representation, no-hallucination, and visual QA.
+- The webpage repo is only the deployable presentation layer.
+- `thumbnail-map.json` records visual routing, but it should not claim deployable image assets that are absent from the repo.
+
+Current worktree finding:
+
+- `images/thumbnails/reels/` is empty in the current working tree because the bad reel crops were intentionally deleted.
+- Do not restore deleted reel crops from git history unless a future human review explicitly approves one.
+- The 2026-05-21 reel strategy patch removes live `projects.html` and `thumbnail-map.json` references to deleted reel files.
+- Replacement choices use only existing approved homepage thumbnails, canonical source media, or CSS/text fallbacks.
+- Missing-safe-image cases are marked as `HUMAN SCREENSHOT NEEDED` instead of inventing a visual.
+
+### 2026-05-21 Reel Strategy Patch Decisions
+
+| Project | Deleted reel asset removed | Current safe strategy | Expected meaning from source/core evidence | Mismatch status | Recommended action |
+|---|---|---|---|---|---|
+| Protein AI Pipeline | `images/thumbnails/reels/protein-ai-pipeline-reel.png` | `images/thumbnails/homepage/protein-ai-pipeline-home.png` | Cao Labs `ChrisB` research implementation plus Bridging Biology And AI supporting poster/pipeline evidence. | OK | Reuse approved homepage thumbnail until a human-approved reel crop exists. |
+| Mabi AI | `images/thumbnails/reels/mabi-ai-reel.png` | `images/thumbnails/homepage/mabi-ai-home.png` | Legacy Mabinogi pet AI behavior logic using XML/rule evidence. | OK | Reuse approved homepage thumbnail until a human-approved reel crop exists. |
+| Opioid Prescribing Risk Analysis | `images/thumbnails/reels/opioid-prescribing-risk-analysis-reel.png` | `images/thumbnails/homepage/opioid-prescribing-risk-analysis-home.png` | Healthcare data analysis, poster, charts, and model interpretation. | OK | Reuse approved homepage thumbnail until a human-approved reel crop exists. |
+| Pixel Progression | `images/thumbnails/reels/pixel-progression-reel.png` | `images/thumbnails/homepage/pixel-progression-home.png` | Collaborative PHP/JavaScript game systems with real gameplay, auth, saved state, and leaderboard context. | OK | Reuse approved homepage thumbnail until a human-approved reel crop exists. |
+| Grocery Retail Consumer Analytics | `images/thumbnails/reels/grocery-retail-consumer-analytics-reel.png` | `images/thumbnails/homepage/grocery-retail-consumer-analytics-home.png` | Consumer analytics poster/chart evidence from the grocery retail project. | OK | Reuse approved homepage thumbnail until a human-approved reel crop exists. |
+| Minesweeper Game | `images/thumbnails/reels/minesweeper-game-reel.png` | `images/thumbnails/homepage/minesweeper-game-home.png` | Real revealed Minesweeper board gameplay. | OK | Reuse approved homepage thumbnail until a human-approved reel crop exists. |
+| Battleship Game | `images/thumbnails/reels/battleship-game-reel.png` | `images/thumbnails/homepage/battleship-game-home.png` | Java Battleship terminal/gameplay board evidence. | OK | Reuse approved homepage thumbnail until a human-approved reel crop exists. |
+| HTML Resume Portfolio | `images/thumbnails/reels/html-resume-portfolio-reel.png` | `images/thumbnails/homepage/html-resume-portfolio-home.png` | Rendered HTML/CSS resume or browser screenshot evidence. | OK | Reuse approved homepage thumbnail until a human-approved reel crop exists. |
+| Data Collaboration Room Studio | `images/thumbnails/reels/data-collaboration-room-studio-reel.png` | `images/thumbnails/homepage/data-collaboration-room-studio-home.png` | Four-PDF studio package: summary, consultation, capstone presentation, and logo system. | OK | Reuse approved homepage thumbnail; human can later decide whether reel should emphasize capstone or logo-system identity. |
+| Env Design | `images/thumbnails/reels/env-design-reel.png` | `images/thumbnails/homepage/env-design-home.png` | Environmental design board for the Mount Rainier Paradise Area ecosystem. | OK | Reuse approved homepage thumbnail until a human-approved reel crop exists. |
+| Grid System Composition | `images/thumbnails/reels/grid-system-dynamic-composition-reel.png` | CSS/text design fallback | Grid-system composition PDF/design artifact. | HUMAN SCREENSHOT NEEDED | Keep fallback until a safe PDF-derived crop is reviewed. |
+| Package Series Design | `images/thumbnails/reels/package-series-design-reel.png` | CSS/text design fallback | Packaging design PDF package and presentation artifact. | HUMAN SCREENSHOT NEEDED | Keep fallback until a safe package or presentation crop is reviewed. |
+| SiDiYa Branding System | `images/thumbnails/reels/sidiya-branding-system-reel.png` | `assets/brand/sidiya-emblem-final.png` | Personal identity system, emblem, typography, cultural symbolism, and website brand layer. | OK | Reuse canonical emblem source media. |
+| Typography Poster Design | `images/thumbnails/reels/typography-poster-design-reel.png` | CSS/text design fallback | Typography/poster composition artifact. | HUMAN SCREENSHOT NEEDED | Keep fallback until a safe poster crop is reviewed. |
+| Favorite Things Magazine Spread | `images/thumbnails/reels/favorite-things-magazine-spread-reel.png` | CSS/text design fallback | Editorial/magazine spread design artifact. | HUMAN SCREENSHOT NEEDED | Keep fallback until a safe spread crop is reviewed. |
+| Interactive Number Learning Publication | `images/thumbnails/reels/interactive-number-learning-publication-reel.png` | CSS/text design fallback | Interactive visual-learning publication artifact. | HUMAN SCREENSHOT NEEDED | Keep fallback until a safe publication crop is reviewed. |
+| Wang Center Collab Sticker | `images/thumbnails/reels/wang-center-collab-sticker-reel.jpeg` | `assets/supporting/media/wang-center-collab.jpeg` | Sticker / visual communication artifact from the supporting source file. | OK | Reuse canonical source media. |
+| CSCI 367 Game Systems | `images/thumbnails/reels/csci367-game-systems-reel.png` | `assets/supporting/media/csci367-conceptlogo.png` | Collaborative PHP/JavaScript game systems with auth, save/load, leaderboard, and gameplay systems. | NEEDS HUMAN REVIEW | Use concept logo as a safe temporary visual; a gameplay/UI screenshot is still preferred. |
+| Animated Short Scene | `images/thumbnails/reels/animated-short-scene-reel.gif` | `assets/supporting/animated-short-scene.gif` | Animation / motion study using the source GIF artifact. | OK | Reuse canonical source GIF. |
+
+### Generic or fallback reel references
+
+These are not broken file references because they render through CSS/native markup, but they remain semantic review leads. Patch only when a real source-backed screenshot, chart, still, or output is available.
+
+| Project | Current thumbnail/reel asset | Expected meaning from source/core evidence | Mismatch status | Recommended action |
+|---|---|---|---|---|
+| AI Caption Generator | CSS-generated AI app cover | Streamlit/upload-output caption app evidence. | NEEDS HUMAN REVIEW | Keep fallback until a real app screenshot or generated-caption output is captured. |
+| GAN Discord Bot | CSS-generated Discord bot cover | Discord bot interaction and image-generation output. | NEEDS HUMAN REVIEW | Keep fallback until real bot output evidence exists. |
+| LLM Bias Detection Classifier | CSS-generated data cover | Bias-classifier report, model output, or chart evidence. | SUSPECT | Replace only with a real report chart or classifier output screenshot. |
+| Stock Market Visualization Analysis | CSS-generated data cover | R visualization/report chart evidence. | SUSPECT | Export a strong plot from the report before changing the reel. |
+| CORGIS Predictive Data Analysis | CSS-generated data cover | Notebook/HTML analysis chart evidence. | SUSPECT | Use a notebook chart crop only after confirming the chart exists in source. |
+| Logistic Regression Analysis | CSS-generated statistics cover | Statistical modeling output such as ROC, confusion matrix, or notebook result. | SUSPECT | Add a real model-output crop when available. |
+| Decision Tree Analysis | CSS-generated tree cover | Decision-tree diagram or notebook result. | SUSPECT | Add a real tree plot export when available. |
+| Neural Network Analysis | CSS-generated neural cover | Training curve, architecture diagram, or notebook result. | SUSPECT | Add a real training/architecture visual when available. |
+| Multiple Regression Analysis | CSS-generated regression cover | Coefficient, residual, or regression chart evidence. | SUSPECT | Add a real chart crop when available. |
+| Spelling Bee Puzzle | CSS-generated puzzle/code cover | Java puzzle output or UI/text evidence. | SUSPECT | Add an output screenshot only if it comes from the source package. |
+| Mountain Terrain Pathfinding | CSS-generated terrain/code cover | Terrain/pathfinding visual or output evidence. | SUSPECT | Add a verified terrain/path screenshot when available. |
+| Image Tool | CSS-generated image-tool cover | Before/after pixel/image modification evidence. | SUSPECT | Add a source-backed before/after comparison when available. |
+| Abstract Art | CSS-generated creative cover | Rendered Java drawing/canvas output. | SUSPECT | Add a rendered output screenshot when available. |
+| Regex Pattern Analyzer | CSS-generated regex/code cover | Pattern analyzer output or highlighted text evidence. | SUSPECT | Add a verified output screenshot when available. |
+| Processing Visual Experiment | CSS-generated creative cover | Processing sketch frame or GIF evidence. | SUSPECT | Export a source-backed sketch frame before changing. |
+| Array Visualization Study | CSS-generated creative cover | Processing array-visualization sketch evidence. | SUSPECT | Export a source-backed sketch frame before changing. |
+| Animal Function Animation | CSS-generated motion cover | Processing animation frame or GIF evidence. | SUSPECT | Export a source-backed animation still/GIF before changing. |
+| Random Circles Generator | CSS-generated circles cover | Processing generated-circle sketch evidence. | SUSPECT | Export a source-backed generated sketch frame before changing. |
+| Community Documentary Media | CSS-generated media title card | Original short film / anti-racist exhibit media context. | NEEDS HUMAN REVIEW | Use only an owned, cleared still frame; keep CSS title card otherwise. |
+| BJUG Day Campaign | CSS-generated campaign title card | Campaign video/project media context. | NEEDS HUMAN REVIEW | Use only an owned campaign still; keep CSS title card otherwise. |
+
+Recommended patch plan:
+
+1. Keep `projects.html` and `thumbnail-map.json` aligned so neither claims deleted `images/thumbnails/reels/*` files.
+2. Do not restore deleted reel thumbnails unless a future human review explicitly approves the exact file.
+3. For `Grid System Composition`, `Package Series Design`, `Typography Poster Design`, `Favorite Things Magazine Spread`, and `Interactive Number Learning Publication`, capture or export a human-approved source-backed crop before replacing the CSS fallback.
+4. For `CSCI 367 Game Systems`, use a real gameplay/UI screenshot when available; until then the concept logo is only a safe temporary visual.
+5. For existing CSS fallback projects, leave the fallback in place unless a real source-backed screenshot, chart, still, or output exists.
+
+Common mistake warning:
+
+- Do not ask AI to "make thumbnails better" from filenames.
+- Do not use nearest matching image names as evidence.
+- Do not generate random thumbnails to fill missing paths.
+- Do not change project descriptions while fixing thumbnail references.
+- Do not edit `core_knowledge/`, `ALL_SLIDES/`, or source/archive folders for this presentation-layer audit.
 
 ## NO_REAL_THUMBNAIL Tags
 

@@ -57,10 +57,10 @@
           "note": "Hook: tighter card crop for fast protein/pipeline recognition."
         },
         "reel": {
-          "asset": "images/thumbnails/reels/protein-ai-pipeline-reel.png",
+          "asset": "images/thumbnails/homepage/protein-ai-pipeline-home.png",
           "status": "derived",
           "purpose": "recognition",
-          "note": "Recognition: pipeline-focused crop selected for card-scale readability."
+          "note": "Recognition: reuses the approved homepage hook after deleted reel crops were removed."
         },
         "hero": {
           "asset": "images/thumbnails/heroes/protein-ai-pipeline-hero.png",
@@ -83,10 +83,10 @@
           "note": "Hook: readable XML/game-AI cue at card scale."
         },
         "reel": {
-          "asset": "images/thumbnails/reels/mabi-ai-reel.png",
+          "asset": "images/thumbnails/homepage/mabi-ai-home.png",
           "status": "derived",
           "purpose": "recognition",
-          "note": "Recognition: same evidence isolated for projects-page tuning."
+          "note": "Recognition: reuses the approved homepage hook after deleted reel crops were removed."
         },
         "hero": {
           "asset": "images/thumbnails/heroes/mabi-ai-hero.png",
@@ -109,10 +109,10 @@
           "note": "Hook: chart/result crop instead of full poster compression."
         },
         "reel": {
-          "asset": "images/thumbnails/reels/opioid-prescribing-risk-analysis-reel.png",
+          "asset": "images/thumbnails/homepage/opioid-prescribing-risk-analysis-home.png",
           "status": "derived",
           "purpose": "recognition",
-          "note": "Recognition: readable project evidence in the projects reel."
+          "note": "Recognition: reuses the approved homepage hook after deleted reel crops were removed."
         },
         "hero": {
           "asset": "images/thumbnails/heroes/opioid-prescribing-risk-analysis-hero.png",
@@ -135,10 +135,10 @@
           "note": "Hook: chart-forward crop for fast scan clarity."
         },
         "reel": {
-          "asset": "images/thumbnails/reels/grocery-retail-consumer-analytics-reel.png",
+          "asset": "images/thumbnails/homepage/grocery-retail-consumer-analytics-home.png",
           "status": "derived",
           "purpose": "recognition",
-          "note": "Recognition: chart-first crop selected for quick reel scanning."
+          "note": "Recognition: reuses the approved homepage hook after deleted reel crops were removed."
         },
         "hero": {
           "asset": "images/thumbnails/heroes/grocery-retail-consumer-analytics-hero.png",
@@ -161,10 +161,10 @@
           "note": "Hook: real gameplay frame."
         },
         "reel": {
-          "asset": "images/thumbnails/reels/pixel-progression-reel.png",
+          "asset": "images/thumbnails/homepage/pixel-progression-home.png",
           "status": "artifact",
           "purpose": "recognition",
-          "note": "Recognition: gameplay identity for the projects reel."
+          "note": "Recognition: reuses the approved homepage hook after deleted reel crops were removed."
         },
         "hero": {
           "asset": "images/thumbnails/heroes/pixel-progression-hero.png",
@@ -187,10 +187,10 @@
           "note": "Hook: real revealed-board gameplay."
         },
         "reel": {
-          "asset": "images/thumbnails/reels/minesweeper-game-reel.png",
+          "asset": "images/thumbnails/homepage/minesweeper-game-home.png",
           "status": "artifact",
           "purpose": "recognition",
-          "note": "Recognition: board-state identity for the projects reel."
+          "note": "Recognition: reuses the approved homepage hook after deleted reel crops were removed."
         },
         "hero": {
           "asset": "images/thumbnails/heroes/minesweeper-game-hero.png",
@@ -213,10 +213,10 @@
           "note": "Hook: terminal gameplay board as immediate proof."
         },
         "reel": {
-          "asset": "images/thumbnails/reels/battleship-game-reel.png",
+          "asset": "images/thumbnails/homepage/battleship-game-home.png",
           "status": "artifact",
           "purpose": "recognition",
-          "note": "Recognition: Java game evidence for the projects reel."
+          "note": "Recognition: reuses the approved homepage hook after deleted reel crops were removed."
         },
         "hero": {
           "asset": "images/thumbnails/heroes/battleship-game-hero.png",
@@ -239,10 +239,10 @@
           "note": "Hook: real rendered browser screenshot instead of fallback cover."
         },
         "reel": {
-          "asset": "images/thumbnails/reels/html-resume-portfolio-reel.png",
+          "asset": "images/thumbnails/homepage/html-resume-portfolio-home.png",
           "status": "artifact",
           "purpose": "recognition",
-          "note": "Recognition: browser UI evidence for the projects reel."
+          "note": "Recognition: reuses the approved homepage hook after deleted reel crops were removed."
         },
         "hero": {
           "asset": "images/thumbnails/heroes/html-resume-portfolio-hero.png",
@@ -317,10 +317,10 @@
           "note": "Hook: stronger capstone/title-slide evidence rather than pure logo emphasis."
         },
         "reel": {
-          "asset": "images/thumbnails/reels/data-collaboration-room-studio-reel.png",
+          "asset": "images/thumbnails/homepage/data-collaboration-room-studio-home.png",
           "status": "derived",
           "purpose": "recognition",
-          "note": "Recognition: projects-reel evidence separated from the detail hero."
+          "note": "Recognition: reuses the approved homepage hook after deleted reel crops were removed."
         },
         "hero": {
           "asset": "images/thumbnails/heroes/data-collaboration-room-studio-hero.png",
@@ -343,10 +343,10 @@
           "note": "Hook: landscape crop of the environmental design board."
         },
         "reel": {
-          "asset": "images/thumbnails/reels/env-design-reel.png",
+          "asset": "images/thumbnails/homepage/env-design-home.png",
           "status": "artifact",
           "purpose": "recognition",
-          "note": "Recognition: projects-reel crop isolated for future tuning."
+          "note": "Recognition: reuses the approved homepage hook after deleted reel crops were removed."
         },
         "hero": {
           "asset": "images/thumbnails/heroes/env-design-hero.png",
@@ -362,30 +362,30 @@
     "grid-system-dynamic-composition": {
       "title": "Grid System Dynamic Composition",
       "source_asset": "assets/supporting/design/grid-system-dynamic-composition.pdf",
-      "status": "derived",
+      "status": "fallback",
       "contexts": {
         "reel": {
-          "asset": "images/thumbnails/reels/grid-system-dynamic-composition-reel.png",
-          "status": "derived",
+          "asset": "css-generated design cover",
+          "status": "fallback",
           "purpose": "recognition",
-          "note": "Supporting-project reel visual isolated under the projects-page reel context."
+          "note": "Temporary fallback: deleted reel crop removed; HUMAN SCREENSHOT NEEDED or safe PDF-derived crop needed before replacing."
         }
       },
-      "next_best_asset": "stronger PDF crop if needed"
+      "next_best_asset": "HUMAN SCREENSHOT NEEDED: safe PDF-derived crop"
     },
     "package-series-design": {
       "title": "Package Series Design",
       "source_asset": "assets/supporting/design/package-series-design.pdf",
-      "status": "derived",
+      "status": "fallback",
       "contexts": {
         "reel": {
-          "asset": "images/thumbnails/reels/package-series-design-reel.png",
-          "status": "derived",
+          "asset": "css-generated design cover",
+          "status": "fallback",
           "purpose": "recognition",
-          "note": "Supporting-project reel visual isolated under the projects-page reel context."
+          "note": "Temporary fallback: deleted reel crop removed; HUMAN SCREENSHOT NEEDED or safe package/PDF-derived crop needed before replacing."
         }
       },
-      "next_best_asset": "package mockup or presentation crop"
+      "next_best_asset": "HUMAN SCREENSHOT NEEDED: safe package mockup or presentation crop"
     },
     "sidiya-branding-system": {
       "title": "SiDiYa Branding System",
@@ -393,10 +393,10 @@
       "status": "artifact",
       "contexts": {
         "reel": {
-          "asset": "images/thumbnails/reels/sidiya-branding-system-reel.png",
+          "asset": "assets/brand/sidiya-emblem-final.png",
           "status": "artifact",
           "purpose": "recognition",
-          "note": "Supporting-project reel visual isolated under the projects-page reel context."
+          "note": "Recognition: canonical emblem reused after deleted reel crop was removed."
         }
       },
       "next_best_asset": "master board crop or typeface study composite"
@@ -404,44 +404,44 @@
     "typography-poster-design": {
       "title": "Typography Poster Design",
       "source_asset": "assets/supporting/design/typography-poster-design.pdf",
-      "status": "derived",
+      "status": "fallback",
       "contexts": {
         "reel": {
-          "asset": "images/thumbnails/reels/typography-poster-design-reel.png",
-          "status": "derived",
+          "asset": "css-generated design cover",
+          "status": "fallback",
           "purpose": "recognition",
-          "note": "Supporting-project reel visual isolated under the projects-page reel context."
+          "note": "Temporary fallback: deleted reel crop removed; HUMAN SCREENSHOT NEEDED or safe poster crop needed before replacing."
         }
       },
-      "next_best_asset": "poster crop if needed"
+      "next_best_asset": "HUMAN SCREENSHOT NEEDED: safe poster crop"
     },
     "favorite-things-magazine-spread": {
       "title": "Favorite Things Magazine Spread",
       "source_asset": "assets/supporting/design/favorite-things-magazine-spread.pdf",
-      "status": "derived",
+      "status": "fallback",
       "contexts": {
         "reel": {
-          "asset": "images/thumbnails/reels/favorite-things-magazine-spread-reel.png",
-          "status": "derived",
+          "asset": "css-generated design cover",
+          "status": "fallback",
           "purpose": "recognition",
-          "note": "Supporting-project reel visual isolated under the projects-page reel context."
+          "note": "Temporary fallback: deleted reel crop removed; HUMAN SCREENSHOT NEEDED or safe spread crop needed before replacing."
         }
       },
-      "next_best_asset": "spread crop if needed"
+      "next_best_asset": "HUMAN SCREENSHOT NEEDED: safe magazine spread crop"
     },
     "interactive-number-learning-publication": {
       "title": "Interactive Number Learning Publication",
       "source_asset": "assets/supporting/design/interactive-number-learning-publication.pdf",
-      "status": "derived",
+      "status": "fallback",
       "contexts": {
         "reel": {
-          "asset": "images/thumbnails/reels/interactive-number-learning-publication-reel.png",
-          "status": "derived",
+          "asset": "css-generated design cover",
+          "status": "fallback",
           "purpose": "recognition",
-          "note": "Supporting-project reel visual isolated under the projects-page reel context."
+          "note": "Temporary fallback: deleted reel crop removed; HUMAN SCREENSHOT NEEDED or safe publication crop needed before replacing."
         }
       },
-      "next_best_asset": "publication spread crop"
+      "next_best_asset": "HUMAN SCREENSHOT NEEDED: safe publication spread crop"
     },
     "wang-center-collab-sticker": {
       "title": "Wang Center Collab Sticker",
@@ -449,10 +449,10 @@
       "status": "artifact",
       "contexts": {
         "reel": {
-          "asset": "images/thumbnails/reels/wang-center-collab-sticker-reel.jpeg",
+          "asset": "assets/supporting/media/wang-center-collab.jpeg",
           "status": "artifact",
           "purpose": "recognition",
-          "note": "Supporting-project reel visual isolated under the projects-page reel context."
+          "note": "Recognition: canonical source media reused after deleted reel crop was removed."
         }
       },
       "next_best_asset": "crop if needed"
@@ -557,17 +557,17 @@
     },
     "csci367-game-systems": {
       "title": "CSCI 367 Game Systems",
-      "source_asset": "https://github.com/distcrypto/csci367_4",
-      "status": "derived",
+      "source_asset": "assets/supporting/media/csci367-conceptlogo.png + https://github.com/distcrypto/csci367_4",
+      "status": "artifact",
       "contexts": {
         "reel": {
-          "asset": "images/thumbnails/reels/csci367-game-systems-reel.png",
-          "status": "derived",
+          "asset": "assets/supporting/media/csci367-conceptlogo.png",
+          "status": "artifact",
           "purpose": "recognition",
-          "note": "Supporting-project reel visual isolated under the projects-page reel context."
+          "note": "Temporary recognition: existing concept logo reused because the deleted reel crop cannot be restored without human approval."
         }
       },
-      "next_best_asset": "real gameplay or UI screenshot if available"
+      "next_best_asset": "HUMAN SCREENSHOT NEEDED: real gameplay or UI screenshot if available"
     },
     "spelling-bee-puzzle": {
       "title": "Spelling Bee Puzzle",
@@ -701,10 +701,10 @@
       "status": "artifact",
       "contexts": {
         "reel": {
-          "asset": "images/thumbnails/reels/animated-short-scene-reel.gif",
+          "asset": "assets/supporting/animated-short-scene.gif",
           "status": "artifact",
           "purpose": "recognition",
-          "note": "Supporting-project reel visual isolated under the projects-page reel context."
+          "note": "Recognition: canonical source GIF reused after deleted reel crop was removed."
         }
       },
       "next_best_asset": "keep current GIF"
