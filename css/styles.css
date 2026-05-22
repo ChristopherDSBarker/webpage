@@ -652,6 +652,19 @@ p {
   box-sizing: border-box;
 }
 
+/* Homepage reel fit mirrors the successful Projects reel behavior without
+   affecting the homepage hero collage or any Projects-page rendering. */
+.home-page .project-grid[data-reel] .thumb.opioid-thumb,
+.home-page .project-grid[data-reel] .thumb.grocery-thumb,
+.home-page .project-grid[data-reel] .thumb.light-artifact-thumb,
+.home-page .project-grid[data-reel] a[href="featured/env-design.html"] .thumb {
+  object-fit: contain;
+  object-position: center;
+  padding: 0.45rem;
+  background: #f8fafc;
+  box-sizing: border-box;
+}
+
 /* ─── THUMBNAIL SYSTEM ───
    Two-tier visual fallback for when hero PNG exports aren't ready:
    
