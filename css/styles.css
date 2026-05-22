@@ -240,10 +240,10 @@ p {
 
 .lead {
   margin-top: 22px;
-  max-width: 62ch;
+  max-width: 54ch;
   color: #d8e3f6;
   font-size: clamp(1.05rem, 2vw, 1.28rem);
-  line-height: 1.62;
+  line-height: 1.55;
 }
 
 .actions {
@@ -378,8 +378,9 @@ p {
 }
 
 .section-head p {
-  max-width: 48ch;
+  max-width: 42ch;
   color: var(--muted);
+  line-height: 1.55;
 }
 
 .film-runner {
@@ -1978,27 +1979,31 @@ p {
 }
 
 .project-body {
-  min-height: 196px;
+  min-height: 178px;
   flex: 1;
-  padding: 18px;
+  padding: 16px;
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto auto auto;
   align-content: start;
-  gap: 10px;
+  gap: 12px;
   color: var(--ink);
 }
 
 .project-body h3 {
   color: var(--ink);
+  font-size: 1.12rem;
+  line-height: 1.18;
 }
 
 .project-body p {
   color: #cbd6ea;
+  max-width: 34ch;
+  line-height: 1.48;
 }
 
 .supporting-reel .project-body {
-  min-height: 190px;
-  padding: 16px;
+  min-height: 172px;
+  padding: 15px;
 }
 
 .supporting-reel .project-body p {
@@ -2014,20 +2019,20 @@ p {
 .tag-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
   padding: 0;
-  margin: 0;
+  margin: 2px 0 0;
   list-style: none;
 }
 
 .tag-list li {
-  border: 1px solid rgba(63, 140, 255, 0.56);
+  border: 1px solid rgba(63, 140, 255, 0.34);
   border-radius: 999px;
-  padding: 5px 9px;
-  color: var(--ink);
-  font-weight: 750;
-  font-size: 0.78rem;
-  background: rgba(63, 140, 255, 0.14);
+  padding: 4px 8px;
+  color: rgba(243, 247, 255, 0.82);
+  font-weight: 700;
+  font-size: 0.72rem;
+  background: rgba(63, 140, 255, 0.08);
 }
 
 .supporting-reel .tag-list li {
