@@ -362,30 +362,30 @@
     "grid-system-dynamic-composition": {
       "title": "Grid System Dynamic Composition",
       "source_asset": "assets/supporting/design/grid-system-dynamic-composition.pdf",
-      "status": "fallback",
+      "status": "derived",
       "contexts": {
         "reel": {
-          "asset": "css-generated design cover",
-          "status": "fallback",
+          "asset": "images/thumbnails/grid-system-dynamic-composition-card-refined.png",
+          "status": "derived",
           "purpose": "recognition",
-          "note": "Temporary fallback: deleted reel crop removed; HUMAN SCREENSHOT NEEDED or safe PDF-derived crop needed before replacing."
+          "note": "Recognition: existing approved root-level design preview wired after human review; no deleted reel crop restored."
         }
       },
-      "next_best_asset": "HUMAN SCREENSHOT NEEDED: safe PDF-derived crop"
+      "next_best_asset": "HUMAN SCREENSHOT NEEDED only if a stronger manually approved design crop is selected later."
     },
     "package-series-design": {
       "title": "Package Series Design",
       "source_asset": "assets/supporting/design/package-series-design.pdf",
-      "status": "fallback",
+      "status": "derived",
       "contexts": {
         "reel": {
-          "asset": "css-generated design cover",
-          "status": "fallback",
+          "asset": "images/thumbnails/package-series-design-card-refined.png",
+          "status": "derived",
           "purpose": "recognition",
-          "note": "Temporary fallback: deleted reel crop removed; HUMAN SCREENSHOT NEEDED or safe package/PDF-derived crop needed before replacing."
+          "note": "Recognition: existing approved root-level package preview wired after human review; no deleted reel crop restored."
         }
       },
-      "next_best_asset": "HUMAN SCREENSHOT NEEDED: safe package mockup or presentation crop"
+      "next_best_asset": "HUMAN SCREENSHOT NEEDED only if a stronger manually approved package mockup or presentation crop is selected later."
     },
     "sidiya-branding-system": {
       "title": "SiDiYa Branding System",
@@ -393,10 +393,10 @@
       "status": "artifact",
       "contexts": {
         "reel": {
-          "asset": "assets/brand/sidiya-emblem-final.png",
+          "asset": "images/thumbnails/sidiya-branding-system-card-light.png",
           "status": "artifact",
           "purpose": "recognition",
-          "note": "Recognition: canonical emblem reused after deleted reel crop was removed."
+          "note": "Recognition: existing approved root-level light branding card wired after human review; no deleted reel crop restored."
         }
       },
       "next_best_asset": "master board crop or typeface study composite"
@@ -404,44 +404,44 @@
     "typography-poster-design": {
       "title": "Typography Poster Design",
       "source_asset": "assets/supporting/design/typography-poster-design.pdf",
-      "status": "fallback",
+      "status": "derived",
       "contexts": {
         "reel": {
-          "asset": "css-generated design cover",
-          "status": "fallback",
+          "asset": "images/thumbnails/typography-poster-design-card-refined.png",
+          "status": "derived",
           "purpose": "recognition",
-          "note": "Temporary fallback: deleted reel crop removed; HUMAN SCREENSHOT NEEDED or safe poster crop needed before replacing."
+          "note": "Recognition: existing approved root-level poster preview wired after human review; no deleted reel crop restored."
         }
       },
-      "next_best_asset": "HUMAN SCREENSHOT NEEDED: safe poster crop"
+      "next_best_asset": "HUMAN SCREENSHOT NEEDED only if a stronger manually approved poster crop is selected later."
     },
     "favorite-things-magazine-spread": {
       "title": "Favorite Things Magazine Spread",
       "source_asset": "assets/supporting/design/favorite-things-magazine-spread.pdf",
-      "status": "fallback",
+      "status": "derived",
       "contexts": {
         "reel": {
-          "asset": "css-generated design cover",
-          "status": "fallback",
+          "asset": "images/thumbnails/favorite-things-magazine-spread-card-refined.png",
+          "status": "derived",
           "purpose": "recognition",
-          "note": "Temporary fallback: deleted reel crop removed; HUMAN SCREENSHOT NEEDED or safe spread crop needed before replacing."
+          "note": "Recognition: existing approved root-level spread preview wired after human review; no deleted reel crop restored."
         }
       },
-      "next_best_asset": "HUMAN SCREENSHOT NEEDED: safe magazine spread crop"
+      "next_best_asset": "HUMAN SCREENSHOT NEEDED only if a stronger manually approved magazine spread crop is selected later."
     },
     "interactive-number-learning-publication": {
       "title": "Interactive Number Learning Publication",
       "source_asset": "assets/supporting/design/interactive-number-learning-publication.pdf",
-      "status": "fallback",
+      "status": "derived",
       "contexts": {
         "reel": {
-          "asset": "css-generated design cover",
-          "status": "fallback",
+          "asset": "images/thumbnails/interactive-number-learning-publication-card-refined.png",
+          "status": "derived",
           "purpose": "recognition",
-          "note": "Temporary fallback: deleted reel crop removed; HUMAN SCREENSHOT NEEDED or safe publication crop needed before replacing."
+          "note": "Recognition: existing approved root-level publication preview wired after human review; no deleted reel crop restored."
         }
       },
-      "next_best_asset": "HUMAN SCREENSHOT NEEDED: safe publication spread crop"
+      "next_best_asset": "HUMAN SCREENSHOT NEEDED only if a stronger manually approved publication spread crop is selected later."
     },
     "wang-center-collab-sticker": {
       "title": "Wang Center Collab Sticker",
@@ -561,10 +561,10 @@
       "status": "artifact",
       "contexts": {
         "reel": {
-          "asset": "assets/supporting/media/csci367-conceptlogo.png",
+          "asset": "images/thumbnails/csci367-game-systems-evidence.png",
           "status": "artifact",
           "purpose": "recognition",
-          "note": "Temporary recognition: existing concept logo reused because the deleted reel crop cannot be restored without human approval."
+          "note": "Recognition: existing approved root-level evidence map wired after human review; no deleted reel crop restored."
         }
       },
       "next_best_asset": "HUMAN SCREENSHOT NEEDED: real gameplay or UI screenshot if available"

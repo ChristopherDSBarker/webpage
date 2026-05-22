@@ -638,6 +638,20 @@ p {
   box-shadow: 0 12px 28px rgba(5, 7, 12, 0.2);
 }
 
+/* Projects reel image fit: keep approved image files unchanged while preventing
+   poster, board, and document thumbnails from being over-cropped in reel cards. */
+.projects-page .project-grid[data-reel] .thumb.opioid-thumb,
+.projects-page .project-grid[data-reel] .thumb.grocery-thumb,
+.projects-page .project-grid[data-reel] .thumb.light-artifact-thumb,
+.projects-page .project-grid[data-reel] a[href="featured/env-design.html"] .thumb,
+.projects-page .supporting-reel.project-grid .thumb:not([src$="wang-center-collab.jpeg"]):not([src$="animated-short-scene.gif"]) {
+  object-fit: contain;
+  object-position: center;
+  padding: 0.45rem;
+  background: #f8fafc;
+  box-sizing: border-box;
+}
+
 /* ─── THUMBNAIL SYSTEM ───
    Two-tier visual fallback for when hero PNG exports aren't ready:
    
