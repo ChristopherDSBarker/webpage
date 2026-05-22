@@ -253,6 +253,22 @@ p {
   gap: 12px;
 }
 
+.hero-links {
+  margin-top: 14px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.hero-links a {
+  color: var(--ink);
+  text-decoration-color: rgba(244, 200, 74, 0.5);
+  text-underline-offset: 4px;
+}
+
+.hero-links a:hover {
+  color: var(--accent);
+}
+
 .jump-nav {
   margin-top: 28px;
   display: flex;
