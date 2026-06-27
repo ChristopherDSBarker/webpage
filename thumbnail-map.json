@@ -331,6 +331,32 @@
       },
       "next_best_asset": "capstone presentation crop or studio mockup"
     },
+    "valorant-discord-bot": {
+      "title": "Valorant Discord Bot",
+      "source_asset": "Discord bot profile embed screenshot (cd_val_bot, SiDi254#NA1)",
+      "status": "artifact",
+      "contexts": {
+        "homepage": {
+          "asset": "images/thumbnails/homepage/val-discord-bot-home.png",
+          "status": "artifact",
+          "purpose": "hook",
+          "note": "Hook: real Discord bot profile embed output. Save screenshot to this path."
+        },
+        "reel": {
+          "asset": "images/thumbnails/homepage/val-discord-bot-home.png",
+          "status": "artifact",
+          "purpose": "recognition",
+          "note": "Recognition: reuses the homepage hook crop."
+        },
+        "hero": {
+          "asset": "images/thumbnails/heroes/val-discord-bot-hero.png",
+          "status": "artifact",
+          "purpose": "depth",
+          "note": "Depth: full Discord embed output on the detail page. Save screenshot to this path."
+        }
+      },
+      "next_best_asset": "additional bot output screenshots if available"
+    },
     "env-design": {
       "title": "Env Design",
       "source_asset": "assets/featured/env-design/env-design-final.png",

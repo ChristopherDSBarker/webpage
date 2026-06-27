@@ -1,8 +1,30 @@
 .DS_Store
 .vscode/
+.idea/
 uploads/
 
 *.zip
 *.mp4
 
 assets/**/*.csv
+
+# Secrets and environment
+.env
+.env.*
+*.pem
+*.key
+*.crt
+*.p12
+*.secret
+*.local
+*.backup
+*.bak
+*.log
+*.tmp
+
+# Dependencies
+node_modules/
+coverage/
+dist/
+build/
+.cache/

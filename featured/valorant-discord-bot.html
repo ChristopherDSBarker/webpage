@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../assets/brand/sidiya-emblem-authentic-navbar.png" type="image/png">
+    <title>Valorant Discord Bot | Christopher Barker</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+    <header class="site-header"><nav class="nav" aria-label="Main navigation"><a class="brand" href="../index.html"><span class="brand-mark"><img src="../assets/brand/sidiya-emblem-authentic-navbar.png" alt="" aria-hidden="true"></span><span>Christopher Barker</span></a><div class="nav-links"><a href="../projects.html">Projects</a><a href="../resume.html">Resume</a><a href="../contact.html">Contact</a></div></nav></header>
+    <main>
+      <section class="case-hero">
+        <div class="case-summary">
+          <p class="eyebrow">Featured project</p>
+          <h1>Valorant Discord Bot</h1>
+          <p class="lead">Discord bot for Valorant profile lookup, recent competitive match analysis, RR tracking, and API-driven player statistics.</p>
+          <div class="actions"><a class="button" href="https://github.com/ChristopherDSBarker/val_bot_api_data_tracker" target="_blank" rel="noopener">GitHub Repo</a><a class="button secondary" href="../assets/featured/val-discord-bot/valorantProfile.js" target="_blank" rel="noopener">View Command</a></div>
+        </div>
+        <img class="artifact-hero val-discord-hero" src="../assets/featured/val-discord-bot/val-discord-bot-hero.png" alt="Valorant Discord bot profile embed for SiDi254#NA1 showing Gold 1 rank, 46 RR, recent competitive match history, combat stats, and estimated MMR signal">
+      </section>
+      <section class="case-layout">
+        <aside class="side-panel"><h2>Technologies</h2><ul class="tag-list"><li>Node.js</li><li>JavaScript</li><li>Discord.js</li><li>HenrikDev API</li><li>REST API</li><li>JSON</li><li>GitHub</li></ul><p class="meta">Source: <a href="https://github.com/ChristopherDSBarker/val_bot_api_data_tracker" target="_blank" rel="noopener">val_bot_api_data_tracker</a></p></aside>
+        <div class="content-panel">
+          <section><h2>Overview</h2><p>Built a Discord.js bot that uses slash commands and the HenrikDev Valorant API to fetch player profile data, rank, RR changes, recent match history, combat stats, and estimated MMR signals. The bot formats the results into a Discord embed for quick competitive performance review.</p></section>
+          <section><h2>Highlights</h2><ul><li>Discord slash command interface</li><li>Valorant profile lookup</li><li>Recent competitive match summary</li><li>RR trend tracking</li><li>Rank and peak rank display</li><li>Agent usage summary</li><li>Combat statistics: K/D, ACS, ADR, HS%, K/D/A</li><li>MMR signal estimate using visible rank, lobby rank, RR trend, and recent results</li><li>HenrikDev API integration</li><li>Error handling for missing or invalid profiles</li><li>Node.js backend command structure</li></ul></section>
+          <section><h2>Process</h2><p>Integrated the HenrikDev Valorant API to fetch player account data, MMR history, match results, and combat statistics in parallel using Promise.allSettled. Built Discord slash command handlers with input validation, deferred replies, and graceful error recovery. An experimental pipeline sidecar enriches profiles with damage delta data when the API provides it.</p></section>
+          <section><h2>Outcome</h2><p>The bot delivers rich embedded player profiles in Discord — rank, RR trend, peak rank, recent match record, combat stats, and an estimated MMR signal. The MMR signal is derived from visible rank, lobby rank average, RR pattern, and recent results; it is not Riot's hidden MMR. The project demonstrates applied backend architecture, asynchronous API orchestration, and command-driven interface design.</p></section>
+          <section><h2>Screenshot</h2><div class="screenshot-grid val-discord-grid"><img src="../assets/featured/val-discord-bot/val-discord-bot-hero.png" alt="Valorant Discord bot profile embed for SiDi254#NA1 showing Gold 1 rank, 46 RR, recent competitive match history, combat stats, and estimated MMR signal"></div></section>
+          <section><h2>Source Materials</h2><p><a href="https://github.com/ChristopherDSBarker/val_bot_api_data_tracker" target="_blank" rel="noopener">GitHub repo</a> / <a href="../assets/featured/val-discord-bot/valorantProfile.js" target="_blank" rel="noopener">valorantProfile.js</a></p></section>
+        </div>
+      </section>
+    </main>
+    <footer class="footer"><div class="footer-inner"><p>Christopher Barker Portfolio</p><p><a href="../about.html">About</a> / <a href="../projects.html">Projects</a> / <a href="../resume.html">Resume</a> / <a href="../contact.html">Contact</a></p></div></footer>
+  </body>
+</html>

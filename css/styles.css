@@ -2721,3 +2721,39 @@ p {
     grid-template-columns: 1fr;
   }
 }
+
+/* ─── VALORANT DISCORD BOT: portrait screenshot patch ────────────────────────
+   Discord embed screenshots are portrait/tall. These rules override the global
+   cover-crop defaults so the full embed is always visible without distortion.
+   Every selector here is scoped to this project only — no other card is affected. */
+
+/* Reel card thumbnail — homepage and projects page */
+.home-page .project-grid[data-reel] a[href="featured/valorant-discord-bot.html"] .thumb,
+.projects-page .project-grid[data-reel] a[href="featured/valorant-discord-bot.html"] .thumb {
+  object-fit: contain;
+  object-position: center top;
+  background: #111827;
+}
+
+/* Detail page: hero image — allow portrait height, no fixed clamp */
+.artifact-hero.val-discord-hero {
+  height: auto;
+  min-height: 280px;
+  max-height: none;
+  object-fit: contain;
+  object-position: center top;
+}
+
+/* Detail page: screenshot section — single-column, portrait-safe */
+.val-discord-grid {
+  grid-template-columns: 1fr;
+  max-width: 480px;
+}
+
+.val-discord-grid img {
+  aspect-ratio: auto;
+  height: auto;
+  object-fit: contain;
+  object-position: center top;
+  background: #111827;
+}
